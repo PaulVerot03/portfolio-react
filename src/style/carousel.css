@@ -1,0 +1,38 @@
+/* Carousel.css */
+
+.full-width-carousel {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.full-width-slide {
+    width: auto;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width-slide img {
+    max-width: auto;
+    max-height: 20vh;
+    object-fit: cover;
+}
+
+.slide-image {
+    width: auto;
+    height: 20vh;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slide-image:hover {
+    height: 22vh;
+    width: auto;
+}
+
+.text {
+    display: grid;
+    place-items: center;
+    bottom: 20px;
+}

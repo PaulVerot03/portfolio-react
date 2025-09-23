@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-light: #f5f5f5;
+  --color-dark:  #1a1a1a;
+  --accent:      #e44d26;
+  --transition:  0.6s ease;
+  /*--font-main:   'Segoe UI', sans-serif;*/
+}
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto", sans-serif;
+
+}
+
+.hidden {
+  display: none;
+}
+
+
+#loader img { width: 120px; }
+
+/* Nav bar */
+nav {
+  position: fixed; top: 0; width: 100%;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+#loader {
+  font-family: 'Rajdhani', sans-serif;
+  position: fixed; inset: 0;
+  background: var(--color-dark);
+  color: var(--color-light);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 9999;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+.centered-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+
+/*Style for the description subsection, to be adaptated to any other subsection*/
+
+/* if we change the colours here we also need to change those in the TextMinimap component */
+
+.description {
+  em {
+    font-family: "Noto Serif", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #5b5b5b;
+    font-size: 14pt;
+    line-height: 1.4;
+    margin-bottom: 0.4em;
+    margin-top: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  text-justify: inter-word;
+  text-align: justify;
+  
+
+  h1 {
+    color: #274e13;
+    font-size: 36pt;
+    text-align: center;
+
+  }
+  h2 {
+    color: #38761d;
+    font-size: 32pt;
+    text-align: center;
+  }
+  h3 {
+    color: #6aa84f;
+    font-size: 28pt;
+    text-align: center;
+  }
+  h4 {
+    color: #93c47d;
+    font-size: 18pt;
+    text-align: center;
+  }
+  p{
+    font-size: 16pt;
+
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reference p{
+    font-family: "Noto Serif", serif !important;
+    color: #2c2c2c;
+    margin-bottom: 0.4em;
+    margin-top: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-indent: -1.5em;
+    margin-left: 1.5em;
+    text-align: left;
+  }  
+  
+}
+.RED{
+  color: red;
+  font-size: 20pt;
+}
+.small{
+      width: 200px; 
+      height: auto;
+    }
+.medium{
+  width: 400px;
+  height: auto;
+}
+.big{
+      width: 600px; 
+      height: auto;
+    }
+.large {
+  width: 100%;
+  height: auto; 
+  display: block;
+}
+
+/* This does not look good, uncomment to your risks and perils
+
+.navbar {
+  background-color: #0a0a0a !important;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00 inset;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #00ff00 !important;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1050 !important;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+          rgba(0, 255, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 2px;
+  pointer-events: none;
+}
+
+
+.navbar-brand {
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px #00ff00;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #00ff00 !important;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  text-shadow: 0 0 3px #00ff00;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 5px #ffffff;
+  box-sizing: border-box;
+}
+
+.dropdown-menu {
+  background-color: #0a0a0a;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  min-width: 200px;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  color: #00ff00 !important;
+  padding: 0.5rem 1rem;
+  text-shadow: 0 0 3px #00ff00;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+  color: #ffffff !important;
+  background-color: rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 5px #ffffff;
+  box-sizing: border-box;
+}
+
+
+
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.85;
+  }
+}
+
+.navbar {
+  animation: flicker 0.15s infinite alternate;
+  overflow: visible !important;
+  box-sizing: border-box;
+}
+
+.navbar-collapse {
+  overflow: visible !important;
+}
+
+.navbar-brand, .nav-link, .dropdown-toggle {
+  animation: glow 2s infinite;
+}
+
+*/
+
