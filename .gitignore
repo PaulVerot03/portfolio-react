@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+public/cyano-defender.html
+src/assets/solaris-black-extra.png
+src/assets/solaris-black-noletter.png
+src/assets/solaris-white.png
+src/assets/synthetic-super.pdf
+text-effects-showcase/method1-text-shadow.html
+text-effects-showcase/method2-canvas.html
+text-effects-showcase/method3-css-patterns.html
+text-effects/
+src
