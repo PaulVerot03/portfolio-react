@@ -12,7 +12,9 @@ export function Home() {
     { name: "Python", level: 50 },
   ];
 
-
+let LinkedIn = "https://www.linkedin.com/in/paul-verot-b48805353/";
+let InstaGram = "https://www.instagram.com/paulverot.aep/";
+let GitHub =  "https://github.com/PaulVerot03";
 
   return (
     <div className="portfolio">
@@ -24,29 +26,30 @@ export function Home() {
             <h3>{t('home.subtitle')}</h3>
             <p className="lead">{t('home.university')}</p>
             <div className="social-links">
-              <a href="https://instagram.com/paul_verot" target="_blank" rel="noopener noreferrer">
+              <a href={InstaGram} target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href="https://linkedin.com/in/paul-verot" target="_blank" rel="noopener noreferrer">
+              <a href={LinkedIn} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="https://github.com/paul-verot" target="_blank" rel="noopener noreferrer">
-                GitHub
+              <a href={GitHub} target="_blank" rel="noopener noreferrer">
+                 GitHub
               </a>
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="profile-image-container">
-              <div className="profile-image-placeholder">
-                <div className="profile-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                </div>
-                <p>{t('home.profilePhoto')}</p>
+          <div className="profile-image-container">
+            <div className="profile-image-placeholder">
+              <div className="profile-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
               </div>
+              <p>{t('home.profilePhoto')}</p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -125,13 +128,13 @@ export function Home() {
               {t('home.contact.description')}
             </p>
             <div className="contact-links">
-              <a href="https://instagram.com/paul_verot" target="_blank" rel="noopener noreferrer">
+              <a href={InstaGram} target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href="https://linkedin.com/in/paul-verot" target="_blank" rel="noopener noreferrer">
+              <a href={LinkedIn} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="https://github.com/paul-verot" target="_blank" rel="noopener noreferrer">
+              <a href={GitHub} target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
             </div>

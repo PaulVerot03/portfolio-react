@@ -11,10 +11,10 @@ type Props = {
 function extractHeadingsFromDOM(element: HTMLElement | null) {
   if (!element) return [];
   const colors = [
-    '#274e13', // h1
-    '#38761d', // h2
-    '#6aa84f', // h3
-    '#93c47d', // h4
+    '#B85450', // h1 - Primary red
+    '#D2691E', // h2 - Primary orange
+    '#DAA520', // h3 - Secondary gold
+    '#F4A460', // h4 - Accent yellow
   ];
   const sizes = [16, 14, 12, 11];
   const headings: { id: string; text: string; level: number; color: string; size: number }[] = [];
@@ -112,7 +112,7 @@ export function TextMinimap({ mainContentId, location }: Props) {
         height: 'fit-content',
         maxHeight: '90vh',
         overflow: "auto",
-        borderLeft: "1px solid #2222226b",
+        borderLeft: "1px solid rgba(184, 84, 80, 0.3)",
         padding: 4,
         lineHeight: 1.2,
         fontSize: 7,
@@ -138,7 +138,7 @@ export function TextMinimap({ mainContentId, location }: Props) {
               fontWeight: h.id === activeId ? 'bold' : 'normal',
               marginLeft: 0,
               paddingLeft: 6,
-              background: h.id === activeId ? 'rgba(39, 78, 19, 0.08)' : 'none',
+              background: h.id === activeId ? 'rgba(184, 84, 80, 0.08)' : 'none',
               borderRadius: 3,
               padding: '2px 4px',
               outline: h.id === activeId ? `1px solid ${h.color}44` : 'none',

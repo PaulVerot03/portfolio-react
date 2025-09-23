@@ -11,7 +11,7 @@ body {
 }
 
 .bg-hero {
-  background-color: #45b06cff;
+  background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
 }
 
 /* CALLOUT */
