@@ -15,10 +15,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const pathMapping = getPathMapping();
   const routerLocation = useLocation();
-  const currentPath =
-    routerLocation.pathname
-      .split(`${stringToSlug(import.meta.env.VITE_TEAM_NAME)}`)
-      .pop() || "/";
+  const currentPath = routerLocation.pathname;
 
 
 
