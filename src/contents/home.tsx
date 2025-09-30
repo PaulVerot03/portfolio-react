@@ -4,12 +4,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 export function Home() {
   const { t } = useLanguage();
   const skills = [
-    { name: "Linux", level: 70 },
-    { name: "Windows", level: 60 },
-    { name: "Active Directory", level: 40 },
-    { name: "HTML/CSS", level: 40 },
-    { name: "SQL", level: 40 },
-    { name: "Python", level: 50 },
+    { name: "Linux", level: 70 , description :  t('home.skills.linux')},
+    { name: "Windows", level: 60, description : t('home.skills.windows')},
+    { name: "Active Directory", level: 40, description :  t('home.skills.activedirectory') },
+    { name: "HTML/CSS", level: 40, description :  t('home.skills.html')},
+    { name: "Databases", level: 40, description :  t('home.skills.database') },
+    { name: "Python", level: 50, description :  t('home.skills.python') },
   ];
 
 let LinkedIn = "https://www.linkedin.com/in/paul-verot-b48805353/";
@@ -78,13 +78,14 @@ let GitHub =  "https://github.com/PaulVerot03";
                 <div key={index} className="skill-item">
                   <div className="skill-header">
                     <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
+                    {/*<span className="skill-percentage">{skill.level}%</span>*/}
+                    <p className='skill-description'>{skill.description}</p>
+                  {/*</div>
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
                       style={{ width: `${skill.level}%` }}
-                    ></div>
+                    ></div>*/}
                   </div>
                 </div>
               ))}

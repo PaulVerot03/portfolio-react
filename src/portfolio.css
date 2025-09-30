@@ -178,8 +178,8 @@ section hr {
 
 .skill-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
@@ -187,6 +187,7 @@ section hr {
   font-weight: 600;
   color: #2c3e50;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill-percentage {
@@ -210,6 +211,14 @@ section hr {
   border-radius: 5px;
   transition: width 1.5s ease-in-out;
   box-shadow: 0 2px 8px var(--shadow-warm-strong);
+}
+
+.skill-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
 }
 
 /* Interests Section */

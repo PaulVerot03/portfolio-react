@@ -14,7 +14,8 @@ export const translations = {
         "description": "I'm a Master's student specializing in Computer Networks Systems at Paris-Saclay University. I'm passionate about technology, photography, and hands-on projects that combine technical skills with creative problem-solving."
       },
       "skills": {
-        "title": "Technical Skills"
+        "title": "Technical Skills",
+        "linux" : "I've been using Linux for a long time and i know my way arround many distributions. Having used Linux for both personal machines and servers, I have developed a pretty good all-arround comprehension of the OS and I've learned a lot from breaking and fixing my systems."
       },
       "interests": {
         "title": "Personal Interests",
@@ -104,7 +105,8 @@ export const translations = {
         "description": "Je suis étudiant en Master spécialisé en Systèmes de Réseaux Informatiques à l'Université Paris-Saclay. Je suis passionné par la technologie, la photographie, et les projets pratiques qui allient compétences techniques et résolution créative de problèmes."
       },
       "skills": {
-        "title": "Compétences Techniques"
+        "title": "Compétences Techniques",
+        "linux" : ""
       },
       "interests": {
         "title": "Centres d'Intérêt",
