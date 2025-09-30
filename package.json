@@ -22,7 +22,6 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
-    "react-simple-minimap": "^1.0.1",
     "react-slick": "^0.31.0",
     "slick-carousel": "^1.8.1",
     "styled": "^1.0.0"

@@ -7,7 +7,6 @@ import { Navbar } from "../../components/Navbar";
 import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
-import { TextMinimap } from "../../components/TextMinimap";
 import Loader from "../../components/Loader";
 import { LanguageProvider } from "../../contexts/LanguageContext";
 
@@ -21,8 +20,6 @@ const App = () => {
       .split(`${stringToSlug(import.meta.env.VITE_TEAM_NAME)}`)
       .pop() || "/";
 
-  // add the pages where we dont want the map
-  const pagesWithoutMinimap = ["/game", "/"];
 
 
   const title =
@@ -46,20 +43,15 @@ const App = () => {
       {/* Navigation */}
       <Navbar />
       <Header title={title || ""} lead={lead || ""} />
-      <div style={{ display: "flex" }}>
-        <div style={{ flex: 1, overflow: "auto" }} id="main-content">
-          {/* Main content */}
-          <Routes>
+      <div className="container">
+        {/* Main content */}
+        <Routes>
             {Object.entries(pathMapping).map(
               ([path, { component: Component }]) => (
                 <Route
                   key={path}
                   path={path}
-                  element={
-                    <div className="container">
-                      <Component />
-                    </div>
-                  }
+                  element={<Component />}
                 />
               ),
             )}
@@ -75,11 +67,7 @@ const App = () => {
                 </>
               }
             />
-          </Routes>
-        </div>
-        {!pagesWithoutMinimap.includes(currentPath) && (
-          <TextMinimap mainContentId="main-content" location={routerLocation} />
-        )}
+        </Routes>
       </div>
       {/* Footer */}
       {/* MUST mention license AND have a link to team wiki's repository on gitlab.igem.org */}
