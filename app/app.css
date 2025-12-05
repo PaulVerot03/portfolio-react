@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "tailwindcss-animate";
@@ -7,6 +9,16 @@
   --font-sans:
     "JetBrains Mono", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.coral-pixels-regular {
+  font-family: "Coral Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html,
@@ -132,4 +144,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+.pixelft {
+  font-family: "Coral Pixels", serif;
 }

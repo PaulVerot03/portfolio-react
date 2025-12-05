@@ -202,7 +202,31 @@ vec2 barrel(vec2 uv){
 }
 
 void main() {
-    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); // FOR DEBUGGING: Force red
+    time = iTime * 0.333333;
+    vec2 uv = vUv;
+
+    if(uCurvature != 0.0){
+      uv = barrel(uv);
+    }
+    
+    vec2 p = uv * uScale;
+    vec3 col = getColor(p);
+
+    if(uChromaticAberration != 0.0){
+      vec2 ca = vec2(uChromaticAberration) / iResolution.xy;
+      col.r = getColor(p + ca).r;
+      col.b = getColor(p - ca).b;
+    }
+
+    col *= uTint;
+    col *= uBrightness;
+
+    if(uDither > 0.0){
+      float rnd = hash21(gl_FragCoord.xy);
+      col += (rnd - 0.5) * (uDither * 0.003922);
+    }
+
+    gl_FragColor = vec4(col, 1.0);
 }
 `;
 

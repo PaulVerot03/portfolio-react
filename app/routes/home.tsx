@@ -1,8 +1,8 @@
 import type { Route } from "./+types/home";
 import { useTranslation } from "react-i18next";
 import { ClientOnly } from "../components/ClientOnly";
-import FaultyTerminal from "../components/FaultyTerminal";
-
+import FaultyTerminal from "@/components/FaultyTerminal";
+import TextType from "@/components/TextType";
 import { ThemeToggle } from "../components/ThemeToggle";
 
 export function meta({}: Route.MetaArgs) {
@@ -40,21 +40,22 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               glitchAmount={1}
               flickerAmount={1}
               noiseAmp={1}
-              chromaticAberration={0.5}
+              chromaticAberration={0}
               dither={0}
-              curvature={0.5}
-              tint="#e100ffff"
+              curvature={0}
+              tint="#8f8f8fff"
               mouseReact={true}
-              mouseStrength={0}
+              mouseStrength={0.5}
               pageLoadAnimation={false}
               brightness={1}
             />
+
           </ClientOnly>
         </div>
         <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
           <button
             onClick={changeLanguage}
-            className="p-2 bg-blue-500 text-white rounded"
+            className="p-2  text-white rounded"
           >
             {currentLanguage === "en" ? "Français 🇫🇷" : "English 🇬🇧"}
           </button>
@@ -62,9 +63,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           <div className="bg-black/30 p-8 rounded-3xl max-w-7xl mx-auto text-center">
-            <h1 className="py-4 justify-center flex items-center text-cyan-400 text-6xl font-extrabold text-center select-auto">
-              {t("welcome")}
-            </h1>
+            <TextType text={ t("welcome") } 
+            typingSpeed={75} 
+            pauseDuration={15000} 
+            showCursor={true} 
+            cursorCharacter="_" 
+            className="py-4 justify-center flex items-center text-cyan-400 text-6xl font-extrabold text-center select-auto jersey-10-regular" />
+            
             <p className="text-white text-5xl">
               {t("greeting", { name: "Paul" })}
             </p>
@@ -131,23 +136,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
                           Université d'Évry Paris-Saclay, 2025
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src=""
-                        alt=""
-                      />
-                      <div className="min-w-0 flex-auto">
-                        <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                          Secourisme - PSC1 | Aquatique
-                        </p>
-                        <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          Sapeur Pompier de Paris
                         </p>
                       </div>
                     </div>

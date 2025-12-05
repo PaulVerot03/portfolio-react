@@ -5,5 +5,8 @@
 	"i18n-ally.localesPaths": ["public/locales"],
 	"i18n-ally.sourceLanguage": "en",
 	"i18n-ally.keystyle": "flat",
-	"tailwindcss.experimental.configFile": "tailwind.config.ts"
+	"tailwindcss.experimental.configFile": "tailwind.config.ts",
+	"cSpell.words": [
+		"gsap"
+	]
 }
