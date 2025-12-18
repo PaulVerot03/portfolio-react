@@ -4,16 +4,61 @@ import { ClientOnly } from "../components/ClientOnly";
 import FaultyTerminal from "@/components/FaultyTerminal";
 import TextType from "@/components/TextType";
 import { ThemeToggle } from "../components/ThemeToggle";
+import PillNav from "../components/PillNav";
 
-export function meta({}: Route.MetaArgs) {
+import LogoLoop from '../components/LogoLoop';
+
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython } from 'react-icons/si';
+import * as SiIcons from 'react-icons/si';
+import * as FaIcons from 'react-icons/fa';
+import * as DiIcons from 'react-icons/di';
+
+const getIconByName = (iconName: string) => {
+  if (!iconName) return null;
+  const allIcons = { ...SiIcons, ...FaIcons, ...DiIcons };
+  const IconComponent = allIcons[iconName as keyof typeof allIcons];
+  return IconComponent ? <IconComponent /> : null;
+};
+const TechBadges = ({ techString }: { techString: string }) => {
+  if (!techString) return null;
+  const techs = techString.split(',').map(t => t.trim());
+  return (
+    <div className="flex flex-wrap gap-2 mt-2">
+      {techs.map((iconName, index) => {
+        const icon = getIconByName(iconName);
+        const displayName = iconName.replace(/^(Si|Fa|Di)/, '');
+        return icon ? (
+          <span
+            key={index}
+            className="inline-flex items-center gap-1 px-2 py-1 bg-cyan-100 dark:bg-cyan-900 text-pink-800 dark:text-cyan-200 rounded text-sm"
+            title={displayName}
+          >
+            <span className="text-lg">{icon}</span>
+            <span>{displayName}</span>
+          </span>
+        ) : null;
+      })}
+    </div>
+  );
+};
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" }
+];
+{/** python, linux, podman, docker, oracle, BSD, postgres, bash, react,  */}
+export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Paul Verot | Portfolio" },
+    { name: "description", content: "Portfolio" },
   ];
 }
 
 export function loader({ context }: Route.LoaderArgs) {
-  return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
+  return { message: "Welcome to my portfolio" };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
@@ -25,8 +70,25 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     i18n.changeLanguage(newLanguage);
   };
 
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/project" },
+  ];
+
   return (
     <div className="bg-white dark:bg-black">
+      <ClientOnly>
+        <PillNav
+          logo="/favicon.ico"
+          logoAlt="Logo"
+          items={navItems}
+          activeHref="/"
+          baseColor="#ffffff17"
+          pillColor="#8e7ce044"
+          hoveredPillTextColor="#ffffff"
+          pillTextColor="#000000"
+        />
+      </ClientOnly>
       <div className="relative h-screen">
         <div className="absolute inset-0">
           <ClientOnly>
@@ -49,7 +111,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               pageLoadAnimation={false}
               brightness={1}
             />
-
           </ClientOnly>
         </div>
         <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
@@ -57,19 +118,19 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             onClick={changeLanguage}
             className="p-2  text-white rounded"
           >
-            {currentLanguage === "en" ? "Français 🇫🇷" : "English 🇬🇧"}
+            {currentLanguage === "en" ? "🇫🇷" : "🇬🇧"}
           </button>
           <ThemeToggle />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           <div className="bg-black/30 p-8 rounded-3xl max-w-7xl mx-auto text-center">
-            <TextType text={ t("welcome") } 
-            typingSpeed={75} 
-            pauseDuration={15000} 
-            showCursor={true} 
-            cursorCharacter="_" 
-            className="py-4 justify-center flex items-center text-cyan-400 text-6xl font-extrabold text-center select-auto jersey-10-regular" />
-            
+            <TextType text={t("welcome")}
+              typingSpeed={75}
+              pauseDuration={15000}
+              showCursor={true}
+              cursorCharacter="_"
+              className="py-4 justify-center flex items-center text-purple-600 tracking-wide text-9xl font-extrabold text-center select-auto jersey-10-regular" />
+
             <p className="text-white text-5xl">
               {t("greeting", { name: "Paul" })}
             </p>
@@ -79,15 +140,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <div className="bg-white dark:bg-gray-950 p-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center">
-            <h2 className="text-4xl font-extrabold text-cyan-500 mb-8">
+            <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
               {t("about")}
             </h2>
             <p className="text-lg text-center mb-12 dark:text-white">{t("about-content")}</p>
             <div className="flex">
-              <div className=" flex-auto">
-                  <h2 className="text-4xl font-extrabold text-cyan-500 mb-8">
+              <div className=" flex-auto px-px">
+                <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
                   {t("scholar")}
                 </h2>
+                <div className="">
+                </div>
                 <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-700 w-full mb-12">
                   <li className="flex justify-between gap-x-6 py-5">
                     <div className="flex min-w-0 gap-x-4">
@@ -144,7 +207,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
               </div>
               <div className=" flex-auto">
-                <h2 className="text-4xl font-extrabold text-cyan-500 mb-8">
+                <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
                   {t("stage")}
                 </h2>
                 <p>
@@ -163,7 +226,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                           2019 - Kameleoon
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          
                         </p>
                       </div>
                     </div>
@@ -184,20 +246,52 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                       </div>
                     </div>
                   </li>
-                  
                 </ul>
-
               </div>
-              
             </div>
-            
-            
-            <h2 className="text-4xl font-extrabold text-cyan-500 mb-8">
+
+            <h2 className="text-4xl font-extrabold text-purple-600 mb-8">Other tidbits</h2>
+            <div className="flex flex-row gap-12 justify-center mb-12">
+              <div className="text-center">
+                <p className="text-lg font-bold mb-2 dark:text-white">English</p>
+                <p className="dark:text-gray-300">TOEIC - C1</p>
+                <p className="dark:text-gray-300">EFSET - C2</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold mb-2 dark:text-white">Secourisme</p>
+                <p className="dark:text-gray-300">PSC-1</p>
+                <p className="dark:text-gray-300">Secours Aquatique</p>
+              </div>
+            </div>
+
+
+
+            <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
               {t("knowledge")}
             </h2>
-            <h2 className="text-4xl font-extrabold text-cyan-500 mb-8">
-              {t("interests")}
+            <h3 className="text-2xl text-purple-900 font-semibold mb-4 ">{t("knowledge-subtitle")}</h3>
+            <p className="mb-4 dark:text-white">{t("knowledge-content-1")}</p>
+            <p className="mb-6 dark:text-white">{t("knowledge-content-2")}</p>
+            <ClientOnly>
+              <div className="w-full max-w-4xl mx-auto mb-8" style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
+                <LogoLoop
+                  logos={techLogos}
+                  speed={50}
+                  direction="left"
+                  logoHeight={48}
+                  gap={40}
+                  pauseOnHover={true}
+                  scaleOnHover
+                  ariaLabel="Technology partners"
+                />
+              </div>
+            </ClientOnly>
+
+
+            <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+            {t("interests")}
             </h2>
+
           </div>
         </div>
       </div>

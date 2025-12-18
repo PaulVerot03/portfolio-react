@@ -7,6 +7,7 @@
 	"i18n-ally.keystyle": "flat",
 	"tailwindcss.experimental.configFile": "tailwind.config.ts",
 	"cSpell.words": [
+		"cursus",
 		"gsap"
 	]
 }

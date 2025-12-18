@@ -3,10 +3,108 @@
   "greeting": "My name is Paul and I bid you welcome to my Portfolio!",
   "article": "article",
   "about": "About me",
-  "about-content": "",
+  "about-content": "I am a student pursuing the Computer Network System master at Université Paris-Saclay. I am particularly interested in Networks and Systems administration aswell as biology.",
   "stage": "Interships",
   "stages-content": "",
   "knowledge": "What I can do ",
+  "knowledge-subtitle": "What I learned",
+  "knowledge-content-1": "My Master's Degree focuses on Networks and Administration, as such I have learned to set-up and care for servers and networks. I have also learned the basics of Advanced mathematics, opto-electronics and Statistics. Alongside, I have learned to code and I am proficient in Python for Scripting.",
+  "knowledge-content-2": "Here is a list of the technologies my Uni cursus taught me:",
   "interests": "My center of Interest",
-  "scholar": "Education Background"
+  "scholar": "Education Background",
+  "projects": {
+    "title": "My projects",
+    "intro": "For the past two years, a great part of our teachings were done with projects. I also got the chance to participate in the Synthetic Biology Competition IGEM.",
+    "igem": {
+      "title": "IGEM",
+      "intro": "I was approached by a member of the IGEM team for our Uni to help with the project. And so i got to design and code our Wiki",
+      "project-description": "Our project was about improving Carbon Fixation in cyanobacteria",
+      "link-text": "Evry Paris-Saclay | Solaris",
+      "award": "At the Grand Jamboree we were nominated for Best New Basic Part and received a Gold Medal",
+      "future": "I will be participating again for the next edition and i hope to do more for the team.",
+      "impact": "This project awoke an interest for biology I didn't know I had, and as such I have started learning more about BioInformatics in hope to branch out.",
+      "technologies": ""
+    },
+    "uni": {
+      "title": "Uni",
+      "intro": "Here are some of the project we had the past two years",
+      "L3": {
+        "title": "L3",
+        "tomography": {
+          "title": "Tomograpy",
+          "description": "description",
+          "technologies": ""
+        },
+        "bdd2": {
+          "title": "BDD2",
+          "description": "description",
+          "technologies": ""
+        },
+        "windows-ad": {
+          "title": "Windows AD",
+          "description": "description",
+          "technologies": ""
+        },
+        "dnssec": {
+          "title": "DNSSEC - DoT/DoH",
+          "description": "description",
+          "technologies": ""
+        },
+        "nftables": {
+          "title": "NFTables",
+          "description": "description",
+          "technologies": ""
+        }
+      },
+      "M1": {
+        "title": "M1",
+        "carp": {
+          "title": "CARP",
+          "description": "description",
+          "technologies": ""
+        },
+        "lvs": {
+          "title": "LVS NAT DR",
+          "description": "description",
+          "technologies": ""
+        },
+        "bdd": {
+          "title": "BDD",
+          "description": "description",
+          "technologies": ""
+        },
+        "petri": {
+          "title": "Petri",
+          "description": "description",
+          "technologies": ""
+        },
+        "dhcp": {
+          "title": "DHCP",
+          "description": "description",
+          "technologies": ""
+        }
+      }
+    },
+    "personal": {
+      "title": "Personal",
+      "rwg": {
+        "title": "Read-Write-Grow Hackaton",
+        "link-text": "rwg.bio",
+        "description": "Friends from the IGEM team suggested we should participate to this hackaton, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
+        "code-link": "Our Code",
+        "outcome": "Although we did not win, our sister team was amongst the top ten and got to pitch their idea to professionals and receive guidance.",
+        "technologies": ""
+      },
+      "cardihack": {
+        "title": "Cardi-Hack Challenge",
+        "description": "Suggested to me by a friend studying BioInformatics, this challenge is about training a Language-Model to compute PRS-scores and evaluate cardiac risks.",
+        "technologies": ""
+      },
+      "server": {
+        "title": "My Server",
+        "description": "I build myself a server using Unraid and Docker",
+        "technologies": ""
+      }
+    }
+  }
 }
