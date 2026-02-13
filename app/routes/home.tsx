@@ -100,7 +100,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           items={navItems}
           activeHref="/"
           baseColor="#ffffff17"
-          pillColor="#8e7ce044"
+          pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
           pillTextColor="#000000"
         />
@@ -132,9 +132,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
           <button
             onClick={changeLanguage}
-            className="p-2  text-white rounded"
+            className="p-2  text-white rounded dark:text-white bg-purple-600 hover:bg-purple-700 transition-colors"
           >
-            {currentLanguage === "en" ? "🇫🇷" : "🇬🇧"}
+            {currentLanguage === "en" ? "passer en 🇫🇷" : "switch to 🇬🇧"}
           </button>
           <ThemeToggle />
         </div>
@@ -227,7 +227,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   {t("stage")}
                 </h2>
                 <p>
-                  {t("stage-content")}
+                  {/* {t("stage-content")} */}
                 </p>
                 <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-700 w-full mb-12">
                   <li className="flex justify-between gap-x-6 py-5">

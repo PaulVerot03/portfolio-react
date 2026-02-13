@@ -76,7 +76,7 @@ export default function Project() {
           items={navItems}
           activeHref="/project"
           baseColor="#ffffff17"
-          pillColor="#8e7ce044"
+          pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
           pillTextColor="#000000"
         />
