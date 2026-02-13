@@ -212,6 +212,16 @@ export default function Project() {
             <p className="mb-2 dark:text-white">{t("projects.personal.cardihack.description")}</p>
             <TechBadges techString={t("projects.personal.cardihack.technologies")} />
           </div>
+          
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.rnafold.title")}</h3>
+            <p className="mb-2 dark:text-white">{t("projects.personal.rnafold.description")}</p>
+            <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1770975328/pymol_o7w5ef.png" alt="Pymol visualization of RNA structure" className="mb-4 rounded-lg " width={"400px"}/>
+            <a href="https://github.com/PaulVerot03/Cfold" className="text-purple-600 hover:underline mb-2 block text-center">
+              {t("projects.personal.rwg.code-link")}
+            </a>
+            <TechBadges techString={t("projects.personal.rnafold.technologies")} />
+          </div>
 
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.server.title")}</h3>

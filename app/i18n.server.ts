@@ -11,97 +11,108 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         welcome: "Welcome",
-        greeting: "My name is Paul and I bid you welcome to my Portfolio!",
+        greeting: "My name is Paul and I welcome you to my portfolio!",
         article: "article",
         about: "About me",
         "about-content":
-          "I am a student pursuing the Computer Network System master at Université Paris-Saclay. I am particularly interested in Networks and Systems administration aswell as biology.",
-        stage: "Interships",
+          "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
+        stage: "Internships",
         "stages-content": "",
-        knowledge: "What I can do ",
+        knowledge: "What I can do",
         "knowledge-subtitle": "What I learned",
         "knowledge-content-1":
-          "My Master's Degree focuses on Networks and Administration, as such I have learned to set-up and care for servers and networks. I have also learned the basics of Advanced mathematics, opto-electronics and Statistics. Alongside, I have learned to code and I am proficient in Python for Scripting.",
+          "My Master's degree focuses on networks and administration; I have learned to set up and maintain servers and networks. I have also covered basics of advanced mathematics, opto-electronics, and statistics. Additionally, I am proficient in Python for scripting.",
         "knowledge-content-2":
-          "Here is a list of the technologies my Uni cursus taught me:",
-        interests: "My center of Interest",
-        scholar: "Education Background",
+          "Here is a list of the technologies my university curriculum taught me:",
+        interests: "My interests",
+        scholar: "Education",
         projects: {
           title: "My projects",
           intro:
-            "For the past two years, a great part of our teachings were done with projects. I also got the chance to participate in the Synthetic Biology Competition IGEM.",
+            "Over the past two years much of our teaching was project-based. I also had the chance to participate in the synthetic biology competition iGEM.",
           igem: {
             title: "IGEM",
             intro:
-              "I was approached by a member of the IGEM team for our Uni to help with the project. And so i got to design and code our Wiki",
+              "I was approached by a member of the iGEM team at our university to help with the project, so I designed and coded our wiki.",
             "project-description":
-              "Our project was about improving Carbon Fixation in cyanobacteria",
+              "Our project focused on improving carbon fixation in cyanobacteria.",
             "link-text": "Evry Paris-Saclay | Solaris",
             award:
-              "At the Grand Jamboree we were nominated for Best New Basic Part and received a Gold Medal",
+              "At the Grand Jamboree we were nominated for Best New Basic Part and received a Gold Medal.",
             future:
-              "I will be participating again for the next edition and i hope to do more for the team.",
+              "I will participate again in the next edition and hope to contribute more to the team.",
             impact:
-              "This project awoke an interest for biology I didn't know I had, and as such I have started learning more about BioInformatics in hope to branch out.",
+              "This project sparked an interest in biology I didn't know I had, so I began learning more about bioinformatics to branch out.",
             technologies: "",
           },
           uni: {
-            title: "Uni",
-            intro: "Here are some of the project we had the past two years",
+            title: "University",
+            intro:
+              "Here are some projects we completed over the past two years",
             L3: {
               title: "L3",
               tomography: {
-                title: "Tomograpy",
-                description: "description",
-                technologies: "",
+                title: "Tomography",
+                description:
+                  "Our professor gave us two raw files from a tomographic probe and we had to interpret distributions and density within the sample.",
+                technologies: "SiPython",
               },
               bdd2: {
-                title: "BDD2",
-                description: "description",
-                technologies: "",
+                title: "Database",
+                description:
+                  "We had to model a database for a university. The model was fairly simple: I created tables for professors, courses, exams, students, grades, etc., and to validate the database I implemented a list of 40 SQL queries and tested them.",
+                technologies: "SiPostgresql",
               },
               "windows-ad": {
                 title: "Windows AD",
-                description: "description",
-                technologies: "",
+                description:
+                  "Set up an Active Directory domain controller to manage users and shared resources across multiple machines on the network.",
+                technologies: "FaWindows",
               },
               dnssec: {
                 title: "DNSSEC - DoT/DoH",
-                description: "description",
-                technologies: "",
+                description:
+                  "Set up a recursive DNS server using DNSSEC with Unbound to study DNS protocols and secure transmissions. Also configured a DNS server that communicates over DoT with the FDN's servers.",
+                technologies: "FaLinux,FaDebian",
               },
               nftables: {
-                title: "NFTables",
-                description: "description",
-                technologies: "",
+                title: "nftables",
+                description: "Explored firewall configuration using nftables.",
+                technologies: "FaLinux,FaDebian",
               },
             },
             M1: {
               title: "M1",
               carp: {
                 title: "CARP",
-                description: "description",
-                technologies: "",
+                description:
+                  "Implemented a high-availability network with CARP on OpenBSD. We configured two machines to share a virtual IP and fail over automatically if one fails.",
+                technologies: "SiOpenbsd",
               },
               lvs: {
-                title: "LVS NAT DR",
-                description: "description",
-                technologies: "",
+                title: "LVS",
+                description:
+                  "We set up a load-balancing cluster with LVS in NAT and DR modes. We tested the cluster's performance and compared the two modes.",
+                technologies: "FaLinux,SiRockylinux",
               },
               bdd: {
-                title: "BDD",
-                description: "description",
-                technologies: "",
+                title: "Database",
+                description:
+                  "Deployed an Oracle database on Oracle Linux and migrated data from Oracle to MongoDB using Python scripts.",
+                technologies:
+                  "FaLinux,GrOracle,SiMongodb,TbSql,FaDocker,SiCockpit,SiPython",
               },
               petri: {
                 title: "Petri",
-                description: "description",
+                description:
+                  "We modelled the operation of a fast-food restaurant using Petri nets and then performed model checking to verify certain properties of the system.",
                 technologies: "",
               },
               dhcp: {
                 title: "DHCP",
-                description: "description",
-                technologies: "",
+                description:
+                  "Set up a DHCP server to manage IP addresses for machines on the network. We explored two configurations: one where two servers manage the same address pool and another where each server manages a separate pool.",
+                technologies: "FaLinux, SiAlpinelinux",
               },
             },
           },
@@ -112,21 +123,28 @@ i18n.use(initReactI18next).init({
               "link-text": "rwg.bio",
               description:
                 "Friends from the IGEM team suggested we should participate to this hackaton, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
-              "code-link": "Our Code",
+              "code-link": "Github Repository",
               outcome:
                 "Although we did not win, our sister team was amongst the top ten and got to pitch their idea to professionals and receive guidance.",
-              technologies: "",
+              technologies: "SiPython",
             },
             cardihack: {
               title: "Cardi-Hack Challenge",
               description:
                 "Suggested to me by a friend studying BioInformatics, this challenge is about training a Language-Model to compute PRS-scores and evaluate cardiac risks.",
-              technologies: "",
+              technologies: "SiPython",
             },
             server: {
               title: "My Server",
-              description: "I build myself a server using Unraid and Docker",
+              description:
+                "I build myself a server using Unraid and Docker. I use it to host my personal projects, my websites and for data storage. I also set up Nextcloud for file synchronization and calendar management.",
               technologies: "",
+            },
+            rnafold: {
+              title: "Cfold",
+              description:
+                "Following the RWG hackaton, I started writing a program in C to predict RNA secondary and tertiary structure from its sequence. To do this, I created a physics engine to simulate the forces acting on the nucleotides.",
+              technologies: "SiC",
             },
           },
         },
@@ -177,7 +195,7 @@ i18n.use(initReactI18next).init({
             L3: {
               title: "L3",
               tomography: {
-                title: "Tomograpy",
+                title: "Tomographie",
                 description:
                   "Notre professeur nous a donné deux fichiers brut venant d'une sonde tomographique et nous devions interpreter des distribution et densité dans l'échantillon.",
                 technologies: "SiPython",
@@ -211,12 +229,13 @@ i18n.use(initReactI18next).init({
               carp: {
                 title: "CARP",
                 description:
-                  "Redondance de panne avec le protocole CARP sur OpenBSD.",
+                  "Mise en place d'un réseau de haute disponibilité avec CARP sur openBSD. Nous avons configuré deux machines pour qu'elles partagent une adresse IP virtuelle et basculent automatiquement en cas de défaillance de l'une d'entre elles.",
                 technologies: "SiOpenbsd",
               },
               lvs: {
                 title: "LVS",
-                description: "Redondance de panne avec LVS DR et NAT.",
+                description:
+                  "Nous avions mis en place un cluster de load-balancing avec LVS en mode NAT et DR. Nous avons testé les performances du cluster et comparé les deux modes.",
                 technologies: "FaLinux,SiRockylinux",
               },
               bdd: {
@@ -228,12 +247,14 @@ i18n.use(initReactI18next).init({
               },
               petri: {
                 title: "Petri",
-                description: "description",
+                description:
+                  "Nous devions modéliser le fonctionnement d'un fast-food avec des réseaux de Petri et ensuite faire du model-checking pour vérifier certaines propriétés du système.",
                 technologies: "",
               },
               dhcp: {
                 title: "DHCP",
-                description: "description",
+                description:
+                  "Mise en place d'un serveur DHCP pour gérer les adresses IP des machines du réseau. Nous avions deux modèles, un où deux serveurs gèrent le même pool d'adresses et un autre où chaque serveur gère un pool différent.",
                 technologies: "FaLinux, SiAlpinelinux",
               },
             },
@@ -245,7 +266,7 @@ i18n.use(initReactI18next).init({
               "link-text": "rwg.bio",
               description:
                 "Des amis de l'équipe IGEM ont suggéré ce hackaton, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
-              "code-link": "Notre Code",
+              "code-link": "Dépôt Github",
               outcome:
                 "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
               technologies: "",
@@ -254,13 +275,19 @@ i18n.use(initReactI18next).init({
               title: "Défi Cardi-Hack",
               description:
                 "Suggéré par un ami en BioInformatique, ce hackaton consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
-              technologies: "",
+              technologies: "SiPython",
             },
             server: {
               title: "Mon Serveur",
               description:
-                "Je me suis construit un serveur en utilisant Unraid et Docker",
+                "Je me suis construit un serveur en utilisant Unraid et Docker. Je l'utilise pour héberger mes projets personnels, mes sites web et pour faire du stockage de données. J'ai également mis en place Nextcloud pour la synchronisation de mes fichiers et la gestion de mon calendrier.",
               technologies: "SiUnraid,FaDocker, SiNextcloud ",
+            },
+            rnafold: {
+              title: "Cfold",
+              description:
+                "Suite au hackaton RWG, j'ai commencer à écrire un proramme en C pour prédire la structure secondaire et tertiaire de l'ARN à partir de sa séquence. Pour se faire, j'ai créée un moteur de physique pour simmuler les forces qui agissent sur les nucléotides.",
+              technologies: "SiC",
             },
           },
         },

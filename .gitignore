@@ -21,3 +21,4 @@ gemini.md
 
 .gitignore
 .prettierignore
+package-lock.json

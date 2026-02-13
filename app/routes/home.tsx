@@ -8,14 +8,17 @@ import PillNav from "../components/PillNav";
 
 import LogoLoop from '../components/LogoLoop';
 
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit, SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiDebian } from 'react-icons/si';
+import { FaWindows, FaLinux, FaDocker } from 'react-icons/fa';
+import * as GrIcons from 'react-icons/gr';
+import * as TbIcons from 'react-icons/tb';
 import * as SiIcons from 'react-icons/si';
 import * as FaIcons from 'react-icons/fa';
 import * as DiIcons from 'react-icons/di';
 
 const getIconByName = (iconName: string) => {
   if (!iconName) return null;
-  const allIcons = { ...SiIcons, ...FaIcons, ...DiIcons };
+  const allIcons = { ...SiIcons, ...FaIcons, ...DiIcons, ...GrIcons, ...TbIcons, SiDebian };
   const IconComponent = allIcons[iconName as keyof typeof allIcons];
   return IconComponent ? <IconComponent /> : null;
 };
@@ -47,7 +50,20 @@ const techLogos = [
   { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
   { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-  { node: <SiPython />, title: "Python", href: "https://www.python.org" }
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+  { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+  { node: <FaWindows />, title: "Windows", href: "https://www.microsoft.com/en-us/windows" },
+  { node: <FaLinux />, title: "Linux", href: "https://www.linux.org" },
+  { node: <SiDebian />, title: "Debian", href: "https://www.debian.org" },
+  { node: <SiOpenbsd />, title: "OpenBSD", href: "https://www.openbsd.org" },
+  { node: <SiRockylinux />, title: "Rocky Linux", href: "https://rockylinux.org" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <FaDocker />, title: "Docker", href: "https://www.docker.com" },
+  { node: <SiCockpit />, title: "Cockpit", href: "https://cockpit-project.org" },
+  { node: <SiAlpinelinux />, title: "Alpine Linux", href: "https://alpinelinux.org" },
+  { node: <SiUnraid />, title: "Unraid", href: "https://unraid.net" },
+  { node: <SiNextcloud />, title: "Nextcloud", href: "https://nextcloud.com" },
+  { node: <SiC />, title: "C", href: "https://en.wikipedia.org/wiki/C_(programming_language)" }
 ];
 {/** python, linux, podman, docker, oracle, BSD, postgres, bash, react,  */}
 export function meta({ }: Route.MetaArgs) {

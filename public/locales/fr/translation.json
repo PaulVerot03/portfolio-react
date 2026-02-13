@@ -31,7 +31,7 @@
       "L3": {
         "title": "L3",
         "tomography": {
-          "title": "Tomograpy",
+          "title": "Tomographie",
           "description": "Notre professeur nous a donné deux fichiers brut venant d'une sonde tomographique et nous devions interpreter des distribution et densité dans l'échantillon.",
           "technologies": "SiPython"
         },
@@ -60,12 +60,12 @@
         "title": "M1",
         "carp": {
           "title": "CARP",
-          "description": "Redondance de panne avec le protocole CARP sur OpenBSD.",
+          "description": "Mise en place d'un réseau de haute disponibilité avec CARP sur openBSD. Nous avons configuré deux machines pour qu'elles partagent une adresse IP virtuelle et basculent automatiquement en cas de défaillance de l'une d'entre elles.",
           "technologies": "SiOpenbsd"
         },
         "lvs": {
           "title": "LVS",
-          "description": "Redondance de panne avec LVS DR et NAT.",
+          "description": "Nous avions mis en place un cluster de load-balancing avec LVS en mode NAT et DR. Nous avons testé les performances du cluster et comparé les deux modes.",
           "technologies": "FaLinux,SiRockylinux"
         },
         "bdd": {
@@ -75,12 +75,12 @@
         },
         "petri": {
           "title": "Petri",
-          "description": "description",
+          "description": "Nous devions modéliser le fonctionnement d'un fast-food avec des réseaux de Petri et ensuite faire du model-checking pour vérifier certaines propriétés du système.",
           "technologies": ""
         },
         "dhcp": {
           "title": "DHCP",
-          "description": "description",
+          "description": "Mise en place d'un serveur DHCP pour gérer les adresses IP des machines du réseau. Nous avions deux modèles, un où deux serveurs gèrent le même pool d'adresses et un autre où chaque serveur gère un pool différent.",
           "technologies": "FaLinux, SiAlpinelinux"
         }
       }
@@ -91,20 +91,25 @@
         "title": "Hackaton Read-Write-Grow",
         "link-text": "rwg.bio",
         "description": "Des amis de l'équipe IGEM ont suggéré ce hackaton, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
-        "code-link": "Notre Code",
+        "code-link": "Dépôt Github",
         "outcome": "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
         "technologies": ""
       },
       "cardihack": {
         "title": "Défi Cardi-Hack",
         "description": "Suggéré par un ami en BioInformatique, ce hackaton consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
-        "technologies": ""
+        "technologies": "SiPython"
       },
       "server": {
         "title": "Mon Serveur",
-        "description": "Je me suis construit un serveur en utilisant Unraid et Docker",
+        "description": "Je me suis construit un serveur en utilisant Unraid et Docker. Je l'utilise pour héberger mes projets personnels, mes sites web et pour faire du stockage de données. J'ai également mis en place Nextcloud pour la synchronisation de mes fichiers et la gestion de mon calendrier.",
         "technologies": "SiUnraid,FaDocker, SiNextcloud "
-      }
+      },
+      "rnafold": {
+      "title": "Cfold",
+      "description": "Suite au hackaton RWG, j'ai commencer à écrire un proramme en C pour prédire la structure secondaire et tertiaire de l'ARN à partir de sa séquence. Pour se faire, j'ai créée un moteur de physique pour simmuler les forces qui agissent sur les nucléotides.",
+      "technologies": "SiC"
+           }
     }
   }
 }

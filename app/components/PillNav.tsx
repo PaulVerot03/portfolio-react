@@ -136,7 +136,13 @@ const PillNav: React.FC<PillNavProps> = ({
       }
     }
 
-    return () => window.removeEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      tlRefs.current.forEach(tl => tl?.kill());
+      Object.values(activeTweenRefs.current).forEach(tween => tween?.kill());
+      tlRefs.current = [];
+      activeTweenRefs.current = {};
+    };
   }, [items, ease, initialLoadAnimation]);
 
   const handleEnter = (i: number) => {
