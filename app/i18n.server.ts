@@ -168,6 +168,36 @@ i18n.use(initReactI18next).init({
         "knowledge-content-2":
           "Voici une liste des technologies que mon cursus universitaire m'a enseignées:",
         interests: "Mes centres d'interêts",
+        "interest-content": {
+          music: {
+            title: "Musique",
+            "sub-title": "La musiqe à toujours rerésenté beaucoup pour moi.",
+            "fav-title": "Quelques uns de mes titres préférés :",
+            "fav-artist": "Mes artistes préférés :",
+            "fav-album": "Pour finir, mes albums préférés :",
+            "hi-hi":
+              "Je suis également très intéressé par le matériel HI-FI, j'aime avheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
+            guitar:
+              "J'ai également fait ma propre guitare à partir de Teck de récupération et d'acastillage provenant d'anciennes guitares.",
+          },
+          wood: {
+            title:
+              "La menuisrie est l'une de mes plus ancienne passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses.",
+          },
+          computer: {
+            title: "Informatique",
+            "sub-title":
+              "Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateur et paramétrer les système. D'où est né un amour pour Linux, que j'utilise partout.",
+            linux:
+              "En 2020 j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a frappé et depuis j'essaye autant que je puisse de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur Gnome au lieu de Sway, afin de mieux coller à mon workflow.",
+          },
+          watches: {
+            title: "Horlogerie",
+            "sub-title":
+              "Mon autre grande passion est l'horlogerie, j'affectione particulièrement les montres françaises, suisses et soviètique des annèes 70. je suis toujours fasciné par la minutie à l'intérieur des mouvements, et souvent par la robuste simplicité des aniens calibre.",
+            "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937",
+          },
+        },
         scholar: "Mon parcours scolaire",
         projects: {
           title: "Mes projets",

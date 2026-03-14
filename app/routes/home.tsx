@@ -5,6 +5,7 @@ import FaultyTerminal from "@/components/FaultyTerminal";
 import TextType from "@/components/TextType";
 import { ThemeToggle } from "../components/ThemeToggle";
 import PillNav from "../components/PillNav";
+import TiltedCard from "../components/TitledCard";
 
 import LogoLoop from '../components/LogoLoop';
 
@@ -307,6 +308,213 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
             {t("interests")}
             </h2>
+            <div className="text-center">
+              <h3 className="text-2xl text-purple-900 font-semibold mb-4 text-center">{t("interest-content.music.title")}</h3>
+              <p>{t("interest-content.music.sub-title")}</p>
+              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-title")}</p>
+              <span className="max-w-2">
+                <iframe title="deezer-widget"
+                  src="https://widget.deezer.com/widget/auto/playlist/15052533723"
+                  width="150%" height="300"
+                  frameBorder="0"
+                  allowTransparency={true}
+                  allow="encrypted-media; clipboard-write"
+                  className="max-w-220">
+                </iframe>
+
+              </span>
+              <br />
+              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-artist")}</p>
+              <div className="grid grid-cols-5 gap-4">
+                <a href="https://www.discogs.com/artist/253925-Summoning">
+                  <TiltedCard
+                    imageSrc="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.hornsup.fr%2Fuploads%2Ffiles%2FNEWS%2F2016%2FAout%2F14249787_907233306048595_727627046472095090_o.jpg&f=1&nofb=1&ipt=36290621613ba7ac4f556a8402a3eadfa4a114cbabf7f16edcded3d7b4de7fb7"
+                    altText="Summoning"
+                    captionText="Summoning"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/artist/95544-Ludwig-van-Beethoven">
+                  <TiltedCard
+                    imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.britannica.com%2F24%2F152424-050-907AA3C7%2FLudwig-van-Beethoven.jpg&f=1&nofb=1&ipt=5dcfc09ff514fbacc1573ad624385d4fba7b47ee1fb1859ddbb191830a61088f"
+                    altText="Ludwig van Beethoven"
+                    captionText="Ludwig van Beethoven"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/artist/395130-Gojira-2">
+                   <TiltedCard
+                    imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.metalepidemic.com%2Fwp-content%2Fuploads%2F2020%2F06%2Fgojira.jpg&f=1&nofb=1&ipt=0c1879b9c65898ce086899b0a02de07e22331774849a6172293e5db1da3febe7"
+                    altText="Gojira"
+                    captionText="Gojira"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+                
+               <a href="https://www.discogs.com/artist/102211-Howard-Shore">
+                <TiltedCard
+                  imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwordpress.wbur.org%2Fwp-content%2Fuploads%2F2017%2F04%2FHoward_Shore_Benjamin_Ealovega-1000x1000.jpg&f=1&nofb=1&ipt=3435a00ecd8e2117055caeb058bcabeceab3c84fd64c5ccfc9fdc0d91fd85c3a"
+                  altText="Howard Shore"
+                  captionText="Howard Shore"
+                  containerHeight="150px"
+                  containerWidth="150px"
+                  imageHeight="150px"
+                  imageWidth="150px"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={false}
+                  overlayContent
+                />
+               </a>
+
+               <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
+                <TiltedCard
+                  imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.scdn.co%2Fimage%2Fd011c95081cd9a329e506abd7ded47535d524a07&f=1&nofb=1&ipt=e5cbc18d057810c99248ca26a3e4513a709f78d223300dad2f6717ab48a2d17f"
+                  altText="Pink Floyd"
+                  captionText="Pink Floyd"
+                  containerHeight="150px"
+                  containerWidth="150px"
+                  imageHeight="150px"
+                  imageWidth="150px"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={false}
+                  overlayContent
+                />
+               </a>
+              </div>
+              <br />
+
+              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-album")}</p>
+              <div className="grid grid-cols-5 gap-4">
+                <a href="https://www.discogs.com/master/57183-Summoning-Dol-Guldur">
+                  <TiltedCard
+                    imageSrc="https://cdn-images.dzcdn.net/images/cover/9bfc8e3970c2b05b78a0d1ec6088c9ba/500x500-000000-80-0-0.jpg"
+                    altText="Summoning - Dol Guldur"
+                    captionText="Summoning - Dol Guldur"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/release/7420522-Celibidache-M%C3%BCnchner-Philharmoniker-Bruckner-Bruckner-4">
+                  <TiltedCard
+                    imageSrc="https://cdn-images.dzcdn.net/images/cover/47b05dd0e2ececa6c6d1981e0655e43a/500x500-000000-80-0-0.jpg"
+                    altText="Bruckner - Symphony 4"
+                    captionText="Bruckner - Symphony 4"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/release/24917897-V%C3%A9h%C3%A9mence-Ordalies">
+                   <TiltedCard
+                    imageSrc="https://cdn-images.dzcdn.net/images/cover/f8c0db4c8b106cc76864967e432abf63/500x500-000000-80-0-0.jpg"
+                    altText="Véhémence - Ordalie"
+                    captionText="Véhémence - Ordalie"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+                
+               <a href="https://www.discogs.com/release/16531323-Atramentus-Stygian">
+                <TiltedCard
+                  imageSrc="https://cdn-images.dzcdn.net/images/cover/2d858470bd7673a675e33d87b2fec2fb/500x500-000000-80-0-0.jpg"
+                  altText="Atramentus - Stygian"
+                  captionText="Atramentus - Stygian"
+                  containerHeight="150px"
+                  containerWidth="150px"
+                  imageHeight="150px"
+                  imageWidth="150px"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={false}
+                  overlayContent
+                />
+               </a>
+
+               <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
+                <TiltedCard
+                  imageSrc="https://cdn-images.dzcdn.net/images/cover/89f33d7ae3e196ccf3f6f0a8f7e497d1/500x500-000000-80-0-0.jpg"
+                  altText="Gojira - From Mars to Sirius"
+                  captionText="Gojira - From Mars to Sirius"
+                  containerHeight="150px"
+                  containerWidth="150px"
+                  imageHeight="150px"
+                  imageWidth="150px"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={false}
+                  overlayContent
+                />
+               </a>
+              </div>
+              
+
+              
+            </div>
+
 
           </div>
         </div>
