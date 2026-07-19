@@ -3,37 +3,36 @@
   "greeting": "Je suis Paul, et je vous souhaite la bienvenue à mon portfolio!",
   "article": "article",
   "about": "A propos de moi",
-  "about-content": "Je suis étudiant en master Computer Networks System à l'Univeristé Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
+  "about-content": "Je suis étudiant en master Computer Networks System à l'Université Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
   "stage": "Mes stages",
-  "stage-content": "",
+  "stages-content": "",
   "knowledge": "Ce que je sais faire",
   "knowledge-subtitle": "Ce que j'ai appris",
   "knowledge-content-1": "Mon Master se concentre sur les Réseaux et l'Administration, j'ai donc appris à configurer et maintenir des serveurs et des réseaux. J'ai également appris les bases des Mathématiques Avancées, de l'opto-électronique et des Statistiques. En parallèle, j'ai appris à coder et je maîtrise Python pour le Scripting.",
   "knowledge-content-2": "Voici une liste des technologies que mon cursus universitaire m'a enseignées:",
-  "interests": "Mes centres d'interêts",
+  "interests": "Mes centres d'intérêts",
   "interest-content": {
-    "music":{
-      "title":"Musique",
-      "sub-title": "La musiqe à toujours rerésenté beaucoup pour moi.",
-      "fav-title":"Quelques uns de mes titres préférés :",
-      "fav-artist":"Mes artistes préférés :",
-      "fav-album":"Pour finir, mes albums préférés :",
-      "hi-hi":"Je suis également très intéressé par le matériel HI-FI, j'aime avheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
-      "guitar":"J'ai également fait ma propre guitare à partir de Teck de récupération et d'acastillage provenant d'anciennes guitares."
+    "music": {
+      "title": "Musique",
+      "sub-title": "La musique a toujours représenté beaucoup pour moi.",
+      "fav-title": "Quelques uns de mes titres préférés :",
+      "fav-artist": "Mes artistes préférés :",
+      "fav-album": "Pour finir, mes albums préférés :",
+      "hi-hi": "Je suis également très intéressé par le matériel HI-FI, j'aime acheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
+      "guitar": "J'ai également fait ma propre guitare à partir de teck de récupération et d'acastillage provenant d'anciennes guitares."
     },
-    "wood":{
-      "title":"La menuisrie est l'une de mes plus ancienne passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses."
+    "wood": {
+      "title": "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses."
     },
-    "computer":{
-      "title":"Informatique",
-      "sub-title":"Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateur et paramétrer les système. D'où est né un amour pour Linux, que j'utilise partout.",
-      "linux":"En 2020 j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a frappé et depuis j'essaye autant que je puisse de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur Gnome au lieu de Sway, afin de mieux coller à mon workflow."
-
+    "computer": {
+      "title": "Informatique",
+      "sub-title": "Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateurs et paramétrer les systèmes. D'où est né un amour pour Linux, que j'utilise partout.",
+      "linux": "En 2020 j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a frappé et depuis j'essaye autant que je puisse de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur Gnome au lieu de Sway, afin de mieux coller à mon workflow."
     },
-    "watches":{
-      "title":"Horlogerie",
-      "sub-title":"Mon autre grande passion est l'horlogerie, j'affectione particulièrement les montres françaises, suisses et soviètique des annèes 70. je suis toujours fasciné par la minutie à l'intérieur des mouvements, et souvent par la robuste simplicité des aniens calibre.",
-      "fav-watch":"Ma montre préférée est cette Ancora d'Ouro de 1937"
+    "watches": {
+      "title": "Horlogerie",
+      "sub-title": "Mon autre grande passion est l'horlogerie, j'affectionne particulièrement les montres françaises, suisses et soviétiques des années 70. Je suis toujours fasciné par la minutie à l'intérieur des mouvements, et souvent par la robuste simplicité des anciens calibres.",
+      "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937"
     }
   },
   "scholar": "Mon parcours scolaire",
@@ -41,14 +40,22 @@
     "title": "Mes projets",
     "intro": "Ces deux dernières années, une grande partie de nos enseignements s'est faite par projets. J'ai également eu la chance de participer à la compétition de Biologie Synthétique IGEM.",
     "igem": {
-      "title": "IGEM",
-      "intro": "J'ai été approché par un membre de l'équipe IGEM de notre Université pour aider sur le projet. J'ai donc conçu et codé notre Wiki",
-      "project-description": "Notre projet portait sur l'amélioration de la fixation du carbone dans les cyanobactéries",
+      "title": "IGEM - 2025",
+      "intro": "J'ai été approché par un membre de l'équipe IGEM de notre université pour aider sur le projet. J'ai donc conçu et codé notre Wiki.",
+      "project-description": "Notre projet portait sur l'amélioration de la fixation du carbone dans les cyanobactéries.",
       "link-text": "Evry Paris-Saclay | Solaris",
-      "award": "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Pièce de Base et avons reçu une Médaille d'Or",
+      "award": "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Pièce de Base et avons reçu une Médaille d'Or.",
       "future": "Je participerai à nouveau pour la prochaine édition et j'espère faire plus pour l'équipe.",
       "impact": "Ce projet a éveillé un intérêt pour la biologie que je ne savais pas avoir, et j'ai donc commencé à en apprendre davantage sur la BioInformatique dans l'espoir de me diversifier.",
-      "technologies": ""
+      "technologies": "SiPython, FaReact"
+    },
+    "igem2026": {
+      "title": "IGEM - 2026",
+      "intro": "J'ai décidé de rejoindre l'association IGEM pour les éditions suivantes.",
+      "project-description": "Cette année, nous travaillons sur les ribosomes orthogonaux.",
+      "link-text": "Evry Paris-Saclay | ORBIT",
+      "role": "Comme l'année dernière, j'aide sur le Wiki, mais cette fois je peux m'impliquer plus tôt dans la vidéo promotionnelle, le montage, le design et les décisions de projet.",
+      "technologies": "SiPython, FaReact"
     },
     "uni": {
       "title": "Université",
@@ -57,12 +64,12 @@
         "title": "L3",
         "tomography": {
           "title": "Tomographie",
-          "description": "Notre professeur nous a donné deux fichiers brut venant d'une sonde tomographique et nous devions interpreter des distribution et densité dans l'échantillon.",
+          "description": "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique et nous devions interpréter des distributions et densité dans l'échantillon.",
           "technologies": "SiPython"
         },
         "bdd2": {
           "title": "Base de Données",
-          "description": "Nous devions modeliser une base de donnée pour une université. Le modèle était assez simple, j'ai créé des tables pour les professeurs, les cours, les examens, les étudiants, les notes, etc. et pour valider ma base j'avais une liste de 40 requêtes à traduire en SQL et à tester.",
+          "description": "Nous devions modéliser une base de données pour une université. Le modèle était assez simple, j'ai créé des tables pour les professeurs, les cours, les examens, les étudiants, les notes, etc. et pour valider ma base j'avais une liste de 40 requêtes à traduire en SQL et à tester.",
           "technologies": "SiPostgresql"
         },
         "windows-ad": {
@@ -77,7 +84,7 @@
         },
         "nftables": {
           "title": "NFTables",
-          "description": "Découverte du parefeu avec NFTables ",
+          "description": "Découverte du pare-feu avec NFTables.",
           "technologies": "FaLinux,FaDebian"
         }
       },
@@ -95,7 +102,7 @@
         },
         "bdd": {
           "title": "Base de Données",
-          "description": "Mise en place de base de donnée Oracle sur Oracle Linux et passage de données de Oracle à MongoDB en utilisant des scripts python",
+          "description": "Mise en place d'une base de données Oracle sur Oracle Linux et passage des données d'Oracle à MongoDB en utilisant des scripts Python.",
           "technologies": "FaLinux,GrOracle,SiMongodb,TbSql,FaDocker,SiCockpit,SiPython"
         },
         "petri": {
@@ -113,28 +120,33 @@
     "personal": {
       "title": "Personnel",
       "rwg": {
-        "title": "Hackaton Read-Write-Grow",
+        "title": "Hackathon Read-Write-Grow",
         "link-text": "rwg.bio",
-        "description": "Des amis de l'équipe IGEM ont suggéré ce hackaton, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
+        "description": "Des amis de l'équipe IGEM nous ont suggéré ce hackathon, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
         "code-link": "Dépôt Github",
         "outcome": "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
-        "technologies": ""
+        "technologies": "SiPython"
       },
       "cardihack": {
         "title": "Défi Cardi-Hack",
-        "description": "Suggéré par un ami en BioInformatique, ce hackaton consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
+        "description": "Suggéré par un ami en BioInformatique, ce hackathon consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
         "technologies": "SiPython"
       },
       "server": {
         "title": "Mon Serveur",
         "description": "Je me suis construit un serveur en utilisant Unraid et Docker. Je l'utilise pour héberger mes projets personnels, mes sites web et pour faire du stockage de données. J'ai également mis en place Nextcloud pour la synchronisation de mes fichiers et la gestion de mon calendrier.",
-        "technologies": "SiUnraid,FaDocker, SiNextcloud "
+        "technologies": "SiUnraid,FaDocker,SiNextcloud"
       },
       "rnafold": {
-      "title": "Cfold",
-      "description": "Suite au hackaton RWG, j'ai commencer à écrire un proramme en C pour prédire la structure secondaire et tertiaire de l'ARN à partir de sa séquence. Pour se faire, j'ai créée un moteur de physique pour simmuler les forces qui agissent sur les nucléotides.",
-      "technologies": "SiC"
-           }
+        "title": "Cfold",
+        "description": "Suite au hackathon RWG, j'ai commencé à écrire un programme en C pour prédire la structure secondaire et tertiaire de l'ARN à partir de sa séquence. Pour ce faire, j'ai créé un moteur de physique pour simuler les forces qui agissent sur les nucléotides.",
+        "technologies": "SiC"
+      },
+      "ARDA": {
+        "title": "ARDA",
+        "description": "Suite au petit projet sur le RNA 3D Folding, j'ai été approché par un enseignant pour continuer à travailler sur ce projet avec des stagiaires du laboratoire de l'université (IBISC). J'ai donc rejoint le laboratoire pour un stage. Le projet a pris de l'ampleur, et nous développons maintenant une plateforme commerciale pour proposer notre service de calcul.",
+        "link": ""
+      }
     }
   }
 }

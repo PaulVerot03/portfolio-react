@@ -11,19 +11,51 @@
   "knowledge-content-1": "My Master's degree focuses on networks and administration; I have learned to set up and maintain servers and networks. I have also covered basics of advanced mathematics, opto-electronics, and statistics. Additionally, I am proficient in Python for scripting.",
   "knowledge-content-2": "Here is a list of the technologies my university curriculum taught me:",
   "interests": "My interests",
+  "interest-content": {
+    "music": {
+      "title": "Music",
+      "sub-title": "Music has always meant a great deal to me.",
+      "fav-title": "A few of my favorite tracks:",
+      "fav-artist": "My favorite artists:",
+      "fav-album": "Finally, my favorite albums:",
+      "hi-hi": "I'm also very interested in HI-FI equipment, I like buying old amplifiers and headphones and trying to repair them, here's an excerpt from my collection:",
+      "guitar": "I also built my own guitar using reclaimed teak wood and hardware salvaged from old guitars."
+    },
+    "wood": {
+      "title": "Woodworking is one of my oldest passions. Being lucky enough to have access to a workshop, I spend hours making or repairing all sorts of things, but mostly carving wood and building things."
+    },
+    "computer": {
+      "title": "Computing",
+      "sub-title": "Naturally, as a networking master's student, I love computing. I particularly enjoy building computers and configuring systems, which is how my love for Linux was born, I use it everywhere.",
+      "linux": "In 2020 I decided to try Linux and immediately fell in love. The FOSS philosophy struck a chord with me, and ever since I try to contribute to the community as much as I can. I mainly do translations, but right now my project is to build an alternative version of LainOS based on Gnome instead of Sway, to better fit my workflow."
+    },
+    "watches": {
+      "title": "Watchmaking",
+      "sub-title": "My other great passion is watchmaking; I'm particularly fond of French, Swiss, and Soviet watches from the 70s. I'm always fascinated by the intricacy inside the movements, and often by the rugged simplicity of older calibers.",
+      "fav-watch": "My favorite watch is this 1937 Ancora d'Ouro"
+    }
+  },
   "scholar": "Education",
   "projects": {
     "title": "My projects",
     "intro": "Over the past two years much of our teaching was project-based. I also had the chance to participate in the synthetic biology competition iGEM.",
     "igem": {
-      "title": "IGEM",
+      "title": "IGEM - 2025",
       "intro": "I was approached by a member of the iGEM team at our university to help with the project, so I designed and coded our wiki.",
       "project-description": "Our project focused on improving carbon fixation in cyanobacteria.",
       "link-text": "Evry Paris-Saclay | Solaris",
       "award": "At the Grand Jamboree we were nominated for Best New Basic Part and received a Gold Medal.",
       "future": "I will participate again in the next edition and hope to contribute more to the team.",
       "impact": "This project sparked an interest in biology I didn't know I had, so I began learning more about bioinformatics to branch out.",
-      "technologies": ""
+      "technologies": "SiPython, FaReact"
+    },
+    "igem2026": {
+      "title": "IGEM - 2026",
+      "intro": "I decided to join the IGEM association for the following editions.",
+      "project-description": "This year, we are working on Orthogonal Ribosomes.",
+      "link-text": "Evry Paris-Saclay | ORBIT",
+      "role": "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions.",
+      "technologies": "SiPython, FaReact"
     },
     "uni": {
       "title": "University",
@@ -88,9 +120,9 @@
     "personal": {
       "title": "Personal",
       "rwg": {
-        "title": "Read-Write-Grow Hackaton",
+        "title": "Read-Write-Grow Hackathon",
         "link-text": "rwg.bio",
-        "description": "Friends from the IGEM team suggested we should participate to this hackaton, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
+        "description": "Friends from the IGEM team suggested we participate in this hackathon, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
         "code-link": "Github Repository",
         "outcome": "Although we did not win, our sister team was amongst the top ten and got to pitch their idea to professionals and receive guidance.",
         "technologies": "SiPython"
@@ -102,14 +134,26 @@
       },
       "server": {
         "title": "My Server",
-        "description": "I build myself a server using Unraid and Docker. I use it to host my personal projects, my websites and for data storage. I also set up Nextcloud for file synchronization and calendar management.",
-        "technologies": ""
-      }, 
+        "description": "I built myself a server with old parts, I'm running Fedora 43 on it, and I host a coupe of Dockers and services on it. I use NGINX for reverse-proxying and ssl.",
+        "technologies": "FaFedora ,FaDocker,SiNextcloud"
+      },
       "rnafold": {
         "title": "Cfold",
-        "description": "Following the RWG hackaton, I started writing a program in C to predict RNA secondary and tertiary structure from its sequence. To do this, I created a physics engine to simulate the forces acting on the nucleotides.",
+        "description": "Following the RWG hackathon, I started writing a program in C to predict RNA secondary and tertiary structure from its sequence. To do this, I created a physics engine to simulate the forces acting on the nucleotides.",
         "technologies": "SiC"
-       }
+      },
+      "ARDA": {
+        "title": "ARDA",
+        "description": "Following the small project on RNA 3D folding, I was approached by a teacher to continue working on the project with interns at the university's lab (IBISC), so I joined the lab for an internship. The project grew, and now we are building a commercial platform to offer our computation service. All services, website and DataBases are running on OVH BareMetal.",
+        "link": "",
+        "technologies": "SiPython,FaReact,FaLinux"
+      },
+      "D4GEN": {
+        "title": "D4GEN Hackathon 2026",
+        "description": "To help with the IGEM project this year, we decided to participate to the D4GEN Hackathon orgnaized by the Genopole. Ou project was to develop a toolbox that would help the Team with the Dry/Wet lab. As the Hackathon wa sponsored by Amazon Web Services, we got to use their services unlimited for the duration of the Hackathon ; as such, we got to experiment a lot with their LM machines and notebook.",
+        "code-link": "",
+        "technologies": "SiPython,SiAWS"
+      }
     }
   }
 }

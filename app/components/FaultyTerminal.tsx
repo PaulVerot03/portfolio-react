@@ -346,6 +346,17 @@ export default function FaultyTerminal({
     resizeObserver.observe(ctn);
     resize();
 
+    const stopLoop = () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = 0;
+      }
+    };
+    const startLoop = () => {
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(update);
+    };
+
     const update = (t: number) => {
       rafRef.current = requestAnimationFrame(update);
 
@@ -382,14 +393,36 @@ export default function FaultyTerminal({
 
       renderer.render({ scene: mesh });
     };
-    rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
     if (mouseReact) ctn.addEventListener('mousemove', handleMouseMove);
 
+    // Stop rendering when the canvas is scrolled off-screen or the tab is
+    // backgrounded so this WebGL loop doesn't keep burning GPU/CPU forever.
+    let isIntersecting = true;
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        isIntersecting = entry.isIntersecting;
+        if (isIntersecting && document.visibilityState === 'visible') startLoop();
+        else stopLoop();
+      },
+      { threshold: 0 }
+    );
+    intersectionObserver.observe(ctn);
+
+    const handleVisibilityChange = () => {
+      if (isIntersecting && document.visibilityState === 'visible') startLoop();
+      else stopLoop();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    startLoop();
+
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      stopLoop();
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (mouseReact) ctn.removeEventListener('mousemove', handleMouseMove);
       if (gl.canvas.parentElement === ctn) ctn.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();

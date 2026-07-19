@@ -11,40 +11,6 @@ import LogoLoop from '../components/LogoLoop';
 
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit, SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiDebian } from 'react-icons/si';
 import { FaWindows, FaLinux, FaDocker } from 'react-icons/fa';
-import * as GrIcons from 'react-icons/gr';
-import * as TbIcons from 'react-icons/tb';
-import * as SiIcons from 'react-icons/si';
-import * as FaIcons from 'react-icons/fa';
-import * as DiIcons from 'react-icons/di';
-
-const getIconByName = (iconName: string) => {
-  if (!iconName) return null;
-  const allIcons = { ...SiIcons, ...FaIcons, ...DiIcons, ...GrIcons, ...TbIcons, SiDebian };
-  const IconComponent = allIcons[iconName as keyof typeof allIcons];
-  return IconComponent ? <IconComponent /> : null;
-};
-const TechBadges = ({ techString }: { techString: string }) => {
-  if (!techString) return null;
-  const techs = techString.split(',').map(t => t.trim());
-  return (
-    <div className="flex flex-wrap gap-2 mt-2">
-      {techs.map((iconName, index) => {
-        const icon = getIconByName(iconName);
-        const displayName = iconName.replace(/^(Si|Fa|Di)/, '');
-        return icon ? (
-          <span
-            key={index}
-            className="inline-flex items-center gap-1 px-2 py-1 bg-cyan-100 dark:bg-cyan-900 text-pink-800 dark:text-cyan-200 rounded text-sm"
-            title={displayName}
-          >
-            <span className="text-lg">{icon}</span>
-            <span>{displayName}</span>
-          </span>
-        ) : null;
-      })}
-    </div>
-  );
-};
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -66,7 +32,7 @@ const techLogos = [
   { node: <SiNextcloud />, title: "Nextcloud", href: "https://nextcloud.com" },
   { node: <SiC />, title: "C", href: "https://en.wikipedia.org/wiki/C_(programming_language)" }
 ];
-{/** python, linux, podman, docker, oracle, BSD, postgres, bash, react,  */}
+{/** python, linux, podman, docker, oracle, BSD, postgres, bash, react,  */ }
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Paul Verot | Portfolio" },
@@ -133,7 +99,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
           <button
             onClick={changeLanguage}
-            className="p-2  text-white rounded dark:text-white bg-purple-600 hover:bg-purple-700 transition-colors"
+            className="p-2  text-white rounded dark:text-white bg-purple-700 hover:bg-purple-600 transition-colors"
           >
             {currentLanguage === "en" ? "passer en 🇫🇷" : "switch to 🇬🇧"}
           </button>
@@ -198,7 +164,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                           DEUG informatique
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          Université d'Évry Paris-Saclay, 2024
+                          Université Paris-Saclay, 2024
                         </p>
                       </div>
                     </div>
@@ -215,7 +181,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                           Licence informatique - Administration Système en Réseau
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          Université d'Évry Paris-Saclay, 2025
+                          Université Paris-Saclay, 2025
                         </p>
                       </div>
                     </div>
@@ -306,7 +272,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
 
             <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
-            {t("interests")}
+              {t("interests")}
             </h2>
             <div className="text-center">
               <h3 className="text-2xl text-purple-900 font-semibold mb-4 text-center">{t("interest-content.music.title")}</h3>
@@ -363,7 +329,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 </a>
 
                 <a href="https://www.discogs.com/artist/395130-Gojira-2">
-                   <TiltedCard
+                  <TiltedCard
                     imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.metalepidemic.com%2Fwp-content%2Fuploads%2F2020%2F06%2Fgojira.jpg&f=1&nofb=1&ipt=0c1879b9c65898ce086899b0a02de07e22331774849a6172293e5db1da3febe7"
                     altText="Gojira"
                     captionText="Gojira"
@@ -379,42 +345,42 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     overlayContent
                   />
                 </a>
-                
-               <a href="https://www.discogs.com/artist/102211-Howard-Shore">
-                <TiltedCard
-                  imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwordpress.wbur.org%2Fwp-content%2Fuploads%2F2017%2F04%2FHoward_Shore_Benjamin_Ealovega-1000x1000.jpg&f=1&nofb=1&ipt=3435a00ecd8e2117055caeb058bcabeceab3c84fd64c5ccfc9fdc0d91fd85c3a"
-                  altText="Howard Shore"
-                  captionText="Howard Shore"
-                  containerHeight="150px"
-                  containerWidth="150px"
-                  imageHeight="150px"
-                  imageWidth="150px"
-                  rotateAmplitude={12}
-                  scaleOnHover={1.05}
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={false}
-                  overlayContent
-                />
-               </a>
 
-               <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
-                <TiltedCard
-                  imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.scdn.co%2Fimage%2Fd011c95081cd9a329e506abd7ded47535d524a07&f=1&nofb=1&ipt=e5cbc18d057810c99248ca26a3e4513a709f78d223300dad2f6717ab48a2d17f"
-                  altText="Pink Floyd"
-                  captionText="Pink Floyd"
-                  containerHeight="150px"
-                  containerWidth="150px"
-                  imageHeight="150px"
-                  imageWidth="150px"
-                  rotateAmplitude={12}
-                  scaleOnHover={1.05}
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={false}
-                  overlayContent
-                />
-               </a>
+                <a href="https://www.discogs.com/artist/102211-Howard-Shore">
+                  <TiltedCard
+                    imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwordpress.wbur.org%2Fwp-content%2Fuploads%2F2017%2F04%2FHoward_Shore_Benjamin_Ealovega-1000x1000.jpg&f=1&nofb=1&ipt=3435a00ecd8e2117055caeb058bcabeceab3c84fd64c5ccfc9fdc0d91fd85c3a"
+                    altText="Howard Shore"
+                    captionText="Howard Shore"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
+                  <TiltedCard
+                    imageSrc="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.scdn.co%2Fimage%2Fd011c95081cd9a329e506abd7ded47535d524a07&f=1&nofb=1&ipt=e5cbc18d057810c99248ca26a3e4513a709f78d223300dad2f6717ab48a2d17f"
+                    altText="Pink Floyd"
+                    captionText="Pink Floyd"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
               </div>
               <br />
 
@@ -457,7 +423,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 </a>
 
                 <a href="https://www.discogs.com/release/24917897-V%C3%A9h%C3%A9mence-Ordalies">
-                   <TiltedCard
+                  <TiltedCard
                     imageSrc="https://cdn-images.dzcdn.net/images/cover/f8c0db4c8b106cc76864967e432abf63/500x500-000000-80-0-0.jpg"
                     altText="Véhémence - Ordalie"
                     captionText="Véhémence - Ordalie"
@@ -473,49 +439,44 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     overlayContent
                   />
                 </a>
-                
-               <a href="https://www.discogs.com/release/16531323-Atramentus-Stygian">
-                <TiltedCard
-                  imageSrc="https://cdn-images.dzcdn.net/images/cover/2d858470bd7673a675e33d87b2fec2fb/500x500-000000-80-0-0.jpg"
-                  altText="Atramentus - Stygian"
-                  captionText="Atramentus - Stygian"
-                  containerHeight="150px"
-                  containerWidth="150px"
-                  imageHeight="150px"
-                  imageWidth="150px"
-                  rotateAmplitude={12}
-                  scaleOnHover={1.05}
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={false}
-                  overlayContent
-                />
-               </a>
 
-               <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
-                <TiltedCard
-                  imageSrc="https://cdn-images.dzcdn.net/images/cover/89f33d7ae3e196ccf3f6f0a8f7e497d1/500x500-000000-80-0-0.jpg"
-                  altText="Gojira - From Mars to Sirius"
-                  captionText="Gojira - From Mars to Sirius"
-                  containerHeight="150px"
-                  containerWidth="150px"
-                  imageHeight="150px"
-                  imageWidth="150px"
-                  rotateAmplitude={12}
-                  scaleOnHover={1.05}
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={false}
-                  overlayContent
-                />
-               </a>
+                <a href="https://www.discogs.com/release/16531323-Atramentus-Stygian">
+                  <TiltedCard
+                    imageSrc="https://cdn-images.dzcdn.net/images/cover/2d858470bd7673a675e33d87b2fec2fb/500x500-000000-80-0-0.jpg"
+                    altText="Atramentus - Stygian"
+                    captionText="Atramentus - Stygian"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
+
+                <a href="https://www.discogs.com/master/53704-Gojira-From-Mars-To-Sirius">
+                  <TiltedCard
+                    imageSrc="https://cdn-images.dzcdn.net/images/cover/89f33d7ae3e196ccf3f6f0a8f7e497d1/500x500-000000-80-0-0.jpg"
+                    altText="Gojira - From Mars to Sirius"
+                    captionText="Gojira - From Mars to Sirius"
+                    containerHeight="150px"
+                    containerWidth="150px"
+                    imageHeight="150px"
+                    imageWidth="150px"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.05}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={false}
+                    overlayContent
+                  />
+                </a>
               </div>
-              
-
-              
             </div>
-
-
           </div>
         </div>
       </div>
