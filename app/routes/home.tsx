@@ -6,11 +6,19 @@ import TextType from "@/components/TextType";
 import { ThemeToggle } from "../components/ThemeToggle";
 import PillNav from "../components/PillNav";
 import TiltedCard from "../components/TitledCard";
+import { ChevronDown } from "lucide-react";
 
 import LogoLoop from '../components/LogoLoop';
 
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit, SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiDebian } from 'react-icons/si';
-import { FaWindows, FaLinux, FaDocker } from 'react-icons/fa';
+import {
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPostgresql,
+  SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit, SiAlpinelinux, SiUnraid,
+  SiNextcloud, SiC, SiDebian, SiOcaml, SiHtml5, SiCss3, SiJavascript,
+  SiAmazonwebservices, SiNginx
+} from 'react-icons/si';
+import { FaWindows, FaLinux, FaDocker, FaReact } from 'react-icons/fa';
+import { GrOracle } from 'react-icons/gr';
+import { TbSql } from 'react-icons/tb';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -18,19 +26,27 @@ const techLogos = [
   { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
   { node: <SiPython />, title: "Python", href: "https://www.python.org" },
-  { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
-  { node: <FaWindows />, title: "Windows", href: "https://www.microsoft.com/en-us/windows" },
+  { node: <SiC />, title: "C", href: "https://en.wikipedia.org/wiki/C_(programming_language)" },
+  { node: <SiOcaml />, title: "OCaml", href: "https://ocaml.org" },
+  { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
   { node: <FaLinux />, title: "Linux", href: "https://www.linux.org" },
   { node: <SiDebian />, title: "Debian", href: "https://www.debian.org" },
   { node: <SiOpenbsd />, title: "OpenBSD", href: "https://www.openbsd.org" },
   { node: <SiRockylinux />, title: "Rocky Linux", href: "https://rockylinux.org" },
-  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
-  { node: <FaDocker />, title: "Docker", href: "https://www.docker.com" },
-  { node: <SiCockpit />, title: "Cockpit", href: "https://cockpit-project.org" },
   { node: <SiAlpinelinux />, title: "Alpine Linux", href: "https://alpinelinux.org" },
+  { node: <FaWindows />, title: "Windows AD", href: "https://www.microsoft.com/en-us/windows" },
+  { node: <FaDocker />, title: "Docker", href: "https://www.docker.com" },
+  { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <GrOracle />, title: "Oracle", href: "https://www.oracle.com" },
+  { node: <TbSql />, title: "SQL", href: "https://en.wikipedia.org/wiki/SQL" },
+  { node: <SiNginx />, title: "NGINX", href: "https://nginx.org" },
+  { node: <SiAmazonwebservices />, title: "AWS", href: "https://aws.amazon.com" },
+  { node: <SiCockpit />, title: "Cockpit", href: "https://cockpit-project.org" },
   { node: <SiUnraid />, title: "Unraid", href: "https://unraid.net" },
-  { node: <SiNextcloud />, title: "Nextcloud", href: "https://nextcloud.com" },
-  { node: <SiC />, title: "C", href: "https://en.wikipedia.org/wiki/C_(programming_language)" }
+  { node: <SiNextcloud />, title: "Nextcloud", href: "https://nextcloud.com" }
 ];
 {/** python, linux, podman, docker, oracle, BSD, postgres, bash, react,  */ }
 export function meta({ }: Route.MetaArgs) {
@@ -95,6 +111,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               brightness={1}
             />
           </ClientOnly>
+
         </div>
         <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
           <button
@@ -119,6 +136,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </p>
           </div>
         </div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-gray-300 pointer-events-none ">
+          <span className="text-sm font-medium tracking-widest uppercase">Scroll Down</span>
+          <ChevronDown className="w-5 h-5" />
+        </div>
       </div>
       <div className="bg-white dark:bg-gray-950 p-8">
         <div className="max-w-4xl mx-auto">
@@ -135,13 +156,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 <div className="">
                 </div>
                 <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-700 w-full mb-12">
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src="https://cdn.prod.website-files.com/6113c65158fdfa06c0c7f762/6156dae562b88a85298294c2_SainteCatherineLaboure_favicon_256.png"
-                        alt=""
-                      />
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="https://cdn.prod.website-files.com/6113c65158fdfa06c0c7f762/6156dae562b88a85298294c2_SainteCatherineLaboure_favicon_256.png"
+                          alt=""
+                        />
+                      </div>
                       <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                           BAC Mathématiques-Histoire
@@ -152,13 +175,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                       </div>
                     </div>
                   </li>
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src="https://s1.qwant.com/thumbr/474x474/0/9/1e5aa18804306da3f7d5a05e8a0ace1904d6fcdd0dd8410078ab2a22fdee79/OIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa%3Fpid%3DApi&q=0&b=1&p=0&a=0"
-                        alt=""
-                      />
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="../public/evry.png"
+                          alt=""
+                        />
+                      </div>
                       <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                           DEUG informatique
@@ -169,19 +194,40 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                       </div>
                     </div>
                   </li>
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src="https://s1.qwant.com/thumbr/474x474/0/9/1e5aa18804306da3f7d5a05e8a0ace1904d6fcdd0dd8410078ab2a22fdee79/OIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa%3Fpid%3DApi&q=0&b=1&p=0&a=0"
-                        alt=""
-                      />
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="../public/evry.png"
+                          alt=""
+                        />
+                      </div>
                       <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                           Licence informatique - Administration Système en Réseau
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          Université Paris-Saclay, 2025
+                          Université Paris-Saclay, 2024/2025
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="../public/ps.png"
+                          alt=""
+                        />
+                      </div>
+                      <div className="min-w-0 flex-auto">
+                        <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                          Master informatique - Computer and Network System (en cours)
+                        </p>
+                        <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
+                          Université Paris-Saclay, 2025/2026
                         </p>
                       </div>
                     </div>
@@ -193,17 +239,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
                   {t("stage")}
                 </h2>
-                <p>
-                  {/* {t("stage-content")} */}
-                </p>
+
                 <ul role="list" className="divide-y divide-gray-100 dark:divide-gray-700 w-full mb-12">
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src="https://cdn.prod.website-files.com/685945d76d7a305336412a93/685d2e58d6afb933df5bc432_favicon.svg"
-                        alt=""
-                      />
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="https://cdn.prod.website-files.com/685945d76d7a305336412a93/685d2e58d6afb933df5bc432_favicon.svg"
+                          alt=""
+                        />
+                      </div>
                       <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                           2019 - Kameleoon
@@ -213,25 +259,45 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                       </div>
                     </div>
                   </li>
-                  <li className="flex justify-between gap-x-6 py-5">
-                    <div className="flex min-w-0 gap-x-4">
-                      <img
-                        className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        src="https://s1.qwant.com/thumbr/474x474/0/9/1e5aa18804306da3f7d5a05e8a0ace1904d6fcdd0dd8410078ab2a22fdee79/OIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%2Fid%2FOIP.Ot8Wry_uVpBvH0FG0EnnQAHaHa%3Fpid%3DApi&q=0&b=1&p=0&a=0"
-                        alt=""
-                      />
+                  <li className="flex justify-between gap-x-6 py-5 items-center">
+                    <div className="flex items-center min-w-0 gap-x-4">
+                      <div className="w-12 h-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
+                        <img
+                          className="max-h-full max-w-full object-contain"
+                          src="https://images.seeklogo.com/logo-png/36/1/informatique-bio-informatique-et-systemes-complex-logo-png_seeklogo-360383.png"
+                          alt=""
+                        />
+                      </div>
                       <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                          2020 - Impression Design
+                          2026 - Laboratoire IBISC
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
                         </p>
                       </div>
                     </div>
                   </li>
+
                 </ul>
               </div>
             </div>
+            <div>
+              <h2 className="text-2xl text-center font-extrabold text-purple-600 mb-8">More about my Education and Internships</h2>
+              <div className="flex flex-col gap-2 justify-center mb-12">
+                <h4 className="text-xl font-bold text-purple-600 mb-8">About my Education</h4>
+                <p className="dark:text-gray-300">{t("education-description-1")}</p>
+                <p className="dark:text-gray-300">{t("education-description-2")}</p>
+                <p className="dark:text-gray-300">{t("education-description-3")}</p>
+                <p className="dark:text-gray-300">{t("education-description-4")}</p>
+                <h4 className="text-xl font-bold text-purple-600 mb-8">About my Internships</h4>
+                <p className="dark:text-gray-300">
+                  {t("stage-content")}
+                </p>
+              </div>
+
+            </div>
+
+            <br />
 
             <h2 className="text-4xl font-extrabold text-purple-600 mb-8">Other tidbits</h2>
             <div className="flex flex-row gap-12 justify-center mb-12">
@@ -271,13 +337,26 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </ClientOnly>
 
 
-            <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+            <h2 className="text-4xl font-extrabold text-purple-600 mb-8 text-center">
               {t("interests")}
             </h2>
-            <div className="text-center">
-              <h3 className="text-2xl text-purple-900 font-semibold mb-4 text-center">{t("interest-content.music.title")}</h3>
-              <p>{t("interest-content.music.sub-title")}</p>
-              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-title")}</p>
+
+            {/* Computing */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                {t("interest-content.computer.title")}
+              </h3>
+              <p className="mb-2 dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.computer.sub-title")}</p>
+              <p className="dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.computer.linux")}</p>
+            </div>
+
+            {/* Music */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                {t("interest-content.music.title")}
+              </h3>
+              <p className="mb-4 dark:text-gray-300">{t("interest-content.music.sub-title")}</p>
+              <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-title")}</p>
               <span className="max-w-2">
                 <iframe title="deezer-widget"
                   src="https://widget.deezer.com/widget/auto/playlist/15052533723"
@@ -287,14 +366,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   allow="encrypted-media; clipboard-write"
                   className="max-w-220">
                 </iframe>
-
               </span>
               <br />
-              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-artist")}</p>
-              <div className="grid grid-cols-5 gap-4">
+              <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-artist")}</p>
+              <div className="grid grid-cols-5 gap-4 justify-items-center">
                 <a href="https://www.discogs.com/artist/253925-Summoning">
                   <TiltedCard
-                    imageSrc="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.hornsup.fr%2Fuploads%2Ffiles%2FNEWS%2F2016%2FAout%2F14249787_907233306048595_727627046472095090_o.jpg&f=1&nofb=1&ipt=36290621613ba7ac4f556a8402a3eadfa4a114cbabf7f16edcded3d7b4de7fb7"
+                    imageSrc="https://i.discogs.com/6Ft1biDZYOYCD5xVzrmogXR8QgJf9ZCPQcAglbDGcwQ/rs:fit/g:sm/q:90/h:450/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTI1Mzky/NS0xNzI4NTgxMTY4/LTU4MTcuanBlZw.jpeg"
                     altText="Summoning"
                     captionText="Summoning"
                     containerHeight="150px"
@@ -384,8 +462,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               </div>
               <br />
 
-              <p className="mb-4 dark:text-white">{t("interest-content.music.fav-album")}</p>
-              <div className="grid grid-cols-5 gap-4">
+              <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-album")}</p>
+              <div className="grid grid-cols-5 gap-4 justify-items-center mb-6">
                 <a href="https://www.discogs.com/master/57183-Summoning-Dol-Guldur">
                   <TiltedCard
                     imageSrc="https://cdn-images.dzcdn.net/images/cover/9bfc8e3970c2b05b78a0d1ec6088c9ba/500x500-000000-80-0-0.jpg"
@@ -476,6 +554,30 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   />
                 </a>
               </div>
+
+              <div className="space-y-2 dark:text-gray-300 max-w-3xl mx-auto">
+                <p>{t("interest-content.music.hi-hi")}</p>
+                <p>{t("interest-content.music.guitar")}</p>
+              </div>
+            </div>
+
+            {/* Woodworking */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                {t("interest-content.wood.title")}
+              </h3>
+              <p className="dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.wood.sub-title")}</p>
+              <img src="../public/drak.jpg" alt="" className="mb-4 rounded-lg " width={"800px"} />
+            </div>
+
+            {/* Watchmaking */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                {t("interest-content.watches.title")}
+              </h3>
+              <p className="mb-2 dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.watches.sub-title")}</p>
+              <p className="dark:text-gray-300 italic max-w-3xl mx-auto">{t("interest-content.watches.fav-watch")}</p>
+              <img src="../public/watch.JPG" alt="" className="mb-4 rounded-lg " width={"400px"} />
             </div>
           </div>
         </div>

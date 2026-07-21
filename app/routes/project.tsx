@@ -246,7 +246,7 @@ export default function Project() {
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.D4GEN.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.D4GEN.description")}</p>
-            <img src="../public/d4gen.jpeg" alt="D4GEN" className="mb-4 rounded-lg " width={"400px"} loading="lazy" decoding="async" />
+            <img src="../public/d4gen.jpeg" alt="D4GEN" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
             <a href={t("projects.personal.D4GEN.code-link")} className="text-purple-600 hover:underline mb-2 block text-center">
               Github Repository
             </a>
@@ -256,14 +256,15 @@ export default function Project() {
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.ARDA.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.ARDA.description")}</p>
-            <img src="" alt="ARDA" className="mb-4 rounded-lg " width={"400px"} loading="lazy" decoding="async" />
-
+            <img src="../public/arda.png" alt="ARDA" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
+            <a href="https://arda-bio.com" className="text-purple-600 hover:underline mb-2 block text-center" >arda-bio.com</a>
             <TechBadges techString={t("projects.personal.ARDA.technologies")} />
           </div>
 
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.server.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.server.description")}</p>
+            <img src="../public/blender.png" alt="ARDA" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
             <TechBadges techString={t("projects.personal.server.technologies")} />
           </div>
         </section>

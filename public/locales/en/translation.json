@@ -5,7 +5,11 @@
   "about": "About me",
   "about-content": "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
   "stage": "Internships",
-  "stages-content": "",
+  "education-description-1": "I started my degree in the Mathematics and Computer Science double track, a first year split 50/50 between mathematics and computer science. In my first year, I covered the basics of advanced mathematics (calculus, advanced statistics, linear algebra, real and complex analysis) as well as computer science fundamentals (architecture, optoelectronics for optical fibers, programming basics).",
+  "education-description-2": "In my second year in CS, I learned programming languages such as OCaml, C, Python, HTML/CSS/JS, and Assembly, as well as the basics of networking.",
+  "education-description-3": "In my third year, I began specializing in Systems and Networks, learning how to deploy and manage networks; for example: user management with Windows Active Directory and Linux servers, DNS, firewalls, and simple databases.",
+  "education-description-4": "Having finished my Bachelor's degree (Licence), I decided to pursue my Master's degree at the same university (now under the aegis of Paris-Saclay) for the quality of teaching and the hands-on approach of the curriculum. I love that our professors give us many real-world projects. So far, I have learned load balancing and fault tolerance, as well as advanced DHCP, routing protocols and architecture, datacenter design and management, and database security.",
+  "stage-content": "I had the opportunity to complete an internship at the IBISC laboratory in Évry, one of the foremost research labs in bioinformatics. During my internship, I worked with a small team on RNA tertiary structure folding and helped build a commercial platform. In addition, I helped redesign the EvryRNA website.",
   "knowledge": "What I can do",
   "knowledge-subtitle": "What I learned",
   "knowledge-content-1": "My Master's degree focuses on networks and administration; I have learned to set up and maintain servers and networks. I have also covered basics of advanced mathematics, opto-electronics, and statistics. Additionally, I am proficient in Python for scripting.",
@@ -22,12 +26,13 @@
       "guitar": "I also built my own guitar using reclaimed teak wood and hardware salvaged from old guitars."
     },
     "wood": {
-      "title": "Woodworking is one of my oldest passions. Being lucky enough to have access to a workshop, I spend hours making or repairing all sorts of things, but mostly carving wood and building things."
+      "title": "Woodworking",
+      "sub-title": "Woodworking is one of my oldest passions. Being lucky enough to have access to a workshop, I spend hours making or repairing all sorts of things, but mostly carving wood and building things. Right beneath is the early step of a small Drakkar I built for my uncle, the Spine and Dragon are made out of Wenge and the Sidings where stained Pine."
     },
     "computer": {
       "title": "Computing",
       "sub-title": "Naturally, as a networking master's student, I love computing. I particularly enjoy building computers and configuring systems, which is how my love for Linux was born, I use it everywhere.",
-      "linux": "In 2020 I decided to try Linux and immediately fell in love. The FOSS philosophy struck a chord with me, and ever since I try to contribute to the community as much as I can. I mainly do translations, but right now my project is to build an alternative version of LainOS based on Gnome instead of Sway, to better fit my workflow."
+      "linux": "In 2020 I decided to try Linux and immediately fell in love. The FOSS philosophy struck a chord with me, and ever since I try to contribute to the community as much as I can. I mainly do translations, but right now my project is to build an alternative version of LainOS based on GNOME instead of Sway, to better fit my workflow."
     },
     "watches": {
       "title": "Watchmaking",
@@ -42,7 +47,7 @@
     "igem": {
       "title": "IGEM - 2025",
       "intro": "I was approached by a member of the iGEM team at our university to help with the project, so I designed and coded our wiki.",
-      "project-description": "Our project focused on improving carbon fixation in cyanobacteria.",
+      "project-description": "Our project focused on engineering cyanobacteria strains to optimize enzyme efficiency and significantly improve carbon fixation.",
       "link-text": "Evry Paris-Saclay | Solaris",
       "award": "At the Grand Jamboree we were nominated for Best New Basic Part and received a Gold Medal.",
       "future": "I will participate again in the next edition and hope to contribute more to the team.",
@@ -52,29 +57,29 @@
     "igem2026": {
       "title": "IGEM - 2026",
       "intro": "I decided to join the IGEM association for the following editions.",
-      "project-description": "This year, we are working on Orthogonal Ribosomes.",
+      "project-description": "This year, we are working on designing orthogonal ribosomes to enable targeted synthetic protein translation.",
       "link-text": "Evry Paris-Saclay | ORBIT",
       "role": "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions.",
       "technologies": "SiPython, FaReact"
     },
     "uni": {
       "title": "University",
-      "intro": "Here are some projects we completed over the past two years",
+      "intro": "Here are some projects I completed over the past two years",
       "L3": {
         "title": "L3",
         "tomography": {
           "title": "Tomography",
-          "description": "Our professor gave us two raw files from a tomographic probe and we had to interpret distributions and density within the sample.",
+          "description": "Our professor gave us two raw files from a tomographic probe (raw big endians) and we had to interpret distributions and density within the sample. The goal was also to have a very compact script (<300loc). We ended up being able to export a 3D model and a point plot.",
           "technologies": "SiPython"
         },
         "bdd2": {
           "title": "Database",
-          "description": "We had to model a database for a university. The model was fairly simple: I created tables for professors, courses, exams, students, grades, etc., and to validate the database I implemented a list of 40 SQL queries and tested them.",
+          "description": "We had to model a database for a university. The model was fairly simple: I created tables for professors, courses, exams, students, grades, etc, and to validate the database, the teacher gave us the description of 40 SQL queries that we had to interpret and test.",
           "technologies": "SiPostgresql"
         },
         "windows-ad": {
           "title": "Windows AD",
-          "description": "Set up an Active Directory domain controller to manage users and shared resources across multiple machines on the network.",
+          "description": "Deployed an Active Directory domain controller on Windows Server to manage centralized user authentication, GPOs, and network share permissions.",
           "technologies": "FaWindows"
         },
         "dnssec": {
@@ -84,7 +89,7 @@
         },
         "nftables": {
           "title": "nftables",
-          "description": "Explored firewall configuration using nftables.",
+          "description": "Configured and tested stateful firewall rules using nftables on Debian to control network traffic, filter packets, and enforce security policies.",
           "technologies": "FaLinux,FaDebian"
         }
       },
@@ -92,12 +97,12 @@
         "title": "M1",
         "carp": {
           "title": "CARP",
-          "description": "Implemented a high-availability network with CARP on OpenBSD. We configured two machines to share a virtual IP and fail over automatically if one fails.",
+          "description": "Implemented a high-availability network architecture using CARP on OpenBSD, configuring failover redundancy with shared virtual IPs across two gateway nodes.",
           "technologies": "SiOpenbsd"
         },
         "lvs": {
           "title": "LVS",
-          "description": "We set up a load-balancing cluster with LVS in NAT and DR modes. We tested the cluster's performance and compared the two modes.",
+          "description": "Built a high-performance load-balancing cluster using Linux Virtual Server (LVS) in NAT and Direct Routing (DR) modes, benchmarking throughput and latency differences under heavy traffic.",
           "technologies": "FaLinux,SiRockylinux"
         },
         "bdd": {
@@ -107,12 +112,12 @@
         },
         "petri": {
           "title": "Petri",
-          "description": "We modelled the operation of a fast-food restaurant using Petri nets and then performed model checking to verify certain properties of the system.",
+          "description": "Modeled the operational workflow and queue dynamics of a fast-food restaurant using Petri nets, followed by formal model checking to verify system liveness and prevent deadlocks.",
           "technologies": ""
         },
         "dhcp": {
           "title": "DHCP",
-          "description": "Set up a DHCP server to manage IP addresses for machines on the network. We explored two configurations: one where two servers manage the same address pool and another where each server manages a separate pool.",
+          "description": "Configured DHCP failover and redundancy on Linux nodes, testing joint address pool sharing versus split-range allocation for network client reliability.",
           "technologies": "FaLinux, SiAlpinelinux"
         }
       }
@@ -123,18 +128,18 @@
         "title": "Read-Write-Grow Hackathon",
         "link-text": "rwg.bio",
         "description": "Friends from the IGEM team suggested we participate in this hackathon, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
-        "code-link": "Github Repository",
+        "code-link": "GitHub Repository",
         "outcome": "Although we did not win, our sister team was amongst the top ten and got to pitch their idea to professionals and receive guidance.",
         "technologies": "SiPython"
       },
       "cardihack": {
         "title": "Cardi-Hack Challenge",
-        "description": "Suggested to me by a friend studying BioInformatics, this challenge is about training a Language-Model to compute PRS-scores and evaluate cardiac risks.",
+        "description": "Suggested by a friend studying bioinformatics, this challenge involved fine-tuning a language model to process genomic data, calculate Polygenic Risk Scores (PRS), and evaluate cardiovascular risks.",
         "technologies": "SiPython"
       },
       "server": {
         "title": "My Server",
-        "description": "I built myself a server with old parts, I'm running Fedora 43 on it, and I host a coupe of Dockers and services on it. I use NGINX for reverse-proxying and ssl.",
+        "description": "I built myself a server with old parts, I'm running Fedora 44 on it, and I host a couple of Docker containers and services on it. I use NGINX for reverse-proxying and SSL. Currently, I'm hosting a Minecraft server, a file distribution server (Nextcloud) and I am toying with LM hosting and Folding@Home.",
         "technologies": "FaFedora ,FaDocker,SiNextcloud"
       },
       "rnafold": {
@@ -144,14 +149,14 @@
       },
       "ARDA": {
         "title": "ARDA",
-        "description": "Following the small project on RNA 3D folding, I was approached by a teacher to continue working on the project with interns at the university's lab (IBISC), so I joined the lab for an internship. The project grew, and now we are building a commercial platform to offer our computation service. All services, website and DataBases are running on OVH BareMetal.",
+        "description": "Following the small project on RNA 3D folding, I was approached by a teacher to continue working on the project with interns at the university's lab (IBISC), so I joined the lab for an internship. The project grew, and now we are building a commercial platform to offer our computation service. All services, website and databases are running on OVH BareMetal. The server is a Ryzen 7 9700X with 64Gb and 2x 512Gb NVME in RAID. Website is made using React, hosted using PM2, databases are ArangoDB for non-structured data and PSQL for user management. Automatic backups are sent to my personal server.",
         "link": "",
         "technologies": "SiPython,FaReact,FaLinux"
       },
       "D4GEN": {
         "title": "D4GEN Hackathon 2026",
-        "description": "To help with the IGEM project this year, we decided to participate to the D4GEN Hackathon orgnaized by the Genopole. Ou project was to develop a toolbox that would help the Team with the Dry/Wet lab. As the Hackathon wa sponsored by Amazon Web Services, we got to use their services unlimited for the duration of the Hackathon ; as such, we got to experiment a lot with their LM machines and notebook.",
-        "code-link": "",
+        "description": "To help with the IGEM project this year, we decided to participate in the D4GEN Hackathon organized by Genopole. Our project was to develop a toolbox that would help the team with the Dry/Wet lab. As the Hackathon was sponsored by Amazon Web Services, we got to use their services without limit for the duration of the Hackathon; as such, we got to experiment a lot with their LM machines and notebooks.",
+        "code-link": "https://github.com/crakshay1/DalguardYES",
         "technologies": "SiPython,SiAWS"
       }
     }

@@ -17,7 +17,8 @@ i18n.use(initReactI18next).init({
         "about-content":
           "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
         stage: "Internships",
-        "stages-content": "",
+        "stages-content":
+          "I got the opporunity to do an intership at the IBISC laboratory in Évry, one of the foremost research lab on Bio-Informatics. During my internship I worked with a small team on RNA Tertiary Structure Folding and helped building a commercial platform. Aswell, I help with the remaking of the EvryRNA website.",
         knowledge: "What I can do",
         "knowledge-subtitle": "What I learned",
         "knowledge-content-1":
@@ -46,7 +47,7 @@ i18n.use(initReactI18next).init({
             "sub-title":
               "Naturally, as a networking master's student, I love computing. I particularly enjoy building computers and configuring systems, which is how my love for Linux was born, I use it everywhere.",
             linux:
-              "In 2020 I decided to try Linux and immediately fell in love. The FOSS philosophy struck a chord with me, and ever since I try to contribute to the community as much as I can. I mainly do translations, but right now my project is to build an alternative version of LainOS based on Gnome instead of Sway, to better fit my workflow.",
+              "In 2020 I decided to try Linux and immediately fell in love. The FOSS philosophy struck a chord with me, and ever since I try to contribute to the community as much as I can. I mainly do translations, but right now my project is to build an alternative version of LainOS based on GNOME instead of Sway, to better fit my workflow.",
           },
           watches: {
             title: "Watchmaking",
@@ -163,7 +164,7 @@ i18n.use(initReactI18next).init({
               "link-text": "rwg.bio",
               description:
                 "Friends from the IGEM team suggested we participate in this hackathon, so we formed two teams. We focused on predicting and designing RNA nanocages. I personally worked on processing the RNA and predicting the secondary structure.",
-              "code-link": "Github Repository",
+              "code-link": "GitHub Repository",
               outcome:
                 "Although we did not win, our sister team was amongst the top ten and got to pitch their idea to professionals and receive guidance.",
               technologies: "SiPython",
@@ -171,13 +172,13 @@ i18n.use(initReactI18next).init({
             cardihack: {
               title: "Cardi-Hack Challenge",
               description:
-                "Suggested to me by a friend studying BioInformatics, this challenge is about training a Language-Model to compute PRS-scores and evaluate cardiac risks.",
+                "Suggested to me by a friend studying bioinformatics, this challenge is about training a language model to compute PRS scores and evaluate cardiac risks.",
               technologies: "SiPython",
             },
             server: {
               title: "My Server",
               description:
-                "I built myself a server with old parts, I'm running Fedora 43 on it, and I host a coupe of Dockers and services on it. I use NGINX for reverse-proxying and ssl.",
+                "I built myself a server with old parts, I'm running Fedora 43 on it, and I host a couple of Docker containers and services on it. I use NGINX for reverse-proxying and SSL.",
               technologies: "FaFedora ,FaDocker,SiNextcloud",
             },
             rnafold: {
@@ -189,15 +190,15 @@ i18n.use(initReactI18next).init({
             ARDA: {
               title: "ARDA",
               description:
-                "Following the small project on RNA 3D folding, I was approached by a teacher to continue working on the project with interns at the university's lab (IBISC), so I joined the lab for an internship. The project grew, and now we are building a commercial platform to offer our computation service. All services, website and DataBases are running on OVH BareMetal.",
+                "Following the small project on RNA 3D folding, I was approached by a teacher to continue working on the project with interns at the university's lab (IBISC), so I joined the lab for an internship. The project grew, and now we are building a commercial platform to offer our computation service. All services, website and databases are running on OVH BareMetal.",
               link: "",
               technologies: "SiPython,FaReact,FaLinux",
             },
             D4GEN: {
               title: "D4GEN Hackathon 2026",
               description:
-                "To help with the IGEM project this year, we decided to participate to the D4GEN Hackathon orgnaized by the Genopole. Ou project was to develop a toolbox that would help the Team with the Dry/Wet lab. As the Hackathon wa sponsored by Amazon Web Services, we got to use their services unlimited for the duration of the Hackathon ; as such, we got to experiment a lot with their LM machines and notebook.",
-              "code-link": "",
+                "To help with the IGEM project this year, we decided to participate in the D4GEN Hackathon organized by Genopole. Our project was to develop a toolbox that would help the team with the Dry/Wet lab. As the Hackathon was sponsored by Amazon Web Services, we got to use their services without limit for the duration of the Hackathon; as such, we got to experiment a lot with their LM machines and notebooks.",
+              "code-link": "https://github.com/crakshay1/DalguardYES",
               technologies: "SiPython,SiAWS",
             },
           },
@@ -208,9 +209,9 @@ i18n.use(initReactI18next).init({
       translation: {
         welcome: "Bienvenue",
         greeting:
-          "Je suis Paul, et je vous souhaite la bienvenue à mon portfolio!",
+          "Je suis Paul, et je vous souhaite la bienvenue sur mon portfolio !",
         article: "article",
-        about: "A propos de moi",
+        about: "À propos de moi",
         "about-content":
           "Je suis étudiant en master Computer Networks System à l'Université Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
         stage: "Mes stages",
@@ -226,13 +227,13 @@ i18n.use(initReactI18next).init({
           music: {
             title: "Musique",
             "sub-title": "La musique a toujours représenté beaucoup pour moi.",
-            "fav-title": "Quelques uns de mes titres préférés :",
+            "fav-title": "Quelques-uns de mes titres préférés :",
             "fav-artist": "Mes artistes préférés :",
             "fav-album": "Pour finir, mes albums préférés :",
             "hi-hi":
               "Je suis également très intéressé par le matériel HI-FI, j'aime acheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
             guitar:
-              "J'ai également fait ma propre guitare à partir de teck de récupération et d'acastillage provenant d'anciennes guitares.",
+              "J'ai également fait ma propre guitare à partir de teck de récupération et d'accastillage provenant d'anciennes guitares.",
           },
           wood: {
             title:
@@ -243,7 +244,7 @@ i18n.use(initReactI18next).init({
             "sub-title":
               "Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateurs et paramétrer les systèmes. D'où est né un amour pour Linux, que j'utilise partout.",
             linux:
-              "En 2020 j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a frappé et depuis j'essaye autant que je puisse de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur Gnome au lieu de Sway, afin de mieux coller à mon workflow.",
+              "En 2020, j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a marqué et depuis j'essaie autant que possible de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur GNOME au lieu de Sway, afin de mieux coller à mon workflow.",
           },
           watches: {
             title: "Horlogerie",
@@ -291,7 +292,7 @@ i18n.use(initReactI18next).init({
               tomography: {
                 title: "Tomographie",
                 description:
-                  "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique et nous devions interpréter des distributions et densité dans l'échantillon.",
+                  "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique et nous devions interpréter des distributions et des densités dans l'échantillon.",
                 technologies: "SiPython",
               },
               bdd2: {
@@ -323,7 +324,7 @@ i18n.use(initReactI18next).init({
               carp: {
                 title: "CARP",
                 description:
-                  "Mise en place d'un réseau de haute disponibilité avec CARP sur openBSD. Nous avons configuré deux machines pour qu'elles partagent une adresse IP virtuelle et basculent automatiquement en cas de défaillance de l'une d'entre elles.",
+                  "Mise en place d'un réseau de haute disponibilité avec CARP sur OpenBSD. Nous avons configuré deux machines pour qu'elles partagent une adresse IP virtuelle et basculent automatiquement en cas de défaillance de l'une d'entre elles.",
                 technologies: "SiOpenbsd",
               },
               lvs: {
@@ -360,7 +361,7 @@ i18n.use(initReactI18next).init({
               "link-text": "rwg.bio",
               description:
                 "Des amis de l'équipe IGEM nous ont suggéré ce hackathon, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
-              "code-link": "Dépôt Github",
+              "code-link": "Dépôt GitHub",
               outcome:
                 "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
               technologies: "SiPython",
@@ -368,7 +369,7 @@ i18n.use(initReactI18next).init({
             cardihack: {
               title: "Défi Cardi-Hack",
               description:
-                "Suggéré par un ami en BioInformatique, ce hackathon consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
+                "Suggéré par un ami en bio-informatique, ce hackathon consiste à entraîner un modèle de langage pour calculer les scores PRS et évaluer des risques cardiaques.",
               technologies: "SiPython",
             },
             server: {
@@ -388,6 +389,13 @@ i18n.use(initReactI18next).init({
               description:
                 "Suite au petit projet sur le RNA 3D Folding, j'ai été approché par un enseignant pour continuer à travailler sur ce projet avec des stagiaires du laboratoire de l'université (IBISC). J'ai donc rejoint le laboratoire pour un stage. Le projet a pris de l'ampleur, et nous développons maintenant une plateforme commerciale pour proposer notre service de calcul.",
               link: "",
+            },
+            D4GEN: {
+              title: "D4GEN Hackathon 2026",
+              description:
+                "En parallèle du projet IGEM, nous avons décidé de participer au Hackathon D4GEN organisé par le Genopole afin de développer des outils pour aider avec le Dry/Wet lab. Comme le Hackathon était sponsorisé par Amazon Web Services, nous avons eu un accès illimité aux ressources d'AWS, notamment leurs machines de LM et notebooks.",
+              "code-link": "https://github.com/crakshay1/DalguardYES",
+              technologies: "SiPython,SiAWS",
             },
           },
         },

@@ -1,11 +1,15 @@
 {
   "welcome": "Bienvenue",
-  "greeting": "Je suis Paul, et je vous souhaite la bienvenue à mon portfolio!",
+  "greeting": "Je suis Paul, et je vous souhaite la bienvenue sur mon portfolio !",
   "article": "article",
-  "about": "A propos de moi",
+  "about": "À propos de moi",
   "about-content": "Je suis étudiant en master Computer Networks System à l'Université Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
   "stage": "Mes stages",
-  "stages-content": "",
+  "education-description-1": "J'ai commencé mon cursus par le portail Mathématiques-Informatique, une première année divisée à 50/50 entre les mathématiques et l'informatique. Durant cette première année, j'ai appris les bases des mathématiques avancées (analyse, statistiques avancées, algèbre linéaire, analyse réelle et complexe) ainsi que les fondements de l'informatique (architecture des ordinateurs, opto-électronique pour la fibre optique, bases de la programmation).",
+  "education-description-2": "J'ai poursuivi en deuxième année d'informatique où j'ai appris des langages de programmation tels qu'OCaml, C, Python, HTML/CSS/JS et l'Assembleur, ainsi que les bases des réseaux.",
+  "education-description-3": "C'est en troisième année que je me suis spécialisé en Systèmes et Réseaux, en apprenant à déployer et gérer des réseaux ; par exemple : la gestion des utilisateurs avec Windows Active Directory et des serveurs Linux, les serveurs DNS, les pare-feux et les bases de données simples.",
+  "education-description-4": "Ma Licence obtenue, j'ai décidé de poursuivre en Master dans la même université (désormais sous l'égide de Paris-Saclay) pour la qualité des enseignements et l'approche pratique des cours. J'apprécie particulièrement que nos enseignants nous proposent de nombreux projets ancrés dans la réalité. Jusqu'à présent, j'y ai appris la répartition de charge (load-balancing), la tolérance aux pannes, ainsi que le DHCP avancé, l'architecture et les protocoles de routage, la conception et la gestion de centres de données (datacenters) et la sécurité des bases de données.",
+  "stage-content": "J'ai eu l'opportunité d'effectuer un stage au sein du laboratoire IBISC à Évry, l'un des principaux laboratoires de recherche en bio-informatique. Au cours de ce stage, j'ai travaillé avec une équipe restreinte sur le repliement de la structure tertiaire de l'ARN et j'ai participé à la création d'une plateforme commerciale. J'ai également contribué à la refonte du site web d'EvryRNA.",
   "knowledge": "Ce que je sais faire",
   "knowledge-subtitle": "Ce que j'ai appris",
   "knowledge-content-1": "Mon Master se concentre sur les Réseaux et l'Administration, j'ai donc appris à configurer et maintenir des serveurs et des réseaux. J'ai également appris les bases des Mathématiques Avancées, de l'opto-électronique et des Statistiques. En parallèle, j'ai appris à coder et je maîtrise Python pour le Scripting.",
@@ -15,19 +19,20 @@
     "music": {
       "title": "Musique",
       "sub-title": "La musique a toujours représenté beaucoup pour moi.",
-      "fav-title": "Quelques uns de mes titres préférés :",
+      "fav-title": "Quelques-uns de mes titres préférés :",
       "fav-artist": "Mes artistes préférés :",
       "fav-album": "Pour finir, mes albums préférés :",
       "hi-hi": "Je suis également très intéressé par le matériel HI-FI, j'aime acheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
-      "guitar": "J'ai également fait ma propre guitare à partir de teck de récupération et d'acastillage provenant d'anciennes guitares."
+      "guitar": "J'ai également fait ma propre guitare à partir de teck de récupération et d'accastillage provenant d'anciennes guitares."
     },
     "wood": {
-      "title": "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses."
+      "title": "Menuiserie",
+      "sub-title": "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses."
     },
     "computer": {
       "title": "Informatique",
       "sub-title": "Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateurs et paramétrer les systèmes. D'où est né un amour pour Linux, que j'utilise partout.",
-      "linux": "En 2020 j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a frappé et depuis j'essaye autant que je puisse de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur Gnome au lieu de Sway, afin de mieux coller à mon workflow."
+      "linux": "En 2020, j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a marqué et depuis j'essaie autant que possible de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur GNOME au lieu de Sway, afin de mieux coller à mon workflow."
     },
     "watches": {
       "title": "Horlogerie",
@@ -42,7 +47,7 @@
     "igem": {
       "title": "IGEM - 2025",
       "intro": "J'ai été approché par un membre de l'équipe IGEM de notre université pour aider sur le projet. J'ai donc conçu et codé notre Wiki.",
-      "project-description": "Notre projet portait sur l'amélioration de la fixation du carbone dans les cyanobactéries.",
+      "project-description": "Notre projet portait sur l'ingénierie de souches de cyanobactéries afin d'optimiser l'efficacité enzymatique et d'améliorer la fixation du carbone.",
       "link-text": "Evry Paris-Saclay | Solaris",
       "award": "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Pièce de Base et avons reçu une Médaille d'Or.",
       "future": "Je participerai à nouveau pour la prochaine édition et j'espère faire plus pour l'équipe.",
@@ -52,29 +57,29 @@
     "igem2026": {
       "title": "IGEM - 2026",
       "intro": "J'ai décidé de rejoindre l'association IGEM pour les éditions suivantes.",
-      "project-description": "Cette année, nous travaillons sur les ribosomes orthogonaux.",
+      "project-description": "Cette année, nous travaillons sur la conception de ribosomes orthogonaux afin de permettre la traduction ciblée de protéines synthétiques.",
       "link-text": "Evry Paris-Saclay | ORBIT",
       "role": "Comme l'année dernière, j'aide sur le Wiki, mais cette fois je peux m'impliquer plus tôt dans la vidéo promotionnelle, le montage, le design et les décisions de projet.",
       "technologies": "SiPython, FaReact"
     },
     "uni": {
       "title": "Université",
-      "intro": "Voici quelques projets que nous avons réalisés ces deux dernières années",
+      "intro": "Voici quelques projets que j'ai réalisés ces deux dernières années",
       "L3": {
         "title": "L3",
         "tomography": {
           "title": "Tomographie",
-          "description": "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique et nous devions interpréter des distributions et densité dans l'échantillon.",
+          "description": "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique (données brutes en big endian) et nous devions interpréter les distributions et les densités dans l'échantillon. L'objectif était également d'obtenir un script très compact (<300 lignes de code). Nous avons finalement pu exporter un modèle 3D ainsi qu'un nuage de points.",
           "technologies": "SiPython"
         },
         "bdd2": {
           "title": "Base de Données",
-          "description": "Nous devions modéliser une base de données pour une université. Le modèle était assez simple, j'ai créé des tables pour les professeurs, les cours, les examens, les étudiants, les notes, etc. et pour valider ma base j'avais une liste de 40 requêtes à traduire en SQL et à tester.",
+          "description": "Nous devions modéliser une base de données pour une université. Le modèle était assez simple : j'ai créé des tables pour les professeurs, les cours, les examens, les étudiants, les notes, etc. Pour valider la base de données, l'enseignant nous a donné la description de 40 requêtes SQL que nous devions interpréter et tester.",
           "technologies": "SiPostgresql"
         },
         "windows-ad": {
           "title": "Windows AD",
-          "description": "Mise en place d'un contrôleur de domaine Active Directory pour gérer des utilisateurs et des partages sur plusieurs machines du réseau.",
+          "description": "Déploiement d'un contrôleur de domaine Active Directory sous Windows Server pour gérer l'authentification centralisée des utilisateurs, les GPO et les autorisations de partage réseau.",
           "technologies": "FaWindows"
         },
         "dnssec": {
@@ -84,7 +89,7 @@
         },
         "nftables": {
           "title": "NFTables",
-          "description": "Découverte du pare-feu avec NFTables.",
+          "description": "Configuration et test de règles de pare-feu à état avec nftables sous Debian afin de contrôler le trafic réseau, filtrer les paquets et appliquer des politiques de sécurité.",
           "technologies": "FaLinux,FaDebian"
         }
       },
@@ -92,12 +97,12 @@
         "title": "M1",
         "carp": {
           "title": "CARP",
-          "description": "Mise en place d'un réseau de haute disponibilité avec CARP sur openBSD. Nous avons configuré deux machines pour qu'elles partagent une adresse IP virtuelle et basculent automatiquement en cas de défaillance de l'une d'entre elles.",
+          "description": "Mise en place d'une architecture réseau à haute disponibilité avec CARP sous OpenBSD, en configurant la redondance avec basculement automatique via des IP virtuelles partagées entre deux passerelles.",
           "technologies": "SiOpenbsd"
         },
         "lvs": {
           "title": "LVS",
-          "description": "Nous avions mis en place un cluster de load-balancing avec LVS en mode NAT et DR. Nous avons testé les performances du cluster et comparé les deux modes.",
+          "description": "Mise en place d'un cluster de répartition de charge avec Linux Virtual Server (LVS) en modes NAT et Direct Routing (DR), en évaluant les performances de débit et de latence sous forte charge.",
           "technologies": "FaLinux,SiRockylinux"
         },
         "bdd": {
@@ -107,12 +112,12 @@
         },
         "petri": {
           "title": "Petri",
-          "description": "Nous devions modéliser le fonctionnement d'un fast-food avec des réseaux de Petri et ensuite faire du model-checking pour vérifier certaines propriétés du système.",
+          "description": "Modélisation du flux opérationnel et de la gestion des files d'attente d'un fast-food avec des réseaux de Petri, suivie d'une vérification formelle (model checking) pour valider la vivacité du système et éviter les blocages.",
           "technologies": ""
         },
         "dhcp": {
           "title": "DHCP",
-          "description": "Mise en place d'un serveur DHCP pour gérer les adresses IP des machines du réseau. Nous avions deux modèles, un où deux serveurs gèrent le même pool d'adresses et un autre où chaque serveur gère un pool différent.",
+          "description": "Configuration de serveurs DHCP en redondance sous Linux, en comparant le partage d'un même pool d'adresses avec une répartition par plages distinctes pour garantir la continuité de service.",
           "technologies": "FaLinux, SiAlpinelinux"
         }
       }
@@ -123,19 +128,19 @@
         "title": "Hackathon Read-Write-Grow",
         "link-text": "rwg.bio",
         "description": "Des amis de l'équipe IGEM nous ont suggéré ce hackathon, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
-        "code-link": "Dépôt Github",
+        "code-link": "Dépôt GitHub",
         "outcome": "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
         "technologies": "SiPython"
       },
       "cardihack": {
         "title": "Défi Cardi-Hack",
-        "description": "Suggéré par un ami en BioInformatique, ce hackathon consiste à entraîner un Language Model pour calculer les scores PRS et évaluer des risques cardiaques.",
+        "description": "Suggéré par un ami en bio-informatique, ce défi consistait à réentraîner un modèle de langage pour analyser des données génomiques, calculer des scores de risque polygénique (PRS) et évaluer les risques cardiovasculaires.",
         "technologies": "SiPython"
       },
       "server": {
         "title": "Mon Serveur",
-        "description": "Je me suis construit un serveur en utilisant Unraid et Docker. Je l'utilise pour héberger mes projets personnels, mes sites web et pour faire du stockage de données. J'ai également mis en place Nextcloud pour la synchronisation de mes fichiers et la gestion de mon calendrier.",
-        "technologies": "SiUnraid,FaDocker,SiNextcloud"
+        "description": "Je me suis construit un serveur à partir de composants de récupération tournant sous Fedora 44, sur lequel j'héberge plusieurs conteneurs Docker et services. J'utilise NGINX pour le reverse-proxy et le SSL. Actuellement, j'y héberge un serveur Minecraft, un serveur de fichiers (Nextcloud) et j'expérimente l'hébergement de modèles de langage (LM) ainsi que Folding@Home.",
+        "technologies": "FaFedora ,FaDocker,SiNextcloud"
       },
       "rnafold": {
         "title": "Cfold",
@@ -144,8 +149,15 @@
       },
       "ARDA": {
         "title": "ARDA",
-        "description": "Suite au petit projet sur le RNA 3D Folding, j'ai été approché par un enseignant pour continuer à travailler sur ce projet avec des stagiaires du laboratoire de l'université (IBISC). J'ai donc rejoint le laboratoire pour un stage. Le projet a pris de l'ampleur, et nous développons maintenant une plateforme commerciale pour proposer notre service de calcul.",
-        "link": ""
+        "description": "Suite au projet sur le repliement 3D de l'ARN, j'ai été approché par un enseignant pour continuer à travailler sur ce projet avec des stagiaires du laboratoire IBISC de l'université. J'ai donc rejoint le laboratoire pour un stage. Le projet a pris de l'ampleur et nous développons actuellement une plateforme commerciale pour proposer notre service de calcul. Tous les services, le site web et les bases de données fonctionnent sur un serveur BareMetal d'OVH (Ryzen 7 9700X avec 64 Go de RAM et 2x 512 Go NVMe en RAID). Le site est conçu avec React et hébergé via PM2, les bases de données sont ArangoDB pour les données non structurées et PostgreSQL pour la gestion des utilisateurs. Des sauvegardes automatiques sont envoyées sur mon serveur personnel.",
+        "link": "",
+        "technologies": "SiPython,FaReact,FaLinux"
+      },
+      "D4GEN": {
+        "title": "D4GEN Hackathon 2026",
+        "description": "En parallèle du projet IGEM, nous avons décidé de participer au Hackathon D4GEN organisé par le Genopole afin de développer des outils pour aider avec le Dry/Wet lab. Comme le Hackathon était sponsorisé par Amazon Web Services, nous avons eu un accès illimité aux ressources d'AWS, notamment leurs machines de LM et notebooks.",
+        "code-link": "https://github.com/crakshay1/DalguardYES",
+        "technologies": "SiPython,SiAWS"
       }
     }
   }
