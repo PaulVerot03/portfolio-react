@@ -1,6 +1,6 @@
 {
   "welcome": "Welcome",
-  "greeting": "My name is Paul and I welcome you to my portfolio!",
+  "greeting": "Welcome to my portfolio!",
   "article": "article",
   "about": "About me",
   "about-content": "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
@@ -72,7 +72,7 @@
         "title": "L3",
         "tomography": {
           "title": "Tomography",
-          "description": "Our professor gave us two raw files from a tomographic probe (raw big endians) and we had to interpret distributions and density within the sample. The goal was also to have a very compact script (<300loc). We ended up being able to export a 3D model and a point plot.",
+          "description": "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
           "technologies": "SiPython"
         },
         "bdd2": {
@@ -87,12 +87,12 @@
         },
         "dnssec": {
           "title": "DNSSEC - DoT/DoH",
-          "description": "Set up a recursive DNS server using DNSSEC with Unbound to study DNS protocols and secure transmissions. Also configured a DNS server that communicates over DoT with the FDN's servers.",
+          "description": "Set up a recursive DNS resolver with Unbound, configured with the IANA root trust anchor for DNSSEC validation, and verified with dig +dnssec and a packet capture showing the RRSIG record alongside the A record — confirming DNSSEC signs responses for authenticity rather than encrypting them. Benchmarked resolver caching (a repeated query dropped from ~40ms to ~20ms once cached), then tried forwarding queries over DoH before switching to DNS-over-TLS per course guidance, testing several resolvers (FDN, Mullvad, Quad9, Wikimedia) and confirming over a capture that query content was encrypted while the destination server remained visible.",
           "technologies": "FaLinux,SiDebian"
         },
         "nftables": {
           "title": "nftables",
-          "description": "Configured and tested stateful firewall rules using nftables on Debian to control network traffic, filter packets, and enforce security policies.",
+          "description": "Configured nftables on a gateway machine to masquerade an internal /24 LAN out to the internet (prerouting DNAT + postrouting masquerade), letting internal hosts reach external machines and the internet with their traffic translated to the gateway's address — verified with ping, SSH, and packet captures on both sides. Added a DNAT port-forwarding rule to redirect inbound SSH on the gateway straight to an internal host, confirmed by SSHing in from an external machine into a user that only existed on the internal target.",
           "technologies": "FaLinux,SiDebian"
         }
       },
@@ -100,28 +100,38 @@
         "title": "M1",
         "carp": {
           "title": "CARP",
-          "description": "Implemented a high-availability network architecture using CARP on OpenBSD, configuring failover redundancy with shared virtual IPs across two gateway nodes.",
+          "description": "Implemented a high-availability firewall pair using CARP on OpenBSD: two nodes share virtual IPs across two LAN segments via dedicated carp interfaces, prioritized with advskew, and stay in sync over a pfsync interface. Wrote a pf ruleset to allow the CARP/pfsync traffic, then validated failover by killing the primary node mid-ping and confirming the secondary took over seamlessly, captured with Wireshark.",
           "technologies": "SiOpenbsd"
         },
         "lvs": {
           "title": "LVS",
-          "description": "Built a high-performance load-balancing cluster using Linux Virtual Server (LVS) in NAT and Direct Routing (DR) modes, benchmarking throughput and latency differences under heavy traffic.",
+          "description": "Built a load-balanced service with Linux Virtual Server in NAT mode: configured a virtual service with ipvsadm using round-robin scheduling, forwarding to two real backend servers via IP masquerading. Verified the balancing by repeatedly curling the virtual IP and watching responses alternate between the backends, and also studied Direct Routing (DR) mode as a lower-overhead alternative.",
           "technologies": "FaLinux,SiRockylinux"
         },
         "bdd": {
           "title": "Database",
-          "description": "Deployed an Oracle database on Oracle Linux and migrated data from Oracle to MongoDB using Python scripts.",
-          "technologies": "FaLinux,GrOracle,SiMongodb,TbSql,FaDocker,SiCockpit,SiPython"
+          "description": "Deployed Oracle Database (via a Podman container on Oracle Linux 10) alongside MongoDB, managed through Cockpit and firewalled to expose only the needed ports. Since neither MongoDB Compass nor SQL Developer shipped for my distro, I converted Compass from RPM to DEB with alien and ran SQL Developer inside a Distrobox Oracle Linux container. Finally wrote a script piping SQL*cl's JSON_OBJECT/JSON_ARRAYAGG output straight into mongoimport to migrate query results from Oracle into MongoDB collections.",
+          "technologies": "FaLinux,GrOracle,SiMongodb,TbSql,SiPodman,SiCockpit,SiPython"
         },
         "petri": {
           "title": "Petri",
-          "description": "Modeled the operational workflow and queue dynamics of a fast-food restaurant using Petri nets, followed by formal model checking to verify system liveness and prevent deadlocks.",
+          "description": "Modeled a fast-food's operations as a group project: a 42-place, 35-transition Petri net covering checkout queues, kitchen capacity, dine-in/takeout seating, and ingredient stock, analyzed with the TINA toolbox. An initial tina -R run revealed the net was unbounded (one queue was leaking tokens instead of consuming them, ballooning past 20GB of RAM); once fixed, structural analysis (struct) proved place invariants for staff, queue, seating, and stock conservation. Full state-space exploration hit combinatorial explosion (710k+ states, 4.6M+ transitions) before timing out, so liveness couldn't be formally proven — instead we simulated rush-hour, understaffed, and stock-out scenarios to observe the model stayed deadlock-free in practice.",
           "technologies": ""
         },
         "dhcp": {
           "title": "DHCP",
-          "description": "Configured DHCP failover and redundancy on Linux nodes, testing joint address pool sharing versus split-range allocation for network client reliability.",
+          "description": "Set up two ISC DHCP servers on Debian, first splitting a /24 into two unequal pools (an 80/20 split) so each server hands out addresses from its own range, with NAT configured on the router via nftables. Then reconfigured both servers to share a single pool through DHCP failover (failover peer, split 128 for an even 50/50 load), where clients are assigned to a server based on a MAC-address hash and the two servers replicate lease state to each other over TCP/647 with BNDUPD/BNDACK messages.",
           "technologies": "FaLinux, SiAlpinelinux"
+        },
+        "cumulus": {
+          "title": "Cumulus & Debian Network Architecture",
+          "description": "Group project building and studying four network architectures using Cumulus Linux for the switches and Debian 13 for the clients. Focused on link and switch redundancy and on the Spanning Tree Protocol.",
+          "technologies": "FaLinux,SiDebian"
+        },
+        "yubikey": {
+          "title": "YubiKey & PGP",
+          "description": "Explored integrating hardware and software security into a Linux environment. I hardened authentication with a YubiKey: TOTP-based two-factor authentication for SSH, FIDO2/U2F for web logins, and passkey management. I then went deeper into GnuPG for asymmetric cryptography, covering key management (generation, subkeys) and signing/encrypting documents and emails, along with how public keys get validated.",
+          "technologies": "FaLinux,SiYubico,SiGnuprivacyguard"
         }
       }
     },

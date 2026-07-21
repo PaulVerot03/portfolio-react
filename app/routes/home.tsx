@@ -184,7 +184,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   </a>
 
                   <a
-                    href="https://bucket.paulverot.fr/cv.pdf"
+                    href="https://bucket.paulverot.fr/CV-PaulVEROT.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-6 py-3.5 bg-purple-900/90 hover:bg-purple-900 text-white rounded-2xl shadow-md hover:shadow-purple-900/30 hover:-translate-y-0.5 transition-all duration-200 font-semibold group border border-purple-700/40"

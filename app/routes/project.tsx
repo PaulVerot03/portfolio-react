@@ -6,6 +6,7 @@ import { ClientOnly } from "../components/ClientOnly";
 import {
   SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit,
   SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiFedora, SiAmazonwebservices, SiDebian,
+  SiYubico, SiGnuprivacyguard, SiPodman,
 } from 'react-icons/si';
 import { FaWindows, FaLinux, FaDocker, FaReact } from 'react-icons/fa';
 import { GrOracle } from 'react-icons/gr';
@@ -16,6 +17,7 @@ import { TbSql } from 'react-icons/tb';
 const iconMap: Record<string, React.ComponentType> = {
   SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit,
   SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiFedora, SiAmazonwebservices, SiDebian,
+  SiYubico, SiGnuprivacyguard, SiPodman,
   FaWindows, FaLinux, FaDocker, FaReact,
   GrOracle, TbSql,
 };
@@ -42,7 +44,7 @@ const TechBadges = ({ techString }: { techString: string }) => {
         return icon ? (
           <span
             key={index}
-            className="inline-flex items-center gap-1 px-2 py-1 bg-purple-600  text-fuchsia-100  rounded text-sm"
+            className="inline-flex items-center gap-1 px-3 py-1 bg-purple-600  text-fuchsia-100  rounded text-sm"
             title={displayName}
           >
             <span className="text-lg">{icon}</span>
@@ -146,7 +148,7 @@ export default function Project() {
             <div className="mb-6 pl-4 border-l-4 border-purple-500">
               <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.tomography.title")}</h4>
               <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.tomography.description")}</p>
-              <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766021959/truncated_rzmoxc.png" alt="" width={"200px"} loading="lazy" decoding="async" />
+              <img src="/render.png" alt="" width={"800px"} loading="lazy" decoding="async" />
               <TechBadges techString={t("projects.uni.L3.tomography.technologies")} />
             </div>
 
@@ -207,6 +209,18 @@ export default function Project() {
               <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.dhcp.title")}</h4>
               <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.dhcp.description")}</p>
               <TechBadges techString={t("projects.uni.M1.dhcp.technologies")} />
+            </div>
+
+            <div className="mb-6 pl-4 border-l-4 border-purple-500">
+              <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.cumulus.title")}</h4>
+              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.cumulus.description")}</p>
+              <TechBadges techString={t("projects.uni.M1.cumulus.technologies")} />
+            </div>
+
+            <div className="mb-6 pl-4 border-l-4 border-purple-500">
+              <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.yubikey.title")}</h4>
+              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.yubikey.description")}</p>
+              <TechBadges techString={t("projects.uni.M1.yubikey.technologies")} />
             </div>
           </div>
         </section>

@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         welcome: "Welcome",
-        greeting: "My name is Paul and I welcome you to my portfolio!",
+        greeting: "Welcome to my portfolio!",
         article: "article",
         about: "About me",
         "about-content":
@@ -108,7 +108,7 @@ i18n.use(initReactI18next).init({
               tomography: {
                 title: "Tomography",
                 description:
-                  "Our professor gave us two raw files from a tomographic probe (raw big endians) and we had to interpret distributions and density within the sample. The goal was also to have a very compact script (<300loc). We ended up being able to export a 3D model and a point plot.",
+                  "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
                 technologies: "SiPython",
               },
               bdd2: {
@@ -126,13 +126,13 @@ i18n.use(initReactI18next).init({
               dnssec: {
                 title: "DNSSEC - DoT/DoH",
                 description:
-                  "Set up a recursive DNS server using DNSSEC with Unbound to study DNS protocols and secure transmissions. Also configured a DNS server that communicates over DoT with the FDN's servers.",
+                  "Set up a recursive DNS resolver with Unbound, configured with the IANA root trust anchor for DNSSEC validation, and verified with dig +dnssec and a packet capture showing the RRSIG record alongside the A record — confirming DNSSEC signs responses for authenticity rather than encrypting them. Benchmarked resolver caching (a repeated query dropped from ~40ms to ~20ms once cached), then tried forwarding queries over DoH before switching to DNS-over-TLS per course guidance, testing several resolvers (FDN, Mullvad, Quad9, Wikimedia) and confirming over a capture that query content was encrypted while the destination server remained visible.",
                 technologies: "FaLinux,SiDebian",
               },
               nftables: {
                 title: "nftables",
                 description:
-                  "Configured and tested stateful firewall rules using nftables on Debian to control network traffic, filter packets, and enforce security policies.",
+                  "Configured nftables on a gateway machine to masquerade an internal /24 LAN out to the internet (prerouting DNAT + postrouting masquerade), letting internal hosts reach external machines and the internet with their traffic translated to the gateway's address — verified with ping, SSH, and packet captures on both sides. Added a DNAT port-forwarding rule to redirect inbound SSH on the gateway straight to an internal host, confirmed by SSHing in from an external machine into a user that only existed on the internal target.",
                 technologies: "FaLinux,SiDebian",
               },
             },
@@ -141,33 +141,45 @@ i18n.use(initReactI18next).init({
               carp: {
                 title: "CARP",
                 description:
-                  "Implemented a high-availability network architecture using CARP on OpenBSD, configuring failover redundancy with shared virtual IPs across two gateway nodes.",
+                  "Implemented a high-availability firewall pair using CARP on OpenBSD: two nodes share virtual IPs across two LAN segments via dedicated carp interfaces, prioritized with advskew, and stay in sync over a pfsync interface. Wrote a pf ruleset to allow the CARP/pfsync traffic, then validated failover by killing the primary node mid-ping and confirming the secondary took over seamlessly, captured with Wireshark.",
                 technologies: "SiOpenbsd",
               },
               lvs: {
                 title: "LVS",
                 description:
-                  "Built a high-performance load-balancing cluster using Linux Virtual Server (LVS) in NAT and Direct Routing (DR) modes, benchmarking throughput and latency differences under heavy traffic.",
+                  "Built a load-balanced service with Linux Virtual Server in NAT mode: configured a virtual service with ipvsadm using round-robin scheduling, forwarding to two real backend servers via IP masquerading. Verified the balancing by repeatedly curling the virtual IP and watching responses alternate between the backends, and also studied Direct Routing (DR) mode as a lower-overhead alternative.",
                 technologies: "FaLinux,SiRockylinux",
               },
               bdd: {
                 title: "Database",
                 description:
-                  "Deployed an Oracle database on Oracle Linux and migrated data from Oracle to MongoDB using Python scripts.",
+                  "Deployed Oracle Database (via a Podman container on Oracle Linux 10) alongside MongoDB, managed through Cockpit and firewalled to expose only the needed ports. Since neither MongoDB Compass nor SQL Developer shipped for my distro, I converted Compass from RPM to DEB with alien and ran SQL Developer inside a Distrobox Oracle Linux container. Finally wrote a script piping SQL*cl's JSON_OBJECT/JSON_ARRAYAGG output straight into mongoimport to migrate query results from Oracle into MongoDB collections.",
                 technologies:
-                  "FaLinux,GrOracle,SiMongodb,TbSql,FaDocker,SiCockpit,SiPython",
+                  "FaLinux,GrOracle,SiMongodb,TbSql,SiPodman,SiCockpit,SiPython",
               },
               petri: {
                 title: "Petri",
                 description:
-                  "Modeled the operational workflow and queue dynamics of a fast-food restaurant using Petri nets, followed by formal model checking to verify system liveness and prevent deadlocks.",
+                  "Modeled a fast-food's operations as a group project: a 42-place, 35-transition Petri net covering checkout queues, kitchen capacity, dine-in/takeout seating, and ingredient stock, analyzed with the TINA toolbox. An initial tina -R run revealed the net was unbounded (one queue was leaking tokens instead of consuming them, ballooning past 20GB of RAM); once fixed, structural analysis (struct) proved place invariants for staff, queue, seating, and stock conservation. Full state-space exploration hit combinatorial explosion (710k+ states, 4.6M+ transitions) before timing out, so liveness couldn't be formally proven — instead we simulated rush-hour, understaffed, and stock-out scenarios to observe the model stayed deadlock-free in practice.",
                 technologies: "",
               },
               dhcp: {
                 title: "DHCP",
                 description:
-                  "Configured DHCP failover and redundancy on Linux nodes, testing joint address pool sharing versus split-range allocation for network client reliability.",
+                  "Set up two ISC DHCP servers on Debian, first splitting a /24 into two unequal pools (an 80/20 split) so each server hands out addresses from its own range, with NAT configured on the router via nftables. Then reconfigured both servers to share a single pool through DHCP failover (failover peer, split 128 for an even 50/50 load), where clients are assigned to a server based on a MAC-address hash and the two servers replicate lease state to each other over TCP/647 with BNDUPD/BNDACK messages.",
                 technologies: "FaLinux, SiAlpinelinux",
+              },
+              cumulus: {
+                title: "Cumulus & Debian Network Architecture",
+                description:
+                  "Group project building and studying four network architectures using Cumulus Linux for the switches and Debian 13 for the clients. Focused on link and switch redundancy and on the Spanning Tree Protocol.",
+                technologies: "FaLinux,SiDebian",
+              },
+              yubikey: {
+                title: "YubiKey & PGP",
+                description:
+                  "Explored integrating hardware and software security into a Linux environment. I hardened authentication with a YubiKey: TOTP-based two-factor authentication for SSH, FIDO2/U2F for web logins, and passkey management. I then went deeper into GnuPG for asymmetric cryptography, covering key management (generation, subkeys) and signing/encrypting documents and emails, along with how public keys get validated.",
+                technologies: "FaLinux,SiYubico,SiGnuprivacyguard",
               },
             },
           },
@@ -222,209 +234,221 @@ i18n.use(initReactI18next).init({
     fr: {
       translation: {
         welcome: "Bienvenue",
-        greeting:
-          "Je suis Paul, et je vous souhaite la bienvenue sur mon portfolio !",
+        greeting: "Bienvenue sur mon portfolio.",
         article: "article",
         about: "À propos de moi",
         "about-content":
-          "Je suis étudiant en master Computer Networks System à l'Université Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
+          "Je suis étudiant en Master Computer and Network Systems à l'Université Paris-Saclay. Je m'intéresse de près à l'administration système et réseau, ainsi qu'aux applications de l'informatique en biologie.",
         links: "Liens & Contact",
         stage: "Mes stages",
         "education-description-1":
-          "J'ai commencé mon cursus par le portail Mathématiques-Informatique, une première année divisée à 50/50 entre les mathématiques et l'informatique. Durant cette première année, j'ai appris les bases des mathématiques avancées (analyse, statistiques avancées, algèbre linéaire, analyse réelle et complexe) ainsi que les fondements de l'informatique (architecture des ordinateurs, opto-électronique pour la fibre optique, bases de la programmation).",
+          "J'ai commencé mes études supérieures par un portail Mathématiques-Informatique, une première année partagée à parts égales entre les deux disciplines. J'y ai acquis des bases solides en mathématiques (analyse réelle et complexe, algèbre linéaire, statistiques) ainsi que les fondements de l'informatique (architecture des machines, opto-électronique appliquée aux fibres optiques et initiation à la programmation).",
         "education-description-2":
-          "J'ai poursuivi en deuxième année d'informatique où j'ai appris des langages de programmation tels qu'OCaml, C, Python, HTML/CSS/JS et l'Assembleur, ainsi que les bases des réseaux.",
+          "J'ai poursuivi mon parcours en Licence d'informatique, où j'ai approfondi la programmation avec des langages comme OCaml, C, Python, Assembleur et le développement web (HTML/CSS/JS), tout en découvrant les bases de l'architecture réseau.",
         "education-description-3":
-          "C'est en troisième année que je me suis spécialisé en Systèmes et Réseaux, en apprenant à déployer et gérer des réseaux ; par exemple : la gestion des utilisateurs avec Windows Active Directory et des serveurs Linux, les serveurs DNS, les pare-feux et les bases de données simples.",
+          "En troisième année de Licence, je me suis spécialisé en Systèmes et Réseaux. J'ai appris à concevoir, déployer et administrer des infrastructures : gestion d'annuaires sous Active Directory et serveurs Linux, configuration DNS, pare-feu et bases de données.",
         "education-description-4":
-          "Ma Licence obtenue, j'ai décidé de poursuivre en Master dans la même université (désormais sous l'égide de Paris-Saclay) pour la qualité des enseignements et l'approche pratique des cours. J'apprécie particulièrement que nos enseignants nous proposent de nombreux projets ancrés dans la réalité. Jusqu'à présent, j'y ai appris la répartition de charge (load-balancing), la tolérance aux pannes, ainsi que le DHCP avancé, l'architecture et les protocoles de routage, la conception et la gestion de centres de données (datacenters) et la sécurité des bases de données.",
+          "Une fois ma Licence en poche, j'ai choisi de continuer en Master à Paris-Saclay, attiré par la qualité de la formation et son aspect très pratique. Les enseignants nous confient de nombreux projets concrets. En Master 1, j'étudie la répartition de charge (load-balancing), la haute disponibilité, le routage dynamique, l'architecture des datacenters et la sécurisation des bases de données.",
         "stage-content":
-          "J'ai eu l'opportunité d'effectuer un stage au sein du laboratoire IBISC à Évry, l'un des principaux laboratoires de recherche en bio-informatique. Au cours de ce stage, j'ai travaillé avec une équipe restreinte sur le repliement de la structure tertiaire de l'ARN et j'ai participé à la création d'une plateforme commerciale. J'ai également contribué à la refonte du site web d'EvryRNA.",
-        knowledge: "Ce que je sais faire",
+          "J'ai eu l'opportunité de faire un stage au laboratoire IBISC à Évry, un centre de recherche de pointe en bio-informatique. Au sein d'une petite équipe, j'ai travaillé sur des algorithmes de repliement 3D de l'ARN et participé au développement de leur future plateforme commerciale, tout en contribuant à la refonte du site web EvryRNA.",
+        knowledge: "Compétences",
         "knowledge-subtitle": "Ce que j'ai appris",
         "knowledge-content-1":
-          "Mon Master se concentre sur les Réseaux et l'Administration, j'ai donc appris à configurer et maintenir des serveurs et des réseaux. J'ai également appris les bases des Mathématiques Avancées, de l'opto-électronique et des Statistiques. En parallèle, j'ai appris à coder et je maîtrise Python pour le Scripting.",
+          "Mon cursus est axé sur les infrastructures, l'administration système et les réseaux. J'ai également développé de solides compétences en mathématiques appliquées et en programmation, notamment avec Python pour l'automatisation et le scripting.",
         "knowledge-content-2":
-          "Voici une liste des technologies que mon cursus universitaire m'a enseignées:",
+          "Voici un aperçu des technologies étudiées durant mon parcours universitaire :",
         "knowledge-content-3":
-          "Vous pouvez en savoir plus sur les projets que j'ai réalisés ou auxquels j'ai participé dans l'onglet Projets.",
-        interests: "Mes centres d'intérêts",
+          "N'hésitez pas à consulter l'onglet Projets pour en savoir plus sur mes réalisations académiques et personnelles !",
+        interests: "Mes passions",
         "interest-content": {
           music: {
             title: "Musique",
-            "sub-title": "La musique a toujours représenté beaucoup pour moi.",
-            "fav-title": "Quelques-uns de mes titres préférés :",
-            "fav-artist": "Mes artistes préférés :",
-            "fav-album": "Pour finir, mes albums préférés :",
+            "sub-title":
+              "La musique occupe une place centrale dans mon quotidien.",
+            "fav-title": "Quelques-uns de mes morceaux favoris :",
+            "fav-artist": "Mes artistes de référence :",
+            "fav-album": "Mes albums fétiches :",
             "hi-hi":
-              "Je suis également très intéressé par le matériel HI-FI, j'aime acheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
+              "Je suis aussi passionné par le matériel Hi-Fi vintage : j'adore dénicher, restaurer et réparer de vieux amplificateurs ou casques audio. En voici un aperçu :",
             guitar:
-              "J'ai également fait ma propre guitare à partir de wengé de récupération et d'accastillage provenant d'anciennes guitares.",
+              "J'ai également fabriqué ma propre guitare électrique à partir de wengé de récupération et de pièces détachées d'anciens instruments.",
           },
           wood: {
             title: "Menuiserie",
             "sub-title":
-              "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses. Juste en dessous se trouve la première étape d'un petit Drakkar que j'ai construit pour mon oncle, la quille et le dragon sont en wengé et le bordé est en pin teinté.",
+              "Le travail du bois est l'une de mes passions les plus anciennes. Ayant la chance d'avoir accès à un atelier équipé, j'y passe des heures à fabriquer, réparer ou sculpter divers objets. Ci-dessous, voici les prémices d'une réplique de Drakkar que j'ai construite pour mon oncle : la quille et la figure de proue sont en wengé, et les flancs en pin teinté.",
           },
           computer: {
             title: "Informatique",
             "sub-title":
-              "Naturellement pour un masterant en réseau, j'adore l'informatique. J'aime tout particulièrement monter des ordinateurs et paramétrer les systèmes. D'où est né un amour pour Linux, que j'utilise partout.",
+              "Forcément, en tant qu'étudiant en réseaux, je suis passionné d'informatique. J'adore assembler des ordinateurs et configurer des systèmes de A à Z. C'est de là qu'est né mon amour pour Linux, que j'utilise aujourd'hui sur toutes mes machines.",
             linux:
-              "En 2020, j'ai décidé d'essayer Linux et je suis tout de suite tombé amoureux. La philosophie FOSS m'a marqué et depuis j'essaie autant que possible de participer à la communauté. Je fais principalement des traductions, mais en ce moment j'ai pour projet de faire une version alternative de LainOS basée sur GNOME au lieu de Sway, afin de mieux coller à mon workflow.",
+              "J'ai installé Linux pour la première fois en 2020 et j'ai immédiatement accroché. La philosophie du logiciel libre (FOSS) m'a beaucoup parlé, et j'essaie d'y contribuer dès que je peux, principalement via de la traduction. Mon projet du moment est de concevoir une version alternative de LainOS basée sur GNOME à la place de Sway pour mieux l'adapter à mon flux de travail.",
           },
           watches: {
             title: "Horlogerie",
             "sub-title":
-              "Mon autre grande passion est l'horlogerie, j'affectionne particulièrement les montres françaises, suisses et soviétiques des années 70. Je suis toujours fasciné par la minutie à l'intérieur des mouvements, et souvent par la robuste simplicité des anciens calibres.",
-            "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937",
+              "Mon autre grande passion est l'horlogerie mécanique. J'affectionne tout particulièrement les montres françaises, suisses et soviétiques des années 70. Je reste fasciné par la précision mécanique de ces mouvements et la robustesse de ces calibres anciens.",
+            "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937.",
             "fav-watch-2":
-              "Ancora d'Ouro est une ancienne fabrique d'allumettes de Porto, aujourd'hui disparue",
+              "Ancora d'Ouro était une marque d'horlogerie de Porto, aujourd'hui disparue.",
           },
         },
         scholar: "Mon parcours scolaire",
         projects: {
-          title: "Mes projets",
+          title: "Projets",
           intro:
-            "Ces deux dernières années, une grande partie de nos enseignements s'est faite par projets. J'ai également eu la chance de participer à la compétition de Biologie Synthétique IGEM.",
+            "Ces deux dernières années, une grande partie de nos cours s'est déroulée sous forme de projets pratiques. J'ai aussi eu l'opportunité de collaborer avec l'équipe de biologie synthétique iGEM.",
           igem: {
-            title: "IGEM - 2025",
+            title: "iGEM 2025",
             intro:
-              "J'ai été approché par un membre de l'équipe IGEM de notre université pour aider sur le projet. J'ai donc conçu et codé notre Wiki.",
+              "J'ai été contacté par un membre de l'équipe iGEM de notre université pour les aider sur le projet, ce qui m'a amené à concevoir et coder leur Wiki de A à Z.",
             "project-description":
-              "Notre projet portait sur l'ingénierie de souches de cyanobactéries afin d'optimiser l'efficacité enzymatique et d'améliorer la fixation du carbone.",
+              "Notre projet portait sur l'ingénierie de souches de cyanobactéries pour optimiser l'efficacité enzymatique et améliorer la fixation du carbone.",
             "link-text": "Evry Paris-Saclay | Solaris",
             award:
-              "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Pièce de Base et avons reçu une Médaille d'Or.",
+              "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Brique de Base (Best New Basic Part) et avons remporté une Médaille d'Or.",
             future:
-              "Je participerai à nouveau pour la prochaine édition et j'espère faire plus pour l'équipe.",
+              "Je participerai à la prochaine édition avec l'espoir de m'investir encore davantage au sein de l'équipe.",
             impact:
-              "Ce projet a éveillé un intérêt pour la biologie que je ne savais pas avoir, et j'ai donc commencé à en apprendre davantage sur la BioInformatique dans l'espoir de me diversifier.",
+              "Ce projet a éveillé chez moi un véritable intérêt pour la biologie, et j'ai commencé à me former en bio-informatique pour diversifier mes compétences.",
             technologies: "SiPython, FaReact",
           },
           igem2026: {
-            title: "IGEM - 2026",
+            title: "iGEM 2026",
             intro:
-              "J'ai décidé de rejoindre l'association IGEM pour les éditions suivantes.",
+              "J'ai décidé de rejoindre à nouveau l'association iGEM pour les éditions suivantes.",
             "project-description":
-              "Cette année, nous travaillons sur la conception de ribosomes orthogonaux afin de permettre la traduction ciblée de protéines synthétiques.",
+              "Cette année, notre équipe travaille sur la conception de ribosomes orthogonaux pour permettre la traduction ciblée de protéines synthétiques.",
             "link-text": "Evry Paris-Saclay | ORBIT",
-            role: "Comme l'année dernière, j'aide sur le Wiki, mais cette fois je peux m'impliquer plus tôt dans la vidéo promotionnelle, le montage, le design et les décisions de projet.",
+            role: "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe.",
             technologies: "SiPython, FaReact",
           },
           uni: {
-            title: "Université",
+            title: "Projets Universitaires",
             intro:
-              "Voici quelques projets que j'ai réalisés ces deux dernières années",
+              "Voici quelques-uns des projets marquants réalisés dans le cadre de mes études :",
             L3: {
-              title: "L3",
+              title: "Licence 3",
               tomography: {
                 title: "Tomographie",
                 description:
-                  "Notre professeur nous a donné deux fichiers bruts venant d'une sonde tomographique (données brutes en big endian) et nous devions interpréter les distributions et les densités dans l'échantillon. L'objectif était également d'obtenir un script très compact (<300 lignes de code). Nous avons finalement pu exporter un modèle 3D ainsi qu'un nuage de points.",
+                  "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
                 technologies: "SiPython",
               },
               bdd2: {
                 title: "Base de Données",
                 description:
-                  "Nous devions modéliser une base de données pour une université. Le modèle était assez simple : j'ai créé des tables pour les professeurs, les cours, les examens, les étudiants, les notes, etc. Pour valider la base de données, l'enseignant nous a donné la description de 40 requêtes SQL que nous devions interpréter et tester.",
+                  "Modélisation complète d'une base de données universitaire. Pour valider le schéma de nos tables (étudiants, cours, examens, notes, etc.), nous devions concevoir et exécuter 40 requêtes SQL complexes fournies sous forme de cahier des charges.",
                 technologies: "SiPostgresql",
               },
               "windows-ad": {
-                title: "Windows AD",
+                title: "Active Directory",
                 description:
-                  "Déploiement d'un contrôleur de domaine Active Directory sous Windows Server pour gérer l'authentification centralisée des utilisateurs, les GPO et les autorisations de partage réseau.",
+                  "Déploiement d'un contrôleur de domaine Active Directory sous Windows Server pour centraliser l'authentification des utilisateurs, gérer des stratégies de groupe (GPO) et configurer des partages réseau sécurisés.",
                 technologies: "FaWindows",
               },
               dnssec: {
-                title: "DNSSEC - DoT/DoH",
+                title: "DNSSEC & DoT/DoH",
                 description:
-                  "Mise en place d'un serveur DNS récursif utilisant le DNSSEC avec Unbound dans le but d'étudier les protocoles DNS et la sécurisation des transmissions. Mise en place d'un serveur DNS qui communique en DoT avec les serveurs de la FDN.",
+                  "Configuration d'un résolveur récursif avec Unbound validant DNSSEC via l'ancre de confiance de l'IANA (analysé avec dig et Wireshark pour confirmer la présence des signatures RRSIG). J'ai configuré la mise en cache (divisant le temps de réponse par deux) et mis en place du routage DNS-over-TLS sécurisé vers les serveurs de la FDN.",
                 technologies: "FaLinux,SiDebian",
               },
               nftables: {
                 title: "NFTables",
                 description:
-                  "Configuration et test de règles de pare-feu à état avec nftables sous Debian afin de contrôler le trafic réseau, filtrer les paquets et appliquer des politiques de sécurité.",
+                  "Mise en place d'une passerelle réseau nftables sous Debian pour masquer un LAN interne /24 vers Internet (NAT/Masquerade), validée par des captures de paquets. J'ai également configuré une redirection de port (DNAT) pour transférer le flux SSH entrant vers une machine interne spécifique.",
                 technologies: "FaLinux,SiDebian",
               },
             },
             M1: {
-              title: "M1",
+              title: "Master 1",
               carp: {
-                title: "CARP",
+                title: "CARP & PF (OpenBSD)",
                 description:
-                  "Mise en place d'une architecture réseau à haute disponibilité avec CARP sous OpenBSD, en configurant la redondance avec basculement automatique via des IP virtuelles partagées entre deux passerelles.",
+                  "Mise en place d'une paire de pare-feu à haute disponibilité avec CARP sous OpenBSD. Les nœuds partagent des adresses IP virtuelles synchronisées via pfsync et configurées via pf. Le basculement transparent en cas de coupure du nœud primaire a été validé sous Wireshark sans perte de paquets.",
                 technologies: "SiOpenbsd",
               },
               lvs: {
-                title: "LVS",
+                title: "Répartition de charge (LVS)",
                 description:
-                  "Mise en place d'un cluster de répartition de charge avec Linux Virtual Server (LVS) en modes NAT et Direct Routing (DR), en évaluant les performances de débit et de latence sous forte charge.",
+                  "Configuration d'un cluster de load-balancing avec Linux Virtual Server (LVS) en mode NAT. À l'aide de requêtes curl cycliques, j'ai validé la redirection Round-Robin vers deux serveurs réels avec masquerade IP, puis étudié le mode Direct Routing (DR) pour réduire la surcharge réseau.",
                 technologies: "FaLinux,SiRockylinux",
               },
               bdd: {
-                title: "Base de Données",
+                title: "Migration de données",
                 description:
-                  "Mise en place d'une base de données Oracle sur Oracle Linux et passage des données d'Oracle à MongoDB en utilisant des scripts Python.",
+                  "Déploiement d'une base de données Oracle (via conteneur Podman sur Oracle Linux) aux côtés de MongoDB, gérés via Cockpit. Pour contourner les limites de compatibilité des clients lourds de ma distribution, j'ai encapsulé SQL Developer dans un conteneur Distrobox et écrit un script de migration utilisant SQL*cl et mongoimport.",
                 technologies:
-                  "FaLinux,GrOracle,SiMongodb,TbSql,FaDocker,SiCockpit,SiPython",
+                  "FaLinux,GrOracle,SiMongodb,TbSql,SiPodman,SiCockpit,SiPython",
               },
               petri: {
-                title: "Petri",
+                title: "Réseaux de Petri",
                 description:
-                  "Modélisation du flux opérationnel et de la gestion des files d'attente d'un fast-food avec des réseaux de Petri, suivie d'une vérification formelle (model checking) pour valider la vivacité du système et éviter les blocages.",
+                  "Modélisation du flux de service et des stocks d'un fast-food à l'aide d'un réseau de Petri de 42 places et 35 transitions, analysé sous la suite TINA. Après correction d'une file d'attente non bornée à l'origine d'une fuite mémoire, nous avons vérifié les invariants structurels et simulé des pics de trafic.",
                 technologies: "",
               },
               dhcp: {
-                title: "DHCP",
+                title: "Redondance DHCP",
                 description:
-                  "Configuration de serveurs DHCP en redondance sous Linux, en comparant le partage d'un même pool d'adresses avec une répartition par plages distinctes pour garantir la continuité de service.",
+                  "Configuration de serveurs DHCP sous Debian en mode failover (failover peer avec split 128 pour un équilibrage 50/50). Les serveurs synchronisent l'état de leurs baux via TCP/647 (messages BNDUPD/BNDACK) et distribuent les adresses en fonction d'un hash de l'adresse MAC du client.",
                 technologies: "FaLinux, SiAlpinelinux",
+              },
+              cumulus: {
+                title: "Réseau Cumulus Linux",
+                description:
+                  "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les commutateurs (switches) et Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
+                technologies: "FaLinux,SiDebian",
+              },
+              yubikey: {
+                title: "YubiKey & PGP/GPG",
+                description:
+                  "Renforcement de la sécurité d'un environnement Linux à l'aide d'une YubiKey matérielle : double facteur TOTP pour le SSH, authentification FIDO2 pour le web et gestion des passkeys. J'ai également approfondi l'usage de GPG pour le chiffrement asymétrique et la signature de documents.",
+                technologies: "FaLinux,SiYubico,SiGnuprivacyguard",
               },
             },
           },
           personal: {
-            title: "Personnel",
+            title: "Projets Personnels",
             rwg: {
               title: "Hackathon Read-Write-Grow",
               "link-text": "rwg.bio",
               description:
-                "Des amis de l'équipe IGEM nous ont suggéré ce hackathon, nous avons donc formé deux équipes. Nous nous sommes concentrés sur la prédiction et la conception de nanocages d'ARN. Personnellement, j'ai travaillé sur le traitement de l'ARN et la prédiction de la structure secondaire.",
+                "Participation en équipe à ce hackathon axé sur la biologie synthétique. Nous avons conçu des modèles de prédiction de structures secondaires de nanocages d'ARN. J'ai particulièrement travaillé sur les étapes de traitement des données de séquences d'ARN.",
               "code-link": "Dépôt GitHub",
               outcome:
-                "Bien que nous n'ayons pas gagné, notre équipe sœur faisait partie des dix premiers et a pu présenter son idée à des professionnels et recevoir des conseils.",
+                "Même si nous n'avons pas remporté le premier prix, notre équipe partenaire s'est hissée dans le top 10 et a pu présenter son projet devant un jury de professionnels.",
               technologies: "SiPython",
             },
             cardihack: {
-              title: "Défi Cardi-Hack",
+              title: "Hackathon Cardi-Hack",
               description:
-                "Suggéré par un ami en bio-informatique, ce défi consistait à réentraîner un modèle de langage pour analyser des données génomiques, calculer des scores de risque polygénique (PRS) et évaluer les risques cardiovasculaires.",
+                "Défi de bio-informatique consistant à affiner un modèle de langage (LLM) pour traiter des données génomiques complexes, calculer des scores de risque polygénique (PRS) et anticiper les risques de maladies cardiovasculaires.",
               technologies: "SiPython",
             },
             server: {
-              title: "Mon Serveur",
+              title: "Mon Serveur Privé",
               description:
-                "Je me suis construit un serveur à partir de composants de récupération tournant sous Fedora 44, sur lequel j'héberge plusieurs conteneurs Docker et services. J'utilise NGINX pour le reverse-proxy et le SSL. Actuellement, j'y héberge un serveur Minecraft, un serveur de fichiers (Nextcloud) et j'expérimente l'hébergement de modèles de langage (LM) ainsi que Folding@Home.",
+                "Assemblage d'un serveur personnel sous Fedora 44 hébergeant des services conteneurisés sous Docker. J'utilise NGINX en reverse-proxy avec certificats SSL pour sécuriser l'accès à un serveur Nextcloud, un serveur de jeu Minecraft, ainsi qu'à des projets de calcul distribué (Folding@Home).",
               technologies: "SiFedora,FaDocker,SiNextcloud",
             },
             rnafold: {
               title: "Cfold",
               description:
-                "Suite au hackathon RWG, j'ai commencé à écrire un programme en C pour prédire la structure secondaire et tertiaire de l'ARN à partir de sa séquence. Pour ce faire, j'ai créé un moteur de physique pour simuler les forces qui agissent sur les nucléotides.",
+                "Projet de développement d'un outil en C pour prédire les structures secondaires et tertiaires d'ARN. J'ai conçu un moteur physique simple simulant les forces d'attraction et de répulsion s'exerçant sur les nucléotides.",
               technologies: "SiC",
             },
             ARDA: {
-              title: "ARDA",
+              title: "ARDA Platform",
               description:
-                "Suite au projet sur le repliement 3D de l'ARN, j'ai été approché par un enseignant pour continuer à travailler sur ce projet avec des stagiaires du laboratoire IBISC de l'université. J'ai donc rejoint le laboratoire pour un stage. Le projet a pris de l'ampleur et nous développons actuellement une plateforme commerciale pour proposer notre service de calcul. Tous les services, le site web et les bases de données fonctionnent sur un serveur BareMetal d'OVH (Ryzen 7 9700X avec 64 Go de RAM et 2x 512 Go NVMe en RAID). Le site est conçu avec React et hébergé via PM2, les bases de données sont ArangoDB pour les données non structurées et PostgreSQL pour la gestion des utilisateurs. Des sauvegardes automatiques sont envoyées sur mon serveur personnel.",
+                "Né du projet de prédiction 3D d'ARN, ce travail s'est prolongé par un stage au laboratoire IBISC pour lancer une plateforme web commerciale de calcul. L'infrastructure tourne sur des serveurs BareMetal OVH (Ryzen 7 9700X, 64 Go RAM, SSD NVMe RAID), avec une interface React (PM2), une base de données orientée graphe ArangoDB et PostgreSQL. Les sauvegardes sont automatisées vers mon serveur personnel.",
               link: "",
               technologies: "SiPython,FaReact,FaLinux",
             },
             D4GEN: {
-              title: "D4GEN Hackathon 2026",
+              title: "Hackathon D4GEN 2026",
               description:
-                "En parallèle du projet IGEM, nous avons décidé de participer au Hackathon D4GEN organisé par le Genopole afin de développer des outils pour aider avec le Dry/Wet lab. Comme le Hackathon était sponsorisé par Amazon Web Services, nous avons eu un accès illimité aux ressources d'AWS, notamment leurs machines de LM et notebooks.",
+                "Participation au hackathon D4GEN du Genopole pour créer une boîte à outils facilitant la transition entre le travail de laboratoire humide (wet lab) et l'analyse sèche (dry lab). Sponsorisés par AWS, nous avons exploité leurs instances de calcul et environnements de notebooks pour entraîner nos modèles.",
               "code-link": "Dépôt GitHub",
               technologies: "SiPython,SiAmazonwebservices",
             },
