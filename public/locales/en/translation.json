@@ -4,6 +4,7 @@
   "article": "article",
   "about": "About me",
   "about-content": "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
+  "links": "Links & Contact",
   "stage": "Internships",
   "education-description-1": "I started my degree in the Mathematics and Computer Science double track, a first year split 50/50 between mathematics and computer science. In my first year, I covered the basics of advanced mathematics (calculus, advanced statistics, linear algebra, real and complex analysis) as well as computer science fundamentals (architecture, optoelectronics for optical fibers, programming basics).",
   "education-description-2": "In my second year in CS, I learned programming languages such as OCaml, C, Python, HTML/CSS/JS, and Assembly, as well as the basics of networking.",
@@ -14,6 +15,7 @@
   "knowledge-subtitle": "What I learned",
   "knowledge-content-1": "My Master's degree focuses on networks and administration; I have learned to set up and maintain servers and networks. I have also covered basics of advanced mathematics, opto-electronics, and statistics. Additionally, I am proficient in Python for scripting.",
   "knowledge-content-2": "Here is a list of the technologies my university curriculum taught me:",
+  "knowledge-content-3": "You can find out more about the Project I made or been a part of in the Project Tab",
   "interests": "My interests",
   "interest-content": {
     "music": {
@@ -23,7 +25,7 @@
       "fav-artist": "My favorite artists:",
       "fav-album": "Finally, my favorite albums:",
       "hi-hi": "I'm also very interested in HI-FI equipment, I like buying old amplifiers and headphones and trying to repair them, here's an excerpt from my collection:",
-      "guitar": "I also built my own guitar using reclaimed teak wood and hardware salvaged from old guitars."
+      "guitar": "I also built my own guitar using reclaimed Wenge wood and hardware salvaged from old guitars."
     },
     "wood": {
       "title": "Woodworking",
@@ -37,7 +39,8 @@
     "watches": {
       "title": "Watchmaking",
       "sub-title": "My other great passion is watchmaking; I'm particularly fond of French, Swiss, and Soviet watches from the 70s. I'm always fascinated by the intricacy inside the movements, and often by the rugged simplicity of older calibers.",
-      "fav-watch": "My favorite watch is this 1937 Ancora d'Ouro"
+      "fav-watch": "My favorite watch is this 1937 Ancora d'Ouro",
+      "fav-watch-2": "Ancora d'Ouro being a long defunct match maker from Porto"
     }
   },
   "scholar": "Education",
@@ -85,12 +88,12 @@
         "dnssec": {
           "title": "DNSSEC - DoT/DoH",
           "description": "Set up a recursive DNS server using DNSSEC with Unbound to study DNS protocols and secure transmissions. Also configured a DNS server that communicates over DoT with the FDN's servers.",
-          "technologies": "FaLinux,FaDebian"
+          "technologies": "FaLinux,SiDebian"
         },
         "nftables": {
           "title": "nftables",
           "description": "Configured and tested stateful firewall rules using nftables on Debian to control network traffic, filter packets, and enforce security policies.",
-          "technologies": "FaLinux,FaDebian"
+          "technologies": "FaLinux,SiDebian"
         }
       },
       "M1": {
@@ -140,7 +143,7 @@
       "server": {
         "title": "My Server",
         "description": "I built myself a server with old parts, I'm running Fedora 44 on it, and I host a couple of Docker containers and services on it. I use NGINX for reverse-proxying and SSL. Currently, I'm hosting a Minecraft server, a file distribution server (Nextcloud) and I am toying with LM hosting and Folding@Home.",
-        "technologies": "FaFedora ,FaDocker,SiNextcloud"
+        "technologies": "SiFedora,FaDocker,SiNextcloud"
       },
       "rnafold": {
         "title": "Cfold",
@@ -156,8 +159,8 @@
       "D4GEN": {
         "title": "D4GEN Hackathon 2026",
         "description": "To help with the IGEM project this year, we decided to participate in the D4GEN Hackathon organized by Genopole. Our project was to develop a toolbox that would help the team with the Dry/Wet lab. As the Hackathon was sponsored by Amazon Web Services, we got to use their services without limit for the duration of the Hackathon; as such, we got to experiment a lot with their LM machines and notebooks.",
-        "code-link": "https://github.com/crakshay1/DalguardYES",
-        "technologies": "SiPython,SiAWS"
+        "code-link": "GitHub Repository",
+        "technologies": "SiPython,SiAmazonwebservices"
       }
     }
   }

@@ -4,6 +4,7 @@
   "article": "article",
   "about": "À propos de moi",
   "about-content": "Je suis étudiant en master Computer Networks System à l'Université Paris-Saclay. Je suis particulièrement intéressé par l'administration des serveurs et des systèmes et aussi par la biologie.",
+  "links": "Liens & Contact",
   "stage": "Mes stages",
   "education-description-1": "J'ai commencé mon cursus par le portail Mathématiques-Informatique, une première année divisée à 50/50 entre les mathématiques et l'informatique. Durant cette première année, j'ai appris les bases des mathématiques avancées (analyse, statistiques avancées, algèbre linéaire, analyse réelle et complexe) ainsi que les fondements de l'informatique (architecture des ordinateurs, opto-électronique pour la fibre optique, bases de la programmation).",
   "education-description-2": "J'ai poursuivi en deuxième année d'informatique où j'ai appris des langages de programmation tels qu'OCaml, C, Python, HTML/CSS/JS et l'Assembleur, ainsi que les bases des réseaux.",
@@ -14,6 +15,7 @@
   "knowledge-subtitle": "Ce que j'ai appris",
   "knowledge-content-1": "Mon Master se concentre sur les Réseaux et l'Administration, j'ai donc appris à configurer et maintenir des serveurs et des réseaux. J'ai également appris les bases des Mathématiques Avancées, de l'opto-électronique et des Statistiques. En parallèle, j'ai appris à coder et je maîtrise Python pour le Scripting.",
   "knowledge-content-2": "Voici une liste des technologies que mon cursus universitaire m'a enseignées:",
+  "knowledge-content-3": "Vous pouvez en savoir plus sur les projets que j'ai réalisés ou auxquels j'ai participé dans l'onglet Projets.",
   "interests": "Mes centres d'intérêts",
   "interest-content": {
     "music": {
@@ -23,11 +25,11 @@
       "fav-artist": "Mes artistes préférés :",
       "fav-album": "Pour finir, mes albums préférés :",
       "hi-hi": "Je suis également très intéressé par le matériel HI-FI, j'aime acheter de vieux amplis et casques et tenter de les réparer, un extrait de ma collection :",
-      "guitar": "J'ai également fait ma propre guitare à partir de teck de récupération et d'accastillage provenant d'anciennes guitares."
+      "guitar": "J'ai également fait ma propre guitare à partir de wengé de récupération et d'accastillage provenant d'anciennes guitares."
     },
     "wood": {
       "title": "Menuiserie",
-      "sub-title": "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses."
+      "sub-title": "La menuiserie est l'une de mes plus anciennes passions. Ayant la chance d'avoir accès à un atelier, je passe des heures à fabriquer ou réparer de tout, mais surtout à tailler du bois et à créer des choses. Juste en dessous se trouve la première étape d'un petit Drakkar que j'ai construit pour mon oncle, la quille et le dragon sont en wengé et le bordé est en pin teinté."
     },
     "computer": {
       "title": "Informatique",
@@ -37,7 +39,8 @@
     "watches": {
       "title": "Horlogerie",
       "sub-title": "Mon autre grande passion est l'horlogerie, j'affectionne particulièrement les montres françaises, suisses et soviétiques des années 70. Je suis toujours fasciné par la minutie à l'intérieur des mouvements, et souvent par la robuste simplicité des anciens calibres.",
-      "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937"
+      "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937",
+      "fav-watch-2": "Ancora d'Ouro est une ancienne fabrique horlogerie de Porto, aujourd'hui disparue"
     }
   },
   "scholar": "Mon parcours scolaire",
@@ -85,12 +88,12 @@
         "dnssec": {
           "title": "DNSSEC - DoT/DoH",
           "description": "Mise en place d'un serveur DNS récursif utilisant le DNSSEC avec Unbound dans le but d'étudier les protocoles DNS et la sécurisation des transmissions. Mise en place d'un serveur DNS qui communique en DoT avec les serveurs de la FDN.",
-          "technologies": "FaLinux,FaDebian"
+          "technologies": "FaLinux,SiDebian"
         },
         "nftables": {
           "title": "NFTables",
           "description": "Configuration et test de règles de pare-feu à état avec nftables sous Debian afin de contrôler le trafic réseau, filtrer les paquets et appliquer des politiques de sécurité.",
-          "technologies": "FaLinux,FaDebian"
+          "technologies": "FaLinux,SiDebian"
         }
       },
       "M1": {
@@ -140,7 +143,7 @@
       "server": {
         "title": "Mon Serveur",
         "description": "Je me suis construit un serveur à partir de composants de récupération tournant sous Fedora 44, sur lequel j'héberge plusieurs conteneurs Docker et services. J'utilise NGINX pour le reverse-proxy et le SSL. Actuellement, j'y héberge un serveur Minecraft, un serveur de fichiers (Nextcloud) et j'expérimente l'hébergement de modèles de langage (LM) ainsi que Folding@Home.",
-        "technologies": "FaFedora ,FaDocker,SiNextcloud"
+        "technologies": "SiFedora,FaDocker,SiNextcloud"
       },
       "rnafold": {
         "title": "Cfold",
@@ -156,8 +159,8 @@
       "D4GEN": {
         "title": "D4GEN Hackathon 2026",
         "description": "En parallèle du projet IGEM, nous avons décidé de participer au Hackathon D4GEN organisé par le Genopole afin de développer des outils pour aider avec le Dry/Wet lab. Comme le Hackathon était sponsorisé par Amazon Web Services, nous avons eu un accès illimité aux ressources d'AWS, notamment leurs machines de LM et notebooks.",
-        "code-link": "https://github.com/crakshay1/DalguardYES",
-        "technologies": "SiPython,SiAWS"
+        "code-link": "Dépôt GitHub",
+        "technologies": "SiPython,SiAmazonwebservices"
       }
     }
   }

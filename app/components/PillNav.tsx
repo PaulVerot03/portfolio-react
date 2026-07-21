@@ -141,7 +141,7 @@ const PillNav: React.FC<PillNavProps> = ({
       tlRefs.current.forEach(tl => tl?.kill());
       Object.values(activeTweenRefs.current).forEach(tween => tween?.kill());
       tlRefs.current = [];
-      activeTweenRefs.current = {};
+      activeTweenRefs.current = [];
     };
   }, [items, ease, initialLoadAnimation]);
 
