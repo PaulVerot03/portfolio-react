@@ -6,6 +6,8 @@
   "about-content": "Je suis étudiant en Master Computer and Network Systems à l'Université Paris-Saclay. Je m'intéresse de près à l'administration système et réseau, ainsi qu'aux applications de l'informatique en biologie.",
   "links": "Liens & Contact",
   "stage": "Mes stages",
+  "education-subtitle-1":"Plus à propos de mes études",
+  "education-subtitle-2":"Plus à propos de mes stages",
   "education-description-1": "J'ai commencé mes études supérieures par un portail Mathématiques-Informatique, une première année partagée à parts égales entre les deux disciplines. J'y ai acquis des bases solides en mathématiques (analyse réelle et complexe, algèbre linéaire, statistiques) ainsi que les fondements de l'informatique (architecture des machines, opto-électronique appliquée aux fibres optiques et initiation à la programmation).",
   "education-description-2": "J'ai poursuivi mon parcours en Licence d'informatique, où j'ai approfondi la programmation avec des langages comme OCaml, C, Python, Assembleur et le développement web (HTML/CSS/JS), tout en découvrant les bases de l'architecture réseau.",
   "education-description-3": "En troisième année de Licence, je me suis spécialisé en Systèmes et Réseaux. J'ai appris à concevoir, déployer et administrer des infrastructures : gestion d'annuaires sous Active Directory et serveurs Linux, configuration DNS, pare-feu et bases de données.",
@@ -40,7 +42,7 @@
       "title": "Horlogerie",
       "sub-title": "Mon autre grande passion est l'horlogerie mécanique. J'affectionne tout particulièrement les montres françaises, suisses et soviétiques des années 70. Je reste fasciné par la précision mécanique de ces mouvements et la robustesse de ces calibres anciens.",
       "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937.",
-      "fav-watch-2": "Ancora d'Ouro était une marque d'horlogerie de Porto, aujourd'hui disparue."
+      "fav-watch-2": "Ancora d'Ouro était une marque d'horlogerie originaire de Porto, aujourd'hui disparue."
     }
   },
   "scholar": "Mon parcours scolaire",
@@ -72,7 +74,7 @@
         "title": "Licence 3",
         "tomography": {
           "title": "Tomographie",
-          "description": "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
+          "description": "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes ; longueur limite) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
           "technologies": "SiPython"
         },
         "bdd2": {
@@ -125,7 +127,7 @@
         },
         "cumulus": {
           "title": "Réseau Cumulus Linux",
-          "description": "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les commutateurs (switches) et Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
+          "description": "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les switches, Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
           "technologies": "FaLinux,SiDebian"
         },
         "yubikey": {

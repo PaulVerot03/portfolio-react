@@ -6,6 +6,8 @@
   "about-content": "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
   "links": "Links & Contact",
   "stage": "Internships",
+  "education-subtitle-1":"More about my education",
+  "education-subtitle-2":"More about my interships",
   "education-description-1": "I started my degree in the Mathematics and Computer Science double track, a first year split 50/50 between mathematics and computer science. In my first year, I covered the basics of advanced mathematics (calculus, advanced statistics, linear algebra, real and complex analysis) as well as computer science fundamentals (architecture, optoelectronics for optical fibers, programming basics).",
   "education-description-2": "In my second year in CS, I learned programming languages such as OCaml, C, Python, HTML/CSS/JS, and Assembly, as well as the basics of networking.",
   "education-description-3": "In my third year, I began specializing in Systems and Networks, learning how to deploy and manage networks; for example: user management with Windows Active Directory and Linux servers, DNS, firewalls, and simple databases.",
@@ -72,7 +74,7 @@
         "title": "L3",
         "tomography": {
           "title": "Tomography",
-          "description": "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
+          "description": "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines ; size limit) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
           "technologies": "SiPython"
         },
         "bdd2": {

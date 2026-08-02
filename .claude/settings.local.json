@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('public/locales/en/translation.json'\\)\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('public/locales/fr/translation.json'\\)\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(npm run *)",
+      "Bash(timeout 180 npx vite build)",
+      "Bash(npx tsc *)",
+      "Bash(timeout 60 typst compile cv.typ --input language=fr /tmp/cv_test_fr.pdf)",
+      "Bash(pdftoppm -png -r 100 /tmp/cv_test_fr2.pdf /tmp/cv_page)",
+      "Read(//tmp/**)",
+      "Bash(pdftotext cv.pdf -)",
+      "Bash(pdftotext CV-PaulVEROT.pdf -)",
+      "Bash(timeout 60 typst compile cv.typ --input language=fr cv.pdf)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(pdfinfo cv.pdf)",
+      "Bash(timeout 60 typst compile cv.typ --input language=fr /tmp/cv_verify.pdf)",
+      "Bash(pdfinfo /tmp/cv_verify.pdf)",
+      "Bash(pdftoppm -png -r 100 /tmp/cv_verify.pdf /tmp/cv_verify_page)"
+    ]
+  }
+}

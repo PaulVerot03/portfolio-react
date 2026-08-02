@@ -332,14 +332,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl text-center font-extrabold text-purple-600 mb-8">More about my Education and Internships</h2>
                 <div className="flex flex-col gap-6 justify-center mb-12">
-                  <h4 className="text-xl font-bold text-purple-600 mb-8">About my Education</h4>
+                  <h4 className="text-xl font-bold text-purple-600 mb-8">{t("education-subtitle-1")}</h4>
                   <p className="dark:text-gray-300">{t("education-description-1")}</p>
                   <p className="dark:text-gray-300">{t("education-description-2")}</p>
                   <p className="dark:text-gray-300">{t("education-description-3")}</p>
                   <p className="dark:text-gray-300">{t("education-description-4")}</p>
-                  <h4 className="text-xl font-bold text-purple-600 mb-8">About my Internships</h4>
+                  <h4 className="text-xl font-bold text-purple-600 mb-8">{t("education-subtitle-2")}</h4>
                   <p className="dark:text-gray-300">
                     {t("stage-content")}
                   </p>
@@ -627,7 +626,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                     <li>Beyerdynamic DT880 250Ohm</li>
                     <li className="text-purple-600 font-semibold">Amplifiers :</li>
                     <li>Phillips FR 740</li>
-                    <li>JV A-X40</li>
+                    <li>JVC A-X40</li>
                     <li className="text-purple-600 font-semibold">Speakers :</li>
                     <li>Denon SC-N10</li>
                   </ul>

@@ -110,7 +110,7 @@ export default function Project() {
         {/* IGEM Project */}
         <section className="mb-12">
 
-          <div>
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h2 className="text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.igem.title")}</h2>
             <p className="mb-4 dark:text-white">{t("projects.igem.intro")}</p>
             <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766020414/igem2_dxrwot.jpg" alt="IGEM Gold Medal" className="mb-4 rounded-lg grid content-center" width={"400px"} loading="lazy" decoding="async" />
@@ -124,10 +124,23 @@ export default function Project() {
             <p className="mb-2 dark:text-white">{t("projects.igem.impact")}</p>
             <TechBadges techString={t("projects.igem.technologies")} />
           </div>
-          <div>
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h2 className="text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.igem2026.title")}</h2>
             <p className="mb-4 dark:text-white">{t("projects.igem2026.intro")}</p>
             <p className="mb-2 dark:text-white">{t("projects.igem2026.project-description")}</p>
+
+            <a
+              href="https://2026.igem.wiki/evry-paris-saclay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center align-center gap-3 px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex flex-col text-left align-center">
+                <span className="text-base leading-tight">Evry Paris-Saclay | ORBIT</span>
+                <span className="text-xs text-purple-200 font-normal">https://2026.igem.wiki/evry-paris-saclay/</span>
+              </div>
+            </a>
+
             <a href="https://2026.igem.wiki/evry-paris-saclay/" className="text-purple-600 hover:underline mb-4 block text-center">
               {t("projects.igem2026.link-text")}
             </a>
@@ -143,7 +156,7 @@ export default function Project() {
 
           {/* L3 Projects */}
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 dark:text-white text-center">{t("projects.uni.L3.title")}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">{t("projects.uni.L3.title")}</h3>
 
             <div className="mb-6 pl-4 border-l-4 border-purple-500">
               <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.tomography.title")}</h4>
@@ -179,7 +192,7 @@ export default function Project() {
 
           {/* M1 Projects */}
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 dark:text-white text-center">{t("projects.uni.M1.title")}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">{t("projects.uni.M1.title")}</h3>
 
             <div className="mb-6 pl-4 border-l-4 border-purple-500">
               <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.carp.title")}</h4>
@@ -214,6 +227,7 @@ export default function Project() {
             <div className="mb-6 pl-4 border-l-4 border-purple-500">
               <h4 className="text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.cumulus.title")}</h4>
               <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.cumulus.description")}</p>
+               <img src="/archi.png" alt="network architecture" className="mb-4 rounded-lg " width={"600px"} loading="lazy" decoding="async" />
               <TechBadges techString={t("projects.uni.M1.cumulus.technologies")} />
             </div>
 
@@ -229,7 +243,7 @@ export default function Project() {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.personal.title")}</h2>
 
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white">{t("projects.personal.rwg.title")}</h3>
             <a href="https://rwg.bio/" className="text-purple-600 hover:underline mb-2 block text-center">
               {t("projects.personal.rwg.link-text")}
@@ -242,13 +256,13 @@ export default function Project() {
             <TechBadges techString={t("projects.personal.rwg.technologies")} />
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white">{t("projects.personal.cardihack.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.cardihack.description")}</p>
             <TechBadges techString={t("projects.personal.cardihack.technologies")} />
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.rnafold.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.rnafold.description")}</p>
             <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1770975328/pymol_o7w5ef.png" alt="Pymol visualization of RNA structure" className="mb-4 rounded-lg " width={"400px"} loading="lazy" decoding="async" />
@@ -257,7 +271,7 @@ export default function Project() {
             </a>
             <TechBadges techString={t("projects.personal.rnafold.technologies")} />
           </div>
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.D4GEN.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.D4GEN.description")}</p>
             <img src="/d4gen.jpeg" alt="D4GEN Hackathon toolbox" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
@@ -267,7 +281,7 @@ export default function Project() {
             <TechBadges techString={t("projects.personal.D4GEN.technologies")} />
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.ARDA.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.ARDA.description")}</p>
             <img src="/arda.png" alt="ARDA" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
@@ -275,7 +289,7 @@ export default function Project() {
             <TechBadges techString={t("projects.personal.ARDA.technologies")} />
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 pl-4 border-l-4 border-purple-500">
             <h3 className="text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.server.title")}</h3>
             <p className="mb-2 dark:text-white">{t("projects.personal.server.description")}</p>
             <img src="/blender.png" alt="Server rack render" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />

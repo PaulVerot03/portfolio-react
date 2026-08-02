@@ -18,6 +18,8 @@ i18n.use(initReactI18next).init({
           "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
         links: "Links & Contact",
         stage: "Internships",
+        "education-subtitle-1": "More about my education",
+        "education-subtitle-2": "More about my interships",
         "education-description-1":
           "I started my degree in the Mathematics and Computer Science double track, a first year split 50/50 between mathematics and computer science. In my first year, I covered the basics of advanced mathematics (calculus, advanced statistics, linear algebra, real and complex analysis) as well as computer science fundamentals (architecture, optoelectronics for optical fibers, programming basics).",
         "education-description-2":
@@ -241,6 +243,8 @@ i18n.use(initReactI18next).init({
           "Je suis étudiant en Master Computer and Network Systems à l'Université Paris-Saclay. Je m'intéresse de près à l'administration système et réseau, ainsi qu'aux applications de l'informatique en biologie.",
         links: "Liens & Contact",
         stage: "Mes stages",
+        "education-subtitle-1": "Plus à propos de mes études",
+        "education-subtitle-2": "Plus à propos de mes stages",
         "education-description-1":
           "J'ai commencé mes études supérieures par un portail Mathématiques-Informatique, une première année partagée à parts égales entre les deux disciplines. J'y ai acquis des bases solides en mathématiques (analyse réelle et complexe, algèbre linéaire, statistiques) ainsi que les fondements de l'informatique (architecture des machines, opto-électronique appliquée aux fibres optiques et initiation à la programmation).",
         "education-description-2":
