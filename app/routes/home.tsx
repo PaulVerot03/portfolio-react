@@ -89,7 +89,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           pillTextColor="#000000"
         />
       </ClientOnly>
-      <div className="relative h-screen">
+      <div className="relative h-svh min-h-[32rem]">
         <div className="absolute inset-0">
           <ClientOnly>
             <FaultyTerminal
@@ -114,25 +114,31 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </ClientOnly>
 
         </div>
-        <div className="fixed top-4 right-4 flex items-center space-x-4 z-40">
+        <div className="fixed top-4 right-16 md:right-4 flex items-center gap-2 md:gap-4 z-[1001]">
           <button
             onClick={changeLanguage}
-            className="p-2  text-white rounded dark:text-white bg-purple-700 hover:bg-purple-600 transition-colors"
+            aria-label={currentLanguage === "en" ? "Passer en français" : "Switch to English"}
+            className="px-3 py-2 text-sm md:text-base text-white rounded dark:text-white bg-purple-700 hover:bg-purple-600 transition-colors whitespace-nowrap"
           >
-            {currentLanguage === "en" ? "passer en 🇫🇷" : "switch to 🇬🇧"}
+            <span className="hidden lg:inline">
+              {currentLanguage === "en" ? "passer en 🇫🇷" : "switch to 🇬🇧"}
+            </span>
+            <span className="lg:hidden">
+              {currentLanguage === "en" ? "🇫🇷" : "🇬🇧"}
+            </span>
           </button>
           <ThemeToggle />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full">
-          <div className="bg-black/30 p-8 rounded-3xl max-w-7xl mx-auto text-center">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+          <div className="bg-black/30 px-4 py-6 sm:px-8 sm:py-8 rounded-3xl w-full max-w-7xl mx-auto text-center">
             <TextType text={t("welcome")}
               typingSpeed={75}
               pauseDuration={15000}
               showCursor={true}
               cursorCharacter="_"
-              className="py-4 justify-center flex items-center text-purple-600 tracking-wide text-9xl font-extrabold text-center select-auto jersey-10-regular" />
+              className="py-2 sm:py-4 justify-center flex flex-wrap items-center text-purple-600 tracking-wide text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-center break-words select-auto jersey-10-regular" />
 
-            <p className="text-white text-5xl">
+            <p className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl">
               {t("greeting", { name: "Paul" })}
             </p>
           </div>
@@ -142,16 +148,16 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           <ChevronDown className="w-5 h-5" />
         </div>
       </div>
-      <div className="bg-white dark:bg-gray-950 p-8">
+      <div className="bg-white dark:bg-gray-950 px-4 py-8 sm:px-6 md:p-8">
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col items-center">
-            <div>
-              <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+          <div className="flex w-full flex-col items-center">
+            <div className="w-full">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">
                 {t("about")}
               </h2>
               <p className="text-lg text-center mb-12 dark:text-white">{t("about-content")}</p>
               <div className="w-full my-8 mb-12">
-                <h2 className="text-4xl font-extrabold text-purple-600 text-center mb-8">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 text-center mb-8">
                   {t("links")}
                 </h2>
                 <div className="flex flex-wrap justify-center items-center gap-4 max-w-2xl mx-auto">
@@ -198,9 +204,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   </a>
                 </div>
               </div>
-              <div className="flex">
-                <div className=" flex-auto px-px">
-                  <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+              <div className="flex flex-col md:flex-row md:gap-8">
+                <div className="flex-auto min-w-0">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">
                     {t("scholar")}
                   </h2>
                   <div className="">
@@ -285,8 +291,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   </ul>
 
                 </div>
-                <div className=" flex-auto">
-                  <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+                <div className="flex-auto min-w-0">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">
                     {t("stage")}
                   </h2>
 
@@ -348,8 +354,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
               <br />
 
-              <h2 className="text-4xl font-extrabold text-purple-600 mb-8">Other tidbits</h2>
-              <div className="flex flex-row gap-12 justify-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">Other tidbits</h2>
+              <div className="flex flex-wrap gap-8 sm:gap-12 justify-center mb-12">
                 <div className="text-center">
                   <p className="text-lg font-bold mb-2 dark:text-white">English</p>
                   <p className="dark:text-gray-300">TOEIC - C1</p>
@@ -364,14 +370,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
 
 
-              <h2 className="text-4xl font-extrabold text-purple-600 mb-8">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">
                 {t("knowledge")}
               </h2>
-              <h3 className="text-2xl text-purple-900 font-semibold mb-4 ">{t("knowledge-subtitle")}</h3>
+              <h3 className="text-xl sm:text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4">{t("knowledge-subtitle")}</h3>
               <p className="mb-4 dark:text-white">{t("knowledge-content-1")}</p>
               <p className="mb-6 dark:text-white">{t("knowledge-content-2")}</p>
               <ClientOnly>
-                <div className="w-full max-w-4xl mx-auto mb-8" style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
+                <div className="w-full max-w-full mx-auto mb-8 md:max-w-4xl" style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
                   <LogoLoop
                     logos={techLogos}
                     speed={50}
@@ -398,14 +404,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
             {/* INTERESTS */}
 
-            <div>
-              <h2 className="text-4xl font-extrabold text-purple-600 mb-8 text-center">
+            <div className="w-full">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8 text-center">
                 {t("interests")}
               </h2>
 
               {/* Computing */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                <h3 className="text-xl sm:text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
                   {t("interest-content.computer.title")}
                 </h3>
                 <p className="mb-2 dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.computer.sub-title")}</p>
@@ -414,24 +420,24 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
               {/* Music */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                <h3 className="text-xl sm:text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
                   {t("interest-content.music.title")}
                 </h3>
                 <p className="mb-4 dark:text-gray-300">{t("interest-content.music.sub-title")}</p>
                 <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-title")}</p>
-                <span className="max-w-2">
+                <div className="w-full max-w-xl mx-auto">
                   <iframe title="deezer-widget"
                     src="https://widget.deezer.com/widget/auto/playlist/15052533723"
-                    width="150%" height="300"
+                    height="300"
                     frameBorder="0"
                     allowTransparency={true}
                     allow="encrypted-media; clipboard-write"
-                    className="max-w-220">
+                    className="block w-full rounded-lg">
                   </iframe>
-                </span>
+                </div>
                 <br />
                 <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-artist")}</p>
-                <div className="grid grid-cols-5 gap-4 justify-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center">
                   <a href="https://www.discogs.com/artist/253925-Summoning">
                     <TiltedCard
                       imageSrc="https://i.discogs.com/6Ft1biDZYOYCD5xVzrmogXR8QgJf9ZCPQcAglbDGcwQ/rs:fit/g:sm/q:90/h:450/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTI1Mzky/NS0xNzI4NTgxMTY4/LTU4MTcuanBlZw.jpeg"
@@ -525,7 +531,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 <br />
 
                 <p className="mb-4 dark:text-white font-medium">{t("interest-content.music.fav-album")}</p>
-                <div className="grid grid-cols-5 gap-4 justify-items-center mb-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center mb-6">
                   <a href="https://www.discogs.com/master/57183-Summoning-Dol-Guldur">
                     <TiltedCard
                       imageSrc="https://cdn-images.dzcdn.net/images/cover/9bfc8e3970c2b05b78a0d1ec6088c9ba/500x500-000000-80-0-0.jpg"
@@ -636,23 +642,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
               {/* Woodworking */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                <h3 className="text-xl sm:text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
                   {t("interest-content.wood.title")}
                 </h3>
                 <p className="dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.wood.sub-title")}</p>
-                <img src="/drak.jpg" alt="Early build of a wooden Drakkar model" className="mb-4 rounded-lg " width={"800px"} loading="lazy" decoding="async" />
+                <img src="/drak.jpg" alt="Early build of a wooden Drakkar model" className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto" loading="lazy" decoding="async" />
               </div>
 
               {/* Watchmaking */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
+                <h3 className="text-xl sm:text-2xl text-purple-900 dark:text-purple-400 font-semibold mb-4 text-center">
                   {t("interest-content.watches.title")}
                 </h3>
                 <p className="mb-2 dark:text-gray-300 max-w-3xl mx-auto">{t("interest-content.watches.sub-title")}</p>
                 <p className="dark:text-gray-300 italic max-w-3xl mx-auto">{t("interest-content.watches.fav-watch")}</p>
-                <div className="flex flex-row gap-6">
-                  <img src="/watch.JPG" alt="1937 Ancora d'Ouro watch, front view" className="mb-4 rounded-lg " width={"400px"} loading="lazy" decoding="async" />
-                  <img src="/watch-2.JPG" alt="1937 Ancora d'Ouro watch, detail view" className="mb-4 rounded-lg " width={"400px"} loading="lazy" decoding="async" />
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center">
+                  <img src="/watch.JPG" alt="1937 Ancora d'Ouro watch, front view" className="mb-4 rounded-lg w-full max-w-[400px] h-auto" loading="lazy" decoding="async" />
+                  <img src="/watch-2.JPG" alt="1937 Ancora d'Ouro watch, detail view" className="mb-4 rounded-lg w-full max-w-[400px] h-auto" loading="lazy" decoding="async" />
                 </div>
                 <p className="dark:text-gray-300 italic max-w-3xl mx-auto">{t("interest-content.watches.fav-watch-2")}</p>
               </div>

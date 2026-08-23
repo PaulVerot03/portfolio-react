@@ -18,8 +18,43 @@ html,
 body {
   @apply bg-white dark:bg-gray-950;
 
+  /* Nothing on the page should be able to push a horizontal scrollbar on a phone. */
+  overflow-x: hidden;
+  max-width: 100%;
+
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
+  }
+}
+
+/* Embedded media stays inside its column at every width. */
+img,
+video,
+iframe,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Long unbroken strings (URLs, IDs) wrap instead of widening the layout. */
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+/* Respect users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

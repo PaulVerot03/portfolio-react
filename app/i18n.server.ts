@@ -110,7 +110,7 @@ i18n.use(initReactI18next).init({
               tomography: {
                 title: "Tomography",
                 description:
-                  "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
+                  "Given two big-endian binary files of raw tomographic probe data (atomic x/y/z coordinates plus mass), I wrote a compact Python script (<300 lines ; size limit) to parse them and let the user filter the point cloud by a geometric slice (plane + thickness) or by a mass range. Output included histograms of atomic mass distribution and 2D projections color-coded by mass, and the pipeline could also export the filtered data as a 3D model.",
                 technologies: "SiPython",
               },
               bdd2: {
@@ -295,7 +295,7 @@ i18n.use(initReactI18next).init({
               "Mon autre grande passion est l'horlogerie mécanique. J'affectionne tout particulièrement les montres françaises, suisses et soviétiques des années 70. Je reste fasciné par la précision mécanique de ces mouvements et la robustesse de ces calibres anciens.",
             "fav-watch": "Ma montre préférée est cette Ancora d'Ouro de 1937.",
             "fav-watch-2":
-              "Ancora d'Ouro était une marque d'horlogerie de Porto, aujourd'hui disparue.",
+              "Ancora d'Ouro était une marque d'horlogerie originaire de Porto, aujourd'hui disparue.",
           },
         },
         scholar: "Mon parcours scolaire",
@@ -337,7 +337,7 @@ i18n.use(initReactI18next).init({
               tomography: {
                 title: "Tomographie",
                 description:
-                  "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
+                  "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes ; longueur limite) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
                 technologies: "SiPython",
               },
               bdd2: {
@@ -401,7 +401,7 @@ i18n.use(initReactI18next).init({
               cumulus: {
                 title: "Réseau Cumulus Linux",
                 description:
-                  "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les commutateurs (switches) et Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
+                  "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les switches, Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
                 technologies: "FaLinux,SiDebian",
               },
               yubikey: {

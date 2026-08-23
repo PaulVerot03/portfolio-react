@@ -101,7 +101,18 @@ const PillNav: React.FC<PillNavProps> = ({
 
     layout();
 
-    const onResize = () => layout();
+    const onResize = () => {
+      layout();
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+        const menu = mobileMenuRef.current;
+        if (menu) gsap.set(menu, { visibility: 'hidden', opacity: 0 });
+        const hamburger = hamburgerRef.current;
+        if (hamburger) {
+          gsap.set(hamburger.querySelectorAll('.hamburger-line'), { rotation: 0, y: 0 });
+        }
+      }
+    };
     window.addEventListener('resize', onResize);
 
     if (document.fonts) {
@@ -253,9 +264,9 @@ const PillNav: React.FC<PillNavProps> = ({
   } as React.CSSProperties;
 
   return (
-    <div className="absolute top-[1em] z-[1000] w-full left-0 md:left-1/2 md:-translate-x-1/2 md:w-auto">
+    <div className="absolute top-[1em] z-[1000] w-full left-0 md:left-1/2 md:-translate-x-1/2 md:w-auto pointer-events-none">
       <nav
-        className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 ${className}`}
+        className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 pointer-events-none ${className}`}
         aria-label="Primary"
         style={cssVars}
       >
@@ -268,7 +279,7 @@ const PillNav: React.FC<PillNavProps> = ({
             ref={el => {
               logoRef.current = el;
             }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+            className="pointer-events-auto rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
             style={{
               width: 'var(--nav-h)',
               height: 'var(--nav-h)',
@@ -285,7 +296,7 @@ const PillNav: React.FC<PillNavProps> = ({
             ref={el => {
               logoRef.current = el;
             }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+            className="pointer-events-auto rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
             style={{
               width: 'var(--nav-h)',
               height: 'var(--nav-h)',
@@ -298,7 +309,7 @@ const PillNav: React.FC<PillNavProps> = ({
 
         <div
           ref={navItemsRef}
-          className="relative items-center rounded-full hidden md:flex ml-2"
+          className="pointer-events-auto relative items-center rounded-full hidden md:flex ml-2"
           style={{
             height: 'var(--nav-h)',
             background: 'var(--base, #000)'
@@ -401,31 +412,21 @@ const PillNav: React.FC<PillNavProps> = ({
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
+          className="pointer-events-auto md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative bg-black/60 dark:bg-white/15 ring-1 ring-white/50 dark:ring-white/25 backdrop-blur-sm"
           style={{
             width: 'var(--nav-h)',
-            height: 'var(--nav-h)',
-            background: 'var(--base, #000)'
+            height: 'var(--nav-h)'
           }}
         >
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
-          />
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
-          />
+          <span className="hamburger-line w-4 h-0.5 rounded origin-center bg-white transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
+          <span className="hamburger-line w-4 h-0.5 rounded origin-center bg-white transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]" />
         </button>
       </nav>
 
       <div
         ref={mobileMenuRef}
-        className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
-        style={{
-          ...cssVars,
-          background: 'var(--base, #f0f0f0)'
-        }}
+        className="pointer-events-auto md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.25)] z-[998] origin-top bg-white/95 dark:bg-neutral-900/95 ring-1 ring-black/10 dark:ring-white/15 backdrop-blur-md"
+        style={cssVars}
       >
         <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
           {items.map(item => {
@@ -443,7 +444,7 @@ const PillNav: React.FC<PillNavProps> = ({
             };
 
             const linkClasses =
-              'block py-3 px-4 text-[16px] font-medium rounded-[50px] transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]';
+              'block py-3 px-4 text-[16px] font-medium rounded-[50px] ring-1 ring-black/10 dark:ring-white/10 transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]';
 
             return (
               <li key={item.href}>

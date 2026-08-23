@@ -24,6 +24,16 @@ export interface FaultyTerminalProps extends React.HTMLAttributes<HTMLDivElement
   brightness?: number;
 }
 
+// Phones render this full-screen shader at a lower pixel ratio: at native DPR a
+// 3x retina phone screen costs ~9x the fragments for no visible gain.
+function defaultDpr(): number {
+  if (typeof window === 'undefined') return 1;
+  const ratio = window.devicePixelRatio || 1;
+  const coarsePointer =
+    typeof window.matchMedia === 'function' && window.matchMedia('(pointer: coarse)').matches;
+  return Math.min(ratio, coarsePointer ? 1 : 2);
+}
+
 const vertexShader = `
 attribute vec2 position;
 attribute vec2 uv;
@@ -257,7 +267,7 @@ export default function FaultyTerminal({
   tint = '#ffffff',
   mouseReact = true,
   mouseStrength = 0.2,
-  dpr = Math.min(window.devicePixelRatio || 1, 2),
+  dpr = defaultDpr(),
   pageLoadAnimation = true,
   brightness = 1,
   className,
@@ -452,6 +462,6 @@ export default function FaultyTerminal({
   ]);
 
   return (
-    <div ref={containerRef} className={`w-full h-full relative overflow-hidden ${className}`} style={style} {...rest} />
+    <div ref={containerRef} className={`w-full h-full relative overflow-hidden ${className ?? ''}`} style={style} {...rest} />
   );
 }
