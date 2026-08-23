@@ -144,7 +144,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-gray-300 pointer-events-none ">
-          <span className="text-sm font-medium tracking-widest uppercase">Scroll Down</span>
+          <span className="text-sm font-medium tracking-widest uppercase">{t("scroll-down")}</span>
           <ChevronDown className="w-5 h-5" />
         </div>
       </div>
@@ -197,7 +197,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   >
                     <FaFile className="text-xl group-hover:scale-110 transition-transform" />
                     <div className="flex flex-col text-left">
-                      <span className="text-base leading-tight">CV / Resume</span>
+                      <span className="text-base leading-tight">{t("links-content.cv")}</span>
                       <span className="text-xs text-purple-300 font-normal">PDF</span>
                     </div>
                     <ExternalLink className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition-opacity" />
@@ -223,10 +223,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            BAC Mathématiques-Histoire
+                            {t("scholar-content.bac.title")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                            Lycée Sainte Catherine Labouré, 2021
+                            {t("scholar-content.bac.school")}
                           </p>
                         </div>
                       </div>
@@ -242,10 +242,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            DEUG informatique
+                            {t("scholar-content.deug.title")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                            Université Paris-Saclay, 2024
+                            {t("scholar-content.deug.school")}
                           </p>
                         </div>
                       </div>
@@ -261,10 +261,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            Licence informatique - Administration Système en Réseau
+                            {t("scholar-content.licence.title")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                            Université Paris-Saclay, 2024/2025
+                            {t("scholar-content.licence.school")}
                           </p>
                         </div>
                       </div>
@@ -280,10 +280,18 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            Master informatique - Computer and Network System (en cours)
+                            {t("scholar-content.master1.title")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
-                            Université Paris-Saclay, 2025/2026
+                            {t("scholar-content.master1.school")}
+                          </p>
+                        </div>
+                        <div className="min-w-0 flex-auto">
+                          <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                            {t("scholar-content.master2.title")}
+                          </p>
+                          <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
+                            {t("scholar-content.master2.school")}
                           </p>
                         </div>
                       </div>
@@ -308,7 +316,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            2019 - Kameleoon
+                            {t("stage-list.kameleoon")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
                           </p>
@@ -326,7 +334,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                         </div>
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-                            2026 - Laboratoire IBISC
+                            {t("stage-list.ibisc")}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500 dark:text-gray-400">
                           </p>
@@ -354,17 +362,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
               <br />
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">Other tidbits</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-8">{t("tidbits")}</h2>
               <div className="flex flex-wrap gap-8 sm:gap-12 justify-center mb-12">
                 <div className="text-center">
-                  <p className="text-lg font-bold mb-2 dark:text-white">English</p>
-                  <p className="dark:text-gray-300">TOEIC - C1</p>
-                  <p className="dark:text-gray-300">EFSET - C2</p>
+                  <p className="text-lg font-bold mb-2 dark:text-white">{t("tidbits-content.language.title")}</p>
+                  <p className="dark:text-gray-300">{t("tidbits-content.language.toeic")}</p>
+                  <p className="dark:text-gray-300">{t("tidbits-content.language.efset")}</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-lg font-bold mb-2 dark:text-white">Secourisme</p>
-                  <p className="dark:text-gray-300">PSC-1</p>
-                  <p className="dark:text-gray-300">Secours Aquatique</p>
+                  <p className="text-lg font-bold mb-2 dark:text-white">{t("tidbits-content.first-aid.title")}</p>
+                  <p className="dark:text-gray-300">{t("tidbits-content.first-aid.psc1")}</p>
+                  <p className="dark:text-gray-300">{t("tidbits-content.first-aid.water-rescue")}</p>
                 </div>
               </div>
 
@@ -396,7 +404,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   href="/project"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white font-semibold rounded-2xl shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <span>{currentLanguage === "fr" ? "Voir les projets" : "Go to Projects"}</span>
+                  <span>{t("projects-cta")}</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -626,14 +634,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 <div className="space-y-2 dark:text-gray-300 max-w-3xl mx-auto">
                   <p>{t("interest-content.music.hi-hi")}</p>
                   <ul>
-                    <li className="text-purple-600 font-semibold">Headphones :</li>
+                    <li className="text-purple-600 font-semibold">{t("interest-content.music.hifi.headphones")}</li>
                     <li>AKG K2402 HD</li>
                     <li>GRADO SR60X</li>
                     <li>Beyerdynamic DT880 250Ohm</li>
-                    <li className="text-purple-600 font-semibold">Amplifiers :</li>
+                    <li className="text-purple-600 font-semibold">{t("interest-content.music.hifi.amplifiers")}</li>
                     <li>Phillips FR 740</li>
                     <li>JVC A-X40</li>
-                    <li className="text-purple-600 font-semibold">Speakers :</li>
+                    <li className="text-purple-600 font-semibold">{t("interest-content.music.hifi.speakers")}</li>
                     <li>Denon SC-N10</li>
                   </ul>
                   <p>{t("interest-content.music.guitar")}</p>

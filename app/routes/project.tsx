@@ -4,22 +4,52 @@ import { ThemeToggle } from "../components/ThemeToggle";
 import PillNav from "../components/PillNav";
 import { ClientOnly } from "../components/ClientOnly";
 import {
-  SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit,
-  SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiFedora, SiAmazonwebservices, SiDebian,
-  SiYubico, SiGnuprivacyguard, SiPodman,
-} from 'react-icons/si';
-import { FaWindows, FaLinux, FaDocker, FaReact } from 'react-icons/fa';
-import { GrOracle } from 'react-icons/gr';
-import { TbSql } from 'react-icons/tb';
+  SiPython,
+  SiPostgresql,
+  SiOpenbsd,
+  SiRockylinux,
+  SiMongodb,
+  SiCockpit,
+  SiAlpinelinux,
+  SiUnraid,
+  SiNextcloud,
+  SiC,
+  SiFedora,
+  SiAmazonwebservices,
+  SiDebian,
+  SiYubico,
+  SiGnuprivacyguard,
+  SiPodman,
+} from "react-icons/si";
+import { FaWindows, FaLinux, FaDocker, FaReact } from "react-icons/fa";
+import { GrOracle } from "react-icons/gr";
+import { TbSql } from "react-icons/tb";
 
 // Only the icons referenced by the "technologies" strings in the translation files.
 // Named imports (rather than importing the whole react-icons/* package) keep these tree-shakeable.
 const iconMap: Record<string, React.ComponentType> = {
-  SiPython, SiPostgresql, SiOpenbsd, SiRockylinux, SiMongodb, SiCockpit,
-  SiAlpinelinux, SiUnraid, SiNextcloud, SiC, SiFedora, SiAmazonwebservices, SiDebian,
-  SiYubico, SiGnuprivacyguard, SiPodman,
-  FaWindows, FaLinux, FaDocker, FaReact,
-  GrOracle, TbSql,
+  SiPython,
+  SiPostgresql,
+  SiOpenbsd,
+  SiRockylinux,
+  SiMongodb,
+  SiCockpit,
+  SiAlpinelinux,
+  SiUnraid,
+  SiNextcloud,
+  SiC,
+  SiFedora,
+  SiAmazonwebservices,
+  SiDebian,
+  SiYubico,
+  SiGnuprivacyguard,
+  SiPodman,
+  FaWindows,
+  FaLinux,
+  FaDocker,
+  FaReact,
+  GrOracle,
+  TbSql,
 };
 
 const getIconByName = (iconName: string) => {
@@ -32,14 +62,14 @@ const getIconByName = (iconName: string) => {
 const TechBadges = ({ techString }: { techString: string }) => {
   if (!techString) return null;
 
-  const techs = techString.split(',').map(t => t.trim());
+  const techs = techString.split(",").map((t) => t.trim());
 
   return (
     <div className="flex flex-wrap gap-2 mt-2">
       {techs.map((iconName, index) => {
         const icon = getIconByName(iconName);
         // Extract display name from icon name (e.g., "SiPython" -> "Python")
-        const displayName = iconName.replace(/^(Si|Fa|Di)/, '');
+        const displayName = iconName.replace(/^(Si|Fa|Di)/, "");
 
         return icon ? (
           <span
@@ -56,7 +86,7 @@ const TechBadges = ({ techString }: { techString: string }) => {
   );
 };
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({}: Route.MetaArgs) {
   return [
     { title: "Projects - Paul's Portfolio" },
     { name: "description", content: "My projects and work" },
@@ -94,7 +124,11 @@ export default function Project() {
       <div className="fixed top-4 right-16 md:right-4 flex items-center gap-2 md:gap-4 z-[1001]">
         <button
           onClick={changeLanguage}
-          aria-label={currentLanguage === "en" ? "Passer en français" : "Switch to English"}
+          aria-label={
+            currentLanguage === "en"
+              ? "Passer en français"
+              : "Switch to English"
+          }
           className="px-3 py-2 text-gray-900 dark:text-white rounded"
         >
           {currentLanguage === "en" ? "🇫🇷" : "🇬🇧"}
@@ -106,29 +140,65 @@ export default function Project() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-600 mb-8 text-center">
           {t("projects.title")}
         </h1>
-        <p className="text-lg text-center mb-12 dark:text-white">{t("projects.intro")}</p>
+        <p className="text-lg text-center mb-12 dark:text-white">
+          {t("projects.intro")}
+        </p>
 
         {/* IGEM Project */}
         <section className="mb-12">
-
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.igem.title")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">
+              {t("projects.igem.title")}
+            </h2>
             <p className="mb-4 dark:text-white">{t("projects.igem.intro")}</p>
-            <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766020414/igem2_dxrwot.jpg" alt="IGEM Gold Medal" className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto" loading="lazy" decoding="async" />
-            <p className="mb-2 dark:text-white">{t("projects.igem.project-description")}</p>
-            <a href="https://2025.igem.wiki/evry-paris-saclay/" className="text-purple-600 hover:underline mb-4 block text-center break-words">
-              {t("projects.igem.link-text")}
+            <img
+              src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766020414/igem2_dxrwot.jpg"
+              alt="IGEM Gold Medal"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <p className="mb-2 dark:text-white">
+              {t("projects.igem.project-description")}
+            </p>
+            <a
+              href="https://2025.igem.wiki/evry-paris-saclay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">
+                  Evry Paris-Saclay | SOLARIS
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://2025.igem.wiki/evry-paris-saclay/
+                </span>
+              </div>
             </a>
+
             <p className="mb-4 dark:text-white">{t("projects.igem.award")}</p>
-            <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766020415/igem3_n5pf5c.jpg" alt="IGEM Wiki" className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto" loading="lazy" decoding="async" />
+            <img
+              src="https://res.cloudinary.com/dzb3coejh/image/upload/v1766020415/igem3_n5pf5c.jpg"
+              alt="IGEM Wiki"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
             <p className="mb-2 dark:text-white">{t("projects.igem.future")}</p>
             <p className="mb-2 dark:text-white">{t("projects.igem.impact")}</p>
             <TechBadges techString={t("projects.igem.technologies")} />
           </div>
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.igem2026.title")}</h2>
-            <p className="mb-4 dark:text-white">{t("projects.igem2026.intro")}</p>
-            <p className="mb-2 dark:text-white">{t("projects.igem2026.project-description")}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">
+              {t("projects.igem2026.title")}
+            </h2>
+            <p className="mb-4 dark:text-white">
+              {t("projects.igem2026.intro")}
+            </p>
+            <p className="mb-2 dark:text-white">
+              {t("projects.igem2026.project-description")}
+            </p>
 
             <a
               href="https://2026.igem.wiki/evry-paris-saclay/"
@@ -137,164 +207,380 @@ export default function Project() {
               className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
             >
               <div className="flex min-w-0 flex-col text-left">
-                <span className="text-base leading-tight">Evry Paris-Saclay | ORBIT</span>
-                <span className="block break-all text-xs text-purple-200 font-normal">https://2026.igem.wiki/evry-paris-saclay/</span>
+                <span className="text-base leading-tight">
+                  Evry Paris-Saclay | ORBIT
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://2026.igem.wiki/evry-paris-saclay/
+                </span>
               </div>
             </a>
 
-            <a href="https://2026.igem.wiki/evry-paris-saclay/" className="text-purple-600 hover:underline mb-4 block text-center break-words">
-              {t("projects.igem2026.link-text")}
-            </a>
-            <p className="mb-2 dark:text-white">{t("projects.igem2026.role")}</p>
-
+            <p className="mb-2 dark:text-white">
+              {t("projects.igem2026.role")}
+            </p>
+            <div className="w-full max-w-[560px] mx-auto aspect-video my-4">
+              <iframe
+                title="Evry-Paris-Saclay: Meet ORBIT (2026) - Project Promotion"
+                src="https://video.igem.org/videos/embed/2BpcXgmMSzgewMzm7onVM3"
+                allow="fullscreen"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                className="w-full h-full rounded-lg border-0"
+              ></iframe>
+            </div>
+            <TechBadges techString={t("projects.igem2026.technologies")} />
           </div>
         </section>
 
         {/* University Projects */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.uni.title")}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">
+            {t("projects.uni.title")}
+          </h2>
           <p className="mb-6 dark:text-white">{t("projects.uni.intro")}</p>
 
           {/* L3 Projects */}
           <div className="mb-8">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">{t("projects.uni.L3.title")}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">
+              {t("projects.uni.L3.title")}
+            </h3>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.tomography.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.tomography.description")}</p>
-              <img src="/render.png" alt="Tomography render" className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto" loading="lazy" decoding="async" />
-              <TechBadges techString={t("projects.uni.L3.tomography.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.L3.tomography.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.L3.tomography.description")}
+              </p>
+              <img
+                src="/render.png"
+                alt="Tomography render"
+                className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+              <TechBadges
+                techString={t("projects.uni.L3.tomography.technologies")}
+              />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.bdd2.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.bdd2.description")}</p>
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.L3.bdd2.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.L3.bdd2.description")}
+              </p>
               <TechBadges techString={t("projects.uni.L3.bdd2.technologies")} />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.windows-ad.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.windows-ad.description")}</p>
-              <TechBadges techString={t("projects.uni.L3.windows-ad.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.L3.windows-ad.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.L3.windows-ad.description")}
+              </p>
+              <TechBadges
+                techString={t("projects.uni.L3.windows-ad.technologies")}
+              />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.dnssec.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.dnssec.description")}</p>
-              <TechBadges techString={t("projects.uni.L3.dnssec.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.L3.dnssec.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.L3.dnssec.description")}
+              </p>
+              <TechBadges
+                techString={t("projects.uni.L3.dnssec.technologies")}
+              />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.L3.nftables.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.L3.nftables.description")}</p>
-              <TechBadges techString={t("projects.uni.L3.nftables.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.L3.nftables.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.L3.nftables.description")}
+              </p>
+              <TechBadges
+                techString={t("projects.uni.L3.nftables.technologies")}
+              />
             </div>
           </div>
 
           {/* M1 Projects */}
           <div className="mb-8">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">{t("projects.uni.M1.title")}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-purple-500 dark:text-white text-center">
+              {t("projects.uni.M1.title")}
+            </h3>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.carp.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.carp.description")}</p>
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.carp.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.carp.description")}
+              </p>
               <TechBadges techString={t("projects.uni.M1.carp.technologies")} />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.lvs.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.lvs.description")}</p>
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.lvs.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.lvs.description")}
+              </p>
               <TechBadges techString={t("projects.uni.M1.lvs.technologies")} />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.bdd.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.bdd.description")}</p>
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.bdd.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.bdd.description")}
+              </p>
               <TechBadges techString={t("projects.uni.M1.bdd.technologies")} />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.petri.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.petri.description")}</p>
-              <TechBadges techString={t("projects.uni.M1.petri.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.petri.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.petri.description")}
+              </p>
+              <TechBadges
+                techString={t("projects.uni.M1.petri.technologies")}
+              />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.dhcp.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.dhcp.description")}</p>
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.dhcp.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.dhcp.description")}
+              </p>
               <TechBadges techString={t("projects.uni.M1.dhcp.technologies")} />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.cumulus.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.cumulus.description")}</p>
-               <img src="/archi.png" alt="network architecture" className="mb-4 rounded-lg mx-auto w-full max-w-[600px] h-auto" loading="lazy" decoding="async" />
-              <TechBadges techString={t("projects.uni.M1.cumulus.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.cumulus.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.cumulus.description")}
+              </p>
+              <img
+                src="/archi.png"
+                alt="network architecture"
+                className="mb-4 rounded-lg mx-auto w-full max-w-[600px] h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+              <TechBadges
+                techString={t("projects.uni.M1.cumulus.technologies")}
+              />
             </div>
 
             <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">{t("projects.uni.M1.yubikey.title")}</h4>
-              <p className="dark:text-gray-400 mb-2">{t("projects.uni.M1.yubikey.description")}</p>
-              <TechBadges techString={t("projects.uni.M1.yubikey.technologies")} />
+              <h4 className="text-lg sm:text-xl font-semibold dark:text-white mb-2">
+                {t("projects.uni.M1.yubikey.title")}
+              </h4>
+              <p className="dark:text-gray-400 mb-2">
+                {t("projects.uni.M1.yubikey.description")}
+              </p>
+              <TechBadges
+                techString={t("projects.uni.M1.yubikey.technologies")}
+              />
             </div>
           </div>
         </section>
 
         {/* Personal Projects */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">{t("projects.personal.title")}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-4 text-center">
+            {t("projects.personal.title")}
+          </h2>
 
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white">{t("projects.personal.rwg.title")}</h3>
-            <a href="https://rwg.bio/" className="text-purple-600 hover:underline mb-2 block text-center break-words">
-              {t("projects.personal.rwg.link-text")}
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white">
+              {t("projects.personal.rwg.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.rwg.description")}
+            </p>
+            <a
+              href="https://github.com/PaulVerot03/hackaton-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">
+                  {t("projects.personal.rwg.code-link")}
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://github.com/PaulVerot03/hackaton-code
+                </span>
+              </div>
             </a>
-            <p className="mb-2 dark:text-white">{t("projects.personal.rwg.description")}</p>
-            <a href="https://github.com/PaulVerot03/hackaton-code" className="text-purple-600 hover:underline mb-2 block text-center break-words">
-              {t("projects.personal.rwg.code-link")}
-            </a>
-            <p className="mb-2 dark:text-white">{t("projects.personal.rwg.outcome")}</p>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.rwg.outcome")}
+            </p>
             <TechBadges techString={t("projects.personal.rwg.technologies")} />
           </div>
 
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white">{t("projects.personal.cardihack.title")}</h3>
-            <p className="mb-2 dark:text-white">{t("projects.personal.cardihack.description")}</p>
-            <TechBadges techString={t("projects.personal.cardihack.technologies")} />
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white">
+              {t("projects.personal.cardihack.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.cardihack.description")}
+            </p>
+            <TechBadges
+              techString={t("projects.personal.cardihack.technologies")}
+            />
           </div>
 
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.rnafold.title")}</h3>
-            <p className="mb-2 dark:text-white">{t("projects.personal.rnafold.description")}</p>
-            <img src="https://res.cloudinary.com/dzb3coejh/image/upload/v1770975328/pymol_o7w5ef.png" alt="Pymol visualization of RNA structure" className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto" loading="lazy" decoding="async" />
-            <a href="https://github.com/PaulVerot03/Cfold" className="text-purple-600 hover:underline mb-2 block text-center break-words">
-              {t("projects.personal.rwg.code-link")}
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">
+              {t("projects.personal.rnafold.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.rnafold.description")}
+            </p>
+            <img
+              src="https://res.cloudinary.com/dzb3coejh/image/upload/v1770975328/pymol_o7w5ef.png"
+              alt="Pymol visualization of RNA structure"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[400px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <a
+              href="https://github.com/PaulVerot03/Cfold"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">
+                  {t("projects.personal.rwg.code-link")}
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://github.com/PaulVerot03/Cfold
+                </span>
+              </div>
             </a>
-            <TechBadges techString={t("projects.personal.rnafold.technologies")} />
+            <TechBadges
+              techString={t("projects.personal.rnafold.technologies")}
+            />
           </div>
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.D4GEN.title")}</h3>
-            <p className="mb-2 dark:text-white">{t("projects.personal.D4GEN.description")}</p>
-            <img src="/d4gen.jpeg" alt="D4GEN Hackathon toolbox" className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto" loading="lazy" decoding="async" />
-            <a href="https://github.com/crakshay1/DalguardYES" className="text-purple-600 hover:underline mb-2 block text-center break-words">
-              {t("projects.personal.D4GEN.code-link")}
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">
+              {t("projects.personal.D4GEN.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.D4GEN.description")}
+            </p>
+            <img
+              src="/d4gen.jpeg"
+              alt="D4GEN Hackathon toolbox"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <a
+              href="https://github.com/crakshay1/DalguardYES"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">
+                  {t("projects.personal.D4GEN.code-link")}
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://github.com/crakshay1/DalguardYES
+                </span>
+              </div>
             </a>
-            <TechBadges techString={t("projects.personal.D4GEN.technologies")} />
+            <br></br>
+            <a
+              href="https://shine.sheogorath.ovh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">
+                  DalguardYES Dashboard
+                </span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  {t("projects.personal.D4GEN.dashboard-link")}
+                </span>
+              </div>
+            </a>
+
+            <TechBadges
+              techString={t("projects.personal.D4GEN.technologies")}
+            />
           </div>
 
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.ARDA.title")}</h3>
-            <p className="mb-2 dark:text-white">{t("projects.personal.ARDA.description")}</p>
-            <img src="/arda.png" alt="ARDA" className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto" loading="lazy" decoding="async" />
-            <a href="https://arda-bio.com" className="text-purple-600 hover:underline mb-2 block text-center break-words" >arda-bio.com</a>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">
+              {t("projects.personal.ARDA.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.ARDA.description")}
+            </p>
+            <img
+              src="/arda.png"
+              alt="ARDA"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <a
+              href="https://arda-bio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 sm:px-6 py-3.5 bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-purple-500/20 hover:-translate-y-0.5 transition-all duration-200 font-semibold group"
+            >
+              <div className="flex min-w-0 flex-col text-left">
+                <span className="text-base leading-tight">ARDA</span>
+                <span className="block break-all text-xs text-purple-200 font-normal">
+                  https://arda-bio.com
+                </span>
+              </div>
+            </a>
             <TechBadges techString={t("projects.personal.ARDA.technologies")} />
           </div>
 
           <div className="mb-6 pl-3 sm:pl-4 border-l-4 border-purple-500">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">{t("projects.personal.server.title")}</h3>
-            <p className="mb-2 dark:text-white">{t("projects.personal.server.description")}</p>
-            <img src="/blender.png" alt="Server rack render" className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto" loading="lazy" decoding="async" />
-            <TechBadges techString={t("projects.personal.server.technologies")} />
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 dark:text-white text-center">
+              {t("projects.personal.server.title")}
+            </h3>
+            <p className="mb-2 dark:text-white">
+              {t("projects.personal.server.description")}
+            </p>
+            <img
+              src="/blender.png"
+              alt="Server rack render"
+              className="mb-4 rounded-lg mx-auto w-full max-w-[800px] h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <TechBadges
+              techString={t("projects.personal.server.technologies")}
+            />
           </div>
         </section>
       </div>

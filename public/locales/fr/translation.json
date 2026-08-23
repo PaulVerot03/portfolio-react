@@ -1,13 +1,21 @@
 {
   "welcome": "Bienvenue",
   "greeting": "Bienvenue sur mon portfolio.",
+  "scroll-down": "Défiler",
   "article": "article",
   "about": "À propos de moi",
   "about-content": "Je suis étudiant en Master Computer and Network Systems à l'Université Paris-Saclay. Je m'intéresse de près à l'administration système et réseau, ainsi qu'aux applications de l'informatique en biologie.",
   "links": "Liens & Contact",
+  "links-content": {
+    "cv": "CV"
+  },
   "stage": "Mes stages",
-  "education-subtitle-1":"Plus à propos de mes études",
-  "education-subtitle-2":"Plus à propos de mes stages",
+  "stage-list": {
+    "kameleoon": "2019 - Kameleoon",
+    "ibisc": "2026 - Laboratoire IBISC"
+  },
+  "education-subtitle-1": "Plus à propos de mes études",
+  "education-subtitle-2": "Plus à propos de mes stages",
   "education-description-1": "J'ai commencé mes études supérieures par un portail Mathématiques-Informatique, une première année partagée à parts égales entre les deux disciplines. J'y ai acquis des bases solides en mathématiques (analyse réelle et complexe, algèbre linéaire, statistiques) ainsi que les fondements de l'informatique (architecture des machines, opto-électronique appliquée aux fibres optiques et initiation à la programmation).",
   "education-description-2": "J'ai poursuivi mon parcours en Licence d'informatique, où j'ai approfondi la programmation avec des langages comme OCaml, C, Python, Assembleur et le développement web (HTML/CSS/JS), tout en découvrant les bases de l'architecture réseau.",
   "education-description-3": "En troisième année de Licence, je me suis spécialisé en Systèmes et Réseaux. J'ai appris à concevoir, déployer et administrer des infrastructures : gestion d'annuaires sous Active Directory et serveurs Linux, configuration DNS, pare-feu et bases de données.",
@@ -18,6 +26,20 @@
   "knowledge-content-1": "Mon cursus est axé sur les infrastructures, l'administration système et les réseaux. J'ai également développé de solides compétences en mathématiques appliquées et en programmation, notamment avec Python pour l'automatisation et le scripting.",
   "knowledge-content-2": "Voici un aperçu des technologies étudiées durant mon parcours universitaire :",
   "knowledge-content-3": "N'hésitez pas à consulter l'onglet Projets pour en savoir plus sur mes réalisations académiques et personnelles !",
+  "tidbits": "Autres informations",
+  "tidbits-content": {
+    "language": {
+      "title": "Anglais",
+      "toeic": "TOEIC - C1",
+      "efset": "EFSET - C2"
+    },
+    "first-aid": {
+      "title": "Secourisme",
+      "psc1": "PSC-1",
+      "water-rescue": "Secours aquatique"
+    }
+  },
+  "projects-cta": "Voir les projets",
   "interests": "Mes passions",
   "interest-content": {
     "music": {
@@ -27,6 +49,11 @@
       "fav-artist": "Mes artistes de référence :",
       "fav-album": "Mes albums fétiches :",
       "hi-hi": "Je suis aussi passionné par le matériel Hi-Fi vintage : j'adore dénicher, restaurer et réparer de vieux amplificateurs ou casques audio. En voici un aperçu :",
+      "hifi": {
+        "headphones": "Casques :",
+        "amplifiers": "Amplificateurs :",
+        "speakers": "Enceintes :"
+      },
       "guitar": "J'ai également fabriqué ma propre guitare électrique à partir de wengé de récupération et de pièces détachées d'anciens instruments."
     },
     "wood": {
@@ -46,6 +73,28 @@
     }
   },
   "scholar": "Mon parcours scolaire",
+  "scholar-content": {
+    "bac": {
+      "title": "Baccalauréat Mathématiques-Histoire",
+      "school": "Lycée Sainte Catherine Labouré, 2021"
+    },
+    "deug": {
+      "title": "DEUG informatique",
+      "school": "Université Paris-Saclay, 2024"
+    },
+    "licence": {
+      "title": "Licence informatique — Administration Système et Réseau",
+      "school": "Université Paris-Saclay, 2024/2025"
+    },
+    "master1": {
+      "title": "Master informatique 1 — Computer and Network Systems, rang 36/141",
+      "school": "Université Paris-Saclay, 2025/2026"
+    },
+    "master2": {
+      "title": "Master informatique 2 — Computer and Network Systems",
+      "school": "Université Paris-Saclay, 2026/2027"
+    }
+  },
   "projects": {
     "title": "Projets",
     "intro": "Ces deux dernières années, une grande partie de nos cours s'est déroulée sous forme de projets pratiques. J'ai aussi eu l'opportunité de collaborer avec l'équipe de biologie synthétique iGEM.",
@@ -64,7 +113,7 @@
       "intro": "J'ai décidé de rejoindre à nouveau l'association iGEM pour les éditions suivantes.",
       "project-description": "Cette année, notre équipe travaille sur la conception de ribosomes orthogonaux pour permettre la traduction ciblée de protéines synthétiques.",
       "link-text": "Evry Paris-Saclay | ORBIT",
-      "role": "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe.",
+      "role": "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe. Pour la vidéo de promotion par exemple, j'ai réalisé les rendus 3D des ribosomes sous Blender, en plus d'avoir assuré la partie technique de l'enregistrement audio et du montage final.",
       "technologies": "SiPython, FaReact"
     },
     "uni": {
@@ -172,6 +221,7 @@
         "title": "Hackathon D4GEN 2026",
         "description": "Participation au hackathon D4GEN du Genopole pour créer une boîte à outils facilitant la transition entre le travail de laboratoire humide (wet lab) et l'analyse sèche (dry lab). Sponsorisés par AWS, nous avons exploité leurs instances de calcul et environnements de notebooks pour entraîner nos modèles.",
         "code-link": "Dépôt GitHub",
+        "dashboard-link": "Dashboard hébergé sur mon serveur",
         "technologies": "SiPython,SiAmazonwebservices"
       }
     }

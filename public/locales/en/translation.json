@@ -1,13 +1,21 @@
 {
   "welcome": "Welcome",
   "greeting": "Welcome to my portfolio!",
+  "scroll-down": "Scroll Down",
   "article": "article",
   "about": "About me",
   "about-content": "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
   "links": "Links & Contact",
+  "links-content": {
+    "cv": "CV / Resume"
+  },
   "stage": "Internships",
-  "education-subtitle-1":"More about my education",
-  "education-subtitle-2":"More about my interships",
+  "stage-list": {
+    "kameleoon": "2019 - Kameleoon",
+    "ibisc": "2026 - IBISC Laboratory"
+  },
+  "education-subtitle-1": "More about my education",
+  "education-subtitle-2": "More about my interships",
   "education-description-1": "I started my degree in the Mathematics and Computer Science double track, a first year split 50/50 between mathematics and computer science. In my first year, I covered the basics of advanced mathematics (calculus, advanced statistics, linear algebra, real and complex analysis) as well as computer science fundamentals (architecture, optoelectronics for optical fibers, programming basics).",
   "education-description-2": "In my second year in CS, I learned programming languages such as OCaml, C, Python, HTML/CSS/JS, and Assembly, as well as the basics of networking.",
   "education-description-3": "In my third year, I began specializing in Systems and Networks, learning how to deploy and manage networks; for example: user management with Windows Active Directory and Linux servers, DNS, firewalls, and simple databases.",
@@ -18,6 +26,20 @@
   "knowledge-content-1": "My Master's degree focuses on networks and administration; I have learned to set up and maintain servers and networks. I have also covered basics of advanced mathematics, opto-electronics, and statistics. Additionally, I am proficient in Python for scripting.",
   "knowledge-content-2": "Here is a list of the technologies my university curriculum taught me:",
   "knowledge-content-3": "You can find out more about the Project I made or been a part of in the Project Tab",
+  "tidbits": "Other tidbits",
+  "tidbits-content": {
+    "language": {
+      "title": "English",
+      "toeic": "TOEIC - C1",
+      "efset": "EFSET - C2"
+    },
+    "first-aid": {
+      "title": "First aid",
+      "psc1": "PSC-1",
+      "water-rescue": "Water rescue"
+    }
+  },
+  "projects-cta": "Go to Projects",
   "interests": "My interests",
   "interest-content": {
     "music": {
@@ -27,6 +49,11 @@
       "fav-artist": "My favorite artists:",
       "fav-album": "Finally, my favorite albums:",
       "hi-hi": "I'm also very interested in HI-FI equipment, I like buying old amplifiers and headphones and trying to repair them, here's an excerpt from my collection:",
+      "hifi": {
+        "headphones": "Headphones:",
+        "amplifiers": "Amplifiers:",
+        "speakers": "Speakers:"
+      },
       "guitar": "I also built my own guitar using reclaimed Wenge wood and hardware salvaged from old guitars."
     },
     "wood": {
@@ -46,6 +73,28 @@
     }
   },
   "scholar": "Education",
+  "scholar-content": {
+    "bac": {
+      "title": "Baccalauréat, Mathematics & History",
+      "school": "Lycée Sainte Catherine Labouré, 2021"
+    },
+    "deug": {
+      "title": "DEUG in Computer Science",
+      "school": "Université Paris-Saclay, 2024"
+    },
+    "licence": {
+      "title": "Bachelor's in Computer Science — Systems & Network Administration",
+      "school": "Université Paris-Saclay, 2024/2025"
+    },
+    "master1": {
+      "title": "Master's 1 in Computer Science — Computer and Network Systems, ranked 36/141",
+      "school": "Université Paris-Saclay, 2025/2026"
+    },
+    "master2": {
+      "title": "Master's 2 in Computer Science — Computer and Network Systems",
+      "school": "Université Paris-Saclay, 2026/2027"
+    }
+  },
   "projects": {
     "title": "My projects",
     "intro": "Over the past two years much of our teaching was project-based. I also had the chance to participate in the synthetic biology competition iGEM.",
@@ -64,7 +113,7 @@
       "intro": "I decided to join the IGEM association for the following editions.",
       "project-description": "This year, we are working on designing orthogonal ribosomes to enable targeted synthetic protein translation.",
       "link-text": "Evry Paris-Saclay | ORBIT",
-      "role": "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions.",
+      "role": "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions. For example, on the promotion video, I made the 3D renders of the Ribosomes in Blender, aswell as having done the technical part of the audio recording and final editing.",
       "technologies": "SiPython, FaReact"
     },
     "uni": {
@@ -172,6 +221,7 @@
         "title": "D4GEN Hackathon 2026",
         "description": "To help with the IGEM project this year, we decided to participate in the D4GEN Hackathon organized by Genopole. Our project was to develop a toolbox that would help the team with the Dry/Wet lab. As the Hackathon was sponsored by Amazon Web Services, we got to use their services without limit for the duration of the Hackathon; as such, we got to experiment a lot with their LM machines and notebooks.",
         "code-link": "GitHub Repository",
+        "dashboard-link": "Dashboard hosted on my server",
         "technologies": "SiPython,SiAmazonwebservices"
       }
     }

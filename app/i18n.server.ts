@@ -12,12 +12,20 @@ i18n.use(initReactI18next).init({
       translation: {
         welcome: "Welcome",
         greeting: "Welcome to my portfolio!",
+        "scroll-down": "Scroll Down",
         article: "article",
         about: "About me",
         "about-content":
           "I am a student pursuing a Master's in Computer Network Systems at Université Paris-Saclay. I am particularly interested in networks and systems administration as well as biology.",
         links: "Links & Contact",
+        "links-content": {
+          cv: "CV / Resume",
+        },
         stage: "Internships",
+        "stage-list": {
+          kameleoon: "2019 - Kameleoon",
+          ibisc: "2026 - IBISC Laboratory",
+        },
         "education-subtitle-1": "More about my education",
         "education-subtitle-2": "More about my interships",
         "education-description-1":
@@ -38,6 +46,20 @@ i18n.use(initReactI18next).init({
           "Here is a list of the technologies my university curriculum taught me:",
         "knowledge-content-3":
           "You can find out more about the Project I made or been a part of in the Project Tab",
+        tidbits: "Other tidbits",
+        "tidbits-content": {
+          language: {
+            title: "English",
+            toeic: "TOEIC - C1",
+            efset: "EFSET - C2",
+          },
+          "first-aid": {
+            title: "First aid",
+            psc1: "PSC-1",
+            "water-rescue": "Water rescue",
+          },
+        },
+        "projects-cta": "Go to Projects",
         interests: "My interests",
         "interest-content": {
           music: {
@@ -48,6 +70,11 @@ i18n.use(initReactI18next).init({
             "fav-album": "Finally, my favorite albums:",
             "hi-hi":
               "I'm also very interested in HI-FI equipment, I like buying old amplifiers and headphones and trying to repair them, here's an excerpt from my collection:",
+            hifi: {
+              headphones: "Headphones:",
+              amplifiers: "Amplifiers:",
+              speakers: "Speakers:",
+            },
             guitar:
               "I also built my own guitar using reclaimed Wenge wood and hardware salvaged from old guitars.",
           },
@@ -73,6 +100,31 @@ i18n.use(initReactI18next).init({
           },
         },
         scholar: "Education",
+        "scholar-content": {
+          bac: {
+            title: "Baccalauréat, Mathematics & History",
+            school: "Lycée Sainte Catherine Labouré, 2021",
+          },
+          deug: {
+            title: "DEUG in Computer Science",
+            school: "Université Paris-Saclay, 2024",
+          },
+          licence: {
+            title:
+              "Bachelor's in Computer Science — Systems & Network Administration",
+            school: "Université Paris-Saclay, 2024/2025",
+          },
+          master1: {
+            title:
+              "Master's 1 in Computer Science — Computer and Network Systems, ranked 36/141",
+            school: "Université Paris-Saclay, 2025/2026",
+          },
+          master2: {
+            title:
+              "Master's 2 in Computer Science — Computer and Network Systems",
+            school: "Université Paris-Saclay, 2026/2027",
+          },
+        },
         projects: {
           title: "My projects",
           intro:
@@ -99,7 +151,7 @@ i18n.use(initReactI18next).init({
             "project-description":
               "This year, we are working on designing orthogonal ribosomes to enable targeted synthetic protein translation.",
             "link-text": "Evry Paris-Saclay | ORBIT",
-            role: "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions.",
+            role: "Like last year, I am helping with the wiki, but this time I get to help earlier with the promotional video, editing, design, and project decisions. For example, on the promotion video, I made the 3D renders of the Ribosomes in Blender, aswell as having done the technical part of the audio recording and final editing.",
             technologies: "SiPython, FaReact",
           },
           uni: {
@@ -227,6 +279,7 @@ i18n.use(initReactI18next).init({
               description:
                 "To help with the IGEM project this year, we decided to participate in the D4GEN Hackathon organized by Genopole. Our project was to develop a toolbox that would help the team with the Dry/Wet lab. As the Hackathon was sponsored by Amazon Web Services, we got to use their services without limit for the duration of the Hackathon; as such, we got to experiment a lot with their LM machines and notebooks.",
               "code-link": "GitHub Repository",
+              "dashboard-link": "Dashboard hosted on my server",
               technologies: "SiPython,SiAmazonwebservices",
             },
           },
@@ -237,12 +290,20 @@ i18n.use(initReactI18next).init({
       translation: {
         welcome: "Bienvenue",
         greeting: "Bienvenue sur mon portfolio.",
+        "scroll-down": "Défiler",
         article: "article",
         about: "À propos de moi",
         "about-content":
           "Je suis étudiant en Master Computer and Network Systems à l'Université Paris-Saclay. Je m'intéresse de près à l'administration système et réseau, ainsi qu'aux applications de l'informatique en biologie.",
         links: "Liens & Contact",
+        "links-content": {
+          cv: "CV",
+        },
         stage: "Mes stages",
+        "stage-list": {
+          kameleoon: "2019 - Kameleoon",
+          ibisc: "2026 - Laboratoire IBISC",
+        },
         "education-subtitle-1": "Plus à propos de mes études",
         "education-subtitle-2": "Plus à propos de mes stages",
         "education-description-1":
@@ -263,6 +324,20 @@ i18n.use(initReactI18next).init({
           "Voici un aperçu des technologies étudiées durant mon parcours universitaire :",
         "knowledge-content-3":
           "N'hésitez pas à consulter l'onglet Projets pour en savoir plus sur mes réalisations académiques et personnelles !",
+        tidbits: "Autres informations",
+        "tidbits-content": {
+          language: {
+            title: "Anglais",
+            toeic: "TOEIC - C1",
+            efset: "EFSET - C2",
+          },
+          "first-aid": {
+            title: "Secourisme",
+            psc1: "PSC-1",
+            "water-rescue": "Secours aquatique",
+          },
+        },
+        "projects-cta": "Voir les projets",
         interests: "Mes passions",
         "interest-content": {
           music: {
@@ -274,6 +349,11 @@ i18n.use(initReactI18next).init({
             "fav-album": "Mes albums fétiches :",
             "hi-hi":
               "Je suis aussi passionné par le matériel Hi-Fi vintage : j'adore dénicher, restaurer et réparer de vieux amplificateurs ou casques audio. En voici un aperçu :",
+            hifi: {
+              headphones: "Casques :",
+              amplifiers: "Amplificateurs :",
+              speakers: "Enceintes :",
+            },
             guitar:
               "J'ai également fabriqué ma propre guitare électrique à partir de wengé de récupération et de pièces détachées d'anciens instruments.",
           },
@@ -299,6 +379,29 @@ i18n.use(initReactI18next).init({
           },
         },
         scholar: "Mon parcours scolaire",
+        "scholar-content": {
+          bac: {
+            title: "Baccalauréat Mathématiques-Histoire",
+            school: "Lycée Sainte Catherine Labouré, 2021",
+          },
+          deug: {
+            title: "DEUG informatique",
+            school: "Université Paris-Saclay, 2024",
+          },
+          licence: {
+            title: "Licence informatique — Administration Système et Réseau",
+            school: "Université Paris-Saclay, 2024/2025",
+          },
+          master1: {
+            title:
+              "Master informatique 1 — Computer and Network Systems, rang 36/141",
+            school: "Université Paris-Saclay, 2025/2026",
+          },
+          master2: {
+            title: "Master informatique 2 — Computer and Network Systems",
+            school: "Université Paris-Saclay, 2026/2027",
+          },
+        },
         projects: {
           title: "Projets",
           intro:
@@ -325,7 +428,7 @@ i18n.use(initReactI18next).init({
             "project-description":
               "Cette année, notre équipe travaille sur la conception de ribosomes orthogonaux pour permettre la traduction ciblée de protéines synthétiques.",
             "link-text": "Evry Paris-Saclay | ORBIT",
-            role: "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe.",
+            role: "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe. Pour la vidéo de promotion par exemple, j'ai réalisé les rendus 3D des ribosomes sous Blender, en plus d'avoir assuré la partie technique de l'enregistrement audio et du montage final.",
             technologies: "SiPython, FaReact",
           },
           uni: {
@@ -454,6 +557,7 @@ i18n.use(initReactI18next).init({
               description:
                 "Participation au hackathon D4GEN du Genopole pour créer une boîte à outils facilitant la transition entre le travail de laboratoire humide (wet lab) et l'analyse sèche (dry lab). Sponsorisés par AWS, nous avons exploité leurs instances de calcul et environnements de notebooks pour entraîner nos modèles.",
               "code-link": "Dépôt GitHub",
+              "dashboard-link": "Dashboard hébergé sur mon serveur",
               technologies: "SiPython,SiAmazonwebservices",
             },
           },
