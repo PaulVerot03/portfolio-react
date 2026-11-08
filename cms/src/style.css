@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f4f4f6;
+  color: #1a1a1a;
+}
+
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.status {
+  font-size: 0.9rem;
+}
+
+.status.error {
+  color: #b00020;
+}
+
+.status.ok {
+  color: #1a7f37;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+button:hover {
+  background: #eee;
+}
+
+button.primary {
+  background: #4a3aff;
+  color: #fff;
+  border-color: #4a3aff;
+}
+
+button.primary:hover {
+  background: #3a2ce0;
+}
+
+button.danger {
+  color: #b00020;
+  border-color: #b00020;
+}
+
+button.icon {
+  padding: 4px 8px;
+}
+
+section.group {
+  margin-bottom: 24px;
+}
+
+section.group h2 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+ul.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+ul.project-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+ul.project-list li .title {
+  flex: 1;
+  font-weight: 600;
+}
+
+ul.project-list li.selected {
+  border-color: #4a3aff;
+}
+
+.editor {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.field input[type="text"],
+.field input[type="url"],
+.field textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.field textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.lang-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.lang-pair .field {
+  margin-bottom: 0;
+}
+
+.list-row {
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+
+.list-row .row-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}

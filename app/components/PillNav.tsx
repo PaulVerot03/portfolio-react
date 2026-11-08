@@ -248,7 +248,8 @@ const PillNav: React.FC<PillNavProps> = ({
     href.startsWith('//') ||
     href.startsWith('mailto:') ||
     href.startsWith('tel:') ||
-    href.startsWith('#');
+    href.startsWith('#') ||
+    /\.[a-zA-Z0-9]+$/.test(href);
 
   const isRouterLink = (href?: string) => href && !isExternalLink(href);
 

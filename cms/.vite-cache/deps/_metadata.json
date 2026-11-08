@@ -1,0 +1,73 @@
+{
+  "hash": "19bfa909",
+  "configHash": "5ab2de46",
+  "lockfileHash": "ad754d22",
+  "browserHash": "ea56e99a",
+  "optimized": {
+    "react": {
+      "src": "../../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8b5a265b",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../../node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "0e433507",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "2df19fcb",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../../node_modules/react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "a2696ace",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f7ee7c35",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "b62d490e",
+      "needsInterop": false
+    },
+    "react-icons/gr": {
+      "src": "../../../node_modules/react-icons/gr/index.mjs",
+      "file": "react-icons_gr.js",
+      "fileHash": "672affe7",
+      "needsInterop": false
+    },
+    "react-icons/si": {
+      "src": "../../../node_modules/react-icons/si/index.mjs",
+      "file": "react-icons_si.js",
+      "fileHash": "a987e7e2",
+      "needsInterop": false
+    },
+    "react-icons/tb": {
+      "src": "../../../node_modules/react-icons/tb/index.mjs",
+      "file": "react-icons_tb.js",
+      "fileHash": "b3fc33ef",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-A2WKFRT6": {
+      "file": "chunk-A2WKFRT6.js"
+    },
+    "chunk-NIWI7BML": {
+      "file": "chunk-NIWI7BML.js"
+    },
+    "chunk-4IKEHGJB": {
+      "file": "chunk-4IKEHGJB.js"
+    }
+  }
+}

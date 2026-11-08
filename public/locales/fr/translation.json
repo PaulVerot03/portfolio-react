@@ -95,135 +95,25 @@
       "school": "Université Paris-Saclay, 2026/2027"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "intro": "Notes et retours d'expérience sur ce que j'apprends ou sur quoi je travaille en ce moment."
+  },
   "projects": {
     "title": "Projets",
     "intro": "Ces deux dernières années, une grande partie de nos cours s'est déroulée sous forme de projets pratiques. J'ai aussi eu l'opportunité de collaborer avec l'équipe de biologie synthétique iGEM.",
-    "igem": {
-      "title": "iGEM 2025",
-      "intro": "J'ai été contacté par un membre de l'équipe iGEM de notre université pour les aider sur le projet, ce qui m'a amené à concevoir et coder leur Wiki de A à Z.",
-      "project-description": "Notre projet portait sur l'ingénierie de souches de cyanobactéries pour optimiser l'efficacité enzymatique et améliorer la fixation du carbone.",
-      "link-text": "Evry Paris-Saclay | Solaris",
-      "award": "Lors du Grand Jamboree, nous avons été nominés pour la Meilleure Nouvelle Brique de Base (Best New Basic Part) et avons remporté une Médaille d'Or.",
-      "future": "Je participerai à la prochaine édition avec l'espoir de m'investir encore davantage au sein de l'équipe.",
-      "impact": "Ce projet a éveillé chez moi un véritable intérêt pour la biologie, et j'ai commencé à me former en bio-informatique pour diversifier mes compétences.",
-      "technologies": "SiPython, FaReact"
-    },
-    "igem2026": {
-      "title": "iGEM 2026",
-      "intro": "J'ai décidé de rejoindre à nouveau l'association iGEM pour les éditions suivantes.",
-      "project-description": "Cette année, notre équipe travaille sur la conception de ribosomes orthogonaux pour permettre la traduction ciblée de protéines synthétiques.",
-      "link-text": "Evry Paris-Saclay | ORBIT",
-      "role": "Comme l'an dernier, je m'occupe de la création du Wiki, mais je participe également plus tôt aux choix de design graphique, au montage de la vidéo promotionnelle et aux décisions d'équipe. Pour la vidéo de promotion par exemple, j'ai réalisé les rendus 3D des ribosomes sous Blender, en plus d'avoir assuré la partie technique de l'enregistrement audio et du montage final.",
-      "technologies": "SiPython, FaReact"
-    },
     "uni": {
       "title": "Projets Universitaires",
       "intro": "Voici quelques-uns des projets marquants réalisés dans le cadre de mes études :",
       "L3": {
-        "title": "Licence 3",
-        "tomography": {
-          "title": "Tomographie",
-          "description": "À partir de deux fichiers binaires big-endian issus d'une sonde tomographique (coordonnées x/y/z et masse), j'ai codé un script Python compact (<300 lignes ; longueur limite) pour filtrer le nuage de points selon une coupe géométrique (plan et épaisseur) ou des plages de masses. Il génère en sortie des histogrammes de répartition et des projections 2D couleur, avec export des données filtrées en modèle 3D.",
-          "technologies": "SiPython"
-        },
-        "bdd2": {
-          "title": "Base de Données",
-          "description": "Modélisation complète d'une base de données universitaire. Pour valider le schéma de nos tables (étudiants, cours, examens, notes, etc.), nous devions concevoir et exécuter 40 requêtes SQL complexes fournies sous forme de cahier des charges.",
-          "technologies": "SiPostgresql"
-        },
-        "windows-ad": {
-          "title": "Active Directory",
-          "description": "Déploiement d'un contrôleur de domaine Active Directory sous Windows Server pour centraliser l'authentification des utilisateurs, gérer des stratégies de groupe (GPO) et configurer des partages réseau sécurisés.",
-          "technologies": "FaWindows"
-        },
-        "dnssec": {
-          "title": "DNSSEC & DoT/DoH",
-          "description": "Configuration d'un résolveur récursif avec Unbound validant DNSSEC via l'ancre de confiance de l'IANA (analysé avec dig et Wireshark pour confirmer la présence des signatures RRSIG). J'ai configuré la mise en cache (divisant le temps de réponse par deux) et mis en place du routage DNS-over-TLS sécurisé vers les serveurs de la FDN.",
-          "technologies": "FaLinux,SiDebian"
-        },
-        "nftables": {
-          "title": "NFTables",
-          "description": "Mise en place d'une passerelle réseau nftables sous Debian pour masquer un LAN interne /24 vers Internet (NAT/Masquerade), validée par des captures de paquets. J'ai également configuré une redirection de port (DNAT) pour transférer le flux SSH entrant vers une machine interne spécifique.",
-          "technologies": "FaLinux,SiDebian"
-        }
+        "title": "Licence 3"
       },
       "M1": {
-        "title": "Master 1",
-        "carp": {
-          "title": "CARP & PF (OpenBSD)",
-          "description": "Mise en place d'une paire de pare-feu à haute disponibilité avec CARP sous OpenBSD. Les nœuds partagent des adresses IP virtuelles synchronisées via pfsync et configurées via pf. Le basculement transparent en cas de coupure du nœud primaire a été validé sous Wireshark sans perte de paquets.",
-          "technologies": "SiOpenbsd"
-        },
-        "lvs": {
-          "title": "Répartition de charge (LVS)",
-          "description": "Configuration d'un cluster de load-balancing avec Linux Virtual Server (LVS) en mode NAT. À l'aide de requêtes curl cycliques, j'ai validé la redirection Round-Robin vers deux serveurs réels avec masquerade IP, puis étudié le mode Direct Routing (DR) pour réduire la surcharge réseau.",
-          "technologies": "FaLinux,SiRockylinux"
-        },
-        "bdd": {
-          "title": "Migration de données",
-          "description": "Déploiement d'une base de données Oracle (via conteneur Podman sur Oracle Linux) aux côtés de MongoDB, gérés via Cockpit. Pour contourner les limites de compatibilité des clients lourds de ma distribution, j'ai encapsulé SQL Developer dans un conteneur Distrobox et écrit un script de migration utilisant SQL*cl et mongoimport.",
-          "technologies": "FaLinux,GrOracle,SiMongodb,TbSql,SiPodman,SiCockpit,SiPython"
-        },
-        "petri": {
-          "title": "Réseaux de Petri",
-          "description": "Modélisation du flux de service et des stocks d'un fast-food à l'aide d'un réseau de Petri de 42 places et 35 transitions, analysé sous la suite TINA. Après correction d'une file d'attente non bornée à l'origine d'une fuite mémoire, nous avons vérifié les invariants structurels et simulé des pics de trafic.",
-          "technologies": ""
-        },
-        "dhcp": {
-          "title": "Redondance DHCP",
-          "description": "Configuration de serveurs DHCP sous Debian en mode failover (failover peer avec split 128 pour un équilibrage 50/50). Les serveurs synchronisent l'état de leurs baux via TCP/647 (messages BNDUPD/BNDACK) et distribuent les adresses en fonction d'un hash de l'adresse MAC du client.",
-          "technologies": "FaLinux, SiAlpinelinux"
-        },
-        "cumulus": {
-          "title": "Réseau Cumulus Linux",
-          "description": "Projet d'étude et de déploiement de quatre architectures réseau redondantes utilisant Cumulus Linux pour les switches, Debian pour les clients. Nous avons mis l'accent sur la redondance des liaisons physiques et l'optimisation du protocole Spanning Tree (STP).",
-          "technologies": "FaLinux,SiDebian"
-        },
-        "yubikey": {
-          "title": "YubiKey & PGP/GPG",
-          "description": "Renforcement de la sécurité d'un environnement Linux à l'aide d'une YubiKey matérielle : double facteur TOTP pour le SSH, authentification FIDO2 pour le web et gestion des passkeys. J'ai également approfondi l'usage de GPG pour le chiffrement asymétrique et la signature de documents.",
-          "technologies": "FaLinux,SiYubico,SiGnuprivacyguard"
-        }
+        "title": "Master 1"
       }
     },
     "personal": {
-      "title": "Projets Personnels",
-      "rwg": {
-        "title": "Hackathon Read-Write-Grow",
-        "link-text": "rwg.bio",
-        "description": "Participation en équipe à ce hackathon axé sur la biologie synthétique. Nous avons conçu des modèles de prédiction de structures secondaires de nanocages d'ARN. J'ai particulièrement travaillé sur les étapes de traitement des données de séquences d'ARN.",
-        "code-link": "Dépôt GitHub",
-        "outcome": "Même si nous n'avons pas remporté le premier prix, notre équipe partenaire s'est hissée dans le top 10 et a pu présenter son projet devant un jury de professionnels.",
-        "technologies": "SiPython"
-      },
-      "cardihack": {
-        "title": "Hackathon Cardi-Hack",
-        "description": "Défi de bio-informatique consistant à affiner un modèle de langage (LLM) pour traiter des données génomiques complexes, calculer des scores de risque polygénique (PRS) et anticiper les risques de maladies cardiovasculaires.",
-        "technologies": "SiPython"
-      },
-      "server": {
-        "title": "Mon Serveur Privé",
-        "description": "Assemblage d'un serveur personnel sous Fedora 44 hébergeant des services conteneurisés sous Docker. J'utilise NGINX en reverse-proxy avec certificats SSL pour sécuriser l'accès à un serveur Nextcloud, un serveur de jeu Minecraft, ainsi qu'à des projets de calcul distribué (Folding@Home).",
-        "technologies": "SiFedora,FaDocker,SiNextcloud"
-      },
-      "rnafold": {
-        "title": "Cfold",
-        "description": "Projet de développement d'un outil en C pour prédire les structures secondaires et tertiaires d'ARN. J'ai conçu un moteur physique simple simulant les forces d'attraction et de répulsion s'exerçant sur les nucléotides.",
-        "technologies": "SiC"
-      },
-      "ARDA": {
-        "title": "ARDA Platform",
-        "description": "Né du projet de prédiction 3D d'ARN, ce travail s'est prolongé par un stage au laboratoire IBISC pour lancer une plateforme web commerciale de calcul. L'infrastructure tourne sur des serveurs BareMetal OVH (Ryzen 7 9700X, 64 Go RAM, SSD NVMe RAID), avec une interface React (PM2), une base de données orientée graphe ArangoDB et PostgreSQL. Les sauvegardes sont automatisées vers mon serveur personnel.",
-        "link": "",
-        "technologies": "SiPython,FaReact,FaLinux"
-      },
-      "D4GEN": {
-        "title": "Hackathon D4GEN 2026",
-        "description": "Participation au hackathon D4GEN du Genopole pour créer une boîte à outils facilitant la transition entre le travail de laboratoire humide (wet lab) et l'analyse sèche (dry lab). Sponsorisés par AWS, nous avons exploité leurs instances de calcul et environnements de notebooks pour entraîner nos modèles.",
-        "code-link": "Dépôt GitHub",
-        "dashboard-link": "Dashboard hébergé sur mon serveur",
-        "technologies": "SiPython,SiAmazonwebservices"
-      }
+      "title": "Projets Personnels"
     }
   }
 }
